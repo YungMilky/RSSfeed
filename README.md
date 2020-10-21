@@ -19,10 +19,8 @@ navigera till din projektmapp i explorer/finder, för mig är det "F:\NetBeansPr
 
 ## 3 - När du vill lägga upp ändringar:
 ### 1. Hämta master och mergea med dina ändringar:
-```
 	git checkout master
 	git pull
-```
 ### 2. Stagea ändringar:
 	git checkout [dinBranch] (gå in i din branch)
 	git add -A
