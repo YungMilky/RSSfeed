@@ -14,4 +14,8 @@ namespace Models
 
         
     }
+
+    public class AvsnittLista
+    {
+    }
 }
