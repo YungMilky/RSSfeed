@@ -11,12 +11,9 @@ namespace Models
         public string Beskrivning { get; set; }
         public string Titel { get; set; }
 
-        public class AvsnittLista : List<Avsnitt>
-        {
-            public AvsnittLista()
-            {
+    }
 
-            }
-        }
+    public class AvsnittLista : List<Avsnitt>
+    {
     }
 }

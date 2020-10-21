@@ -12,4 +12,5 @@ namespace Models
         {
             return "Det här är en entitet";
         }
+    }
 }
