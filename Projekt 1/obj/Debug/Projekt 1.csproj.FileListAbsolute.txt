@@ -1,0 +1,10 @@
+C:\Users\selda\OneDrive - Örebro universitet\Objektorienterad programmering med C#\Projekt i Visual Studio\repos\Projekt 1\Projekt 1\bin\Debug\Projekt 1.exe.config
+C:\Users\selda\OneDrive - Örebro universitet\Objektorienterad programmering med C#\Projekt i Visual Studio\repos\Projekt 1\Projekt 1\bin\Debug\Projekt 1.exe
+C:\Users\selda\OneDrive - Örebro universitet\Objektorienterad programmering med C#\Projekt i Visual Studio\repos\Projekt 1\Projekt 1\bin\Debug\Projekt 1.pdb
+C:\Users\selda\OneDrive - Örebro universitet\Objektorienterad programmering med C#\Projekt i Visual Studio\repos\Projekt 1\Projekt 1\obj\Debug\Projekt 1.csprojAssemblyReference.cache
+C:\Users\selda\OneDrive - Örebro universitet\Objektorienterad programmering med C#\Projekt i Visual Studio\repos\Projekt 1\Projekt 1\obj\Debug\Projekt_1.Form1.resources
+C:\Users\selda\OneDrive - Örebro universitet\Objektorienterad programmering med C#\Projekt i Visual Studio\repos\Projekt 1\Projekt 1\obj\Debug\Projekt_1.Properties.Resources.resources
+C:\Users\selda\OneDrive - Örebro universitet\Objektorienterad programmering med C#\Projekt i Visual Studio\repos\Projekt 1\Projekt 1\obj\Debug\Projekt 1.csproj.GenerateResource.cache
+C:\Users\selda\OneDrive - Örebro universitet\Objektorienterad programmering med C#\Projekt i Visual Studio\repos\Projekt 1\Projekt 1\obj\Debug\Projekt 1.csproj.CoreCompileInputs.cache
+C:\Users\selda\OneDrive - Örebro universitet\Objektorienterad programmering med C#\Projekt i Visual Studio\repos\Projekt 1\Projekt 1\obj\Debug\Projekt 1.exe
+C:\Users\selda\OneDrive - Örebro universitet\Objektorienterad programmering med C#\Projekt i Visual Studio\repos\Projekt 1\Projekt 1\obj\Debug\Projekt 1.pdb
