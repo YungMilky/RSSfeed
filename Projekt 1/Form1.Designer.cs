@@ -33,7 +33,7 @@
             this.namn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.frekvens = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.kategori = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtURL = new System.Windows.Forms.TextBox();
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,6 +54,10 @@
             this.btnTaBort2 = new System.Windows.Forms.Button();
             this.btnSpara2 = new System.Windows.Forms.Button();
             this.btnNy2 = new System.Windows.Forms.Button();
+            this.cbUppdFrekvens = new System.Windows.Forms.ComboBox();
+            this.cbKategori = new System.Windows.Forms.ComboBox();
+            this.avsnittsBeskrivningTextruta = new System.Windows.Forms.TextBox();
+            this.lblAvsnittsbeskrivning = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listView1
@@ -87,12 +91,12 @@
             // 
             this.kategori.Text = "Kategori";
             // 
-            // textBox1
+            // txtURL
             // 
-            this.textBox1.Location = new System.Drawing.Point(55, 388);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 31);
-            this.textBox1.TabIndex = 2;
+            this.txtURL.Location = new System.Drawing.Point(55, 388);
+            this.txtURL.Name = "txtURL";
+            this.txtURL.Size = new System.Drawing.Size(251, 31);
+            this.txtURL.TabIndex = 2;
             // 
             // listView2
             // 
@@ -127,9 +131,10 @@
             // lblKategorier
             // 
             this.lblKategorier.AutoSize = true;
-            this.lblKategorier.Location = new System.Drawing.Point(1004, 76);
+            this.lblKategorier.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKategorier.Location = new System.Drawing.Point(987, 76);
             this.lblKategorier.Name = "lblKategorier";
-            this.lblKategorier.Size = new System.Drawing.Size(117, 25);
+            this.lblKategorier.Size = new System.Drawing.Size(256, 50);
             this.lblKategorier.TabIndex = 4;
             this.lblKategorier.Text = "Kategorier:";
             // 
@@ -198,7 +203,7 @@
             // 
             // btnNy1
             // 
-            this.btnNy1.Location = new System.Drawing.Point(369, 486);
+            this.btnNy1.Location = new System.Drawing.Point(520, 486);
             this.btnNy1.Name = "btnNy1";
             this.btnNy1.Size = new System.Drawing.Size(118, 37);
             this.btnNy1.TabIndex = 9;
@@ -207,7 +212,7 @@
             // 
             // btnSpara1
             // 
-            this.btnSpara1.Location = new System.Drawing.Point(551, 486);
+            this.btnSpara1.Location = new System.Drawing.Point(669, 486);
             this.btnSpara1.Name = "btnSpara1";
             this.btnSpara1.Size = new System.Drawing.Size(118, 37);
             this.btnSpara1.TabIndex = 10;
@@ -216,7 +221,7 @@
             // 
             // btnTaBort1
             // 
-            this.btnTaBort1.Location = new System.Drawing.Point(718, 486);
+            this.btnTaBort1.Location = new System.Drawing.Point(815, 486);
             this.btnTaBort1.Name = "btnTaBort1";
             this.btnTaBort1.Size = new System.Drawing.Size(118, 37);
             this.btnTaBort1.TabIndex = 11;
@@ -225,7 +230,7 @@
             // 
             // btnTaBort2
             // 
-            this.btnTaBort2.Location = new System.Drawing.Point(1358, 376);
+            this.btnTaBort2.Location = new System.Drawing.Point(1296, 376);
             this.btnTaBort2.Name = "btnTaBort2";
             this.btnTaBort2.Size = new System.Drawing.Size(118, 37);
             this.btnTaBort2.TabIndex = 14;
@@ -234,7 +239,7 @@
             // 
             // btnSpara2
             // 
-            this.btnSpara2.Location = new System.Drawing.Point(1191, 376);
+            this.btnSpara2.Location = new System.Drawing.Point(1138, 376);
             this.btnSpara2.Name = "btnSpara2";
             this.btnSpara2.Size = new System.Drawing.Size(118, 37);
             this.btnSpara2.TabIndex = 13;
@@ -243,18 +248,59 @@
             // 
             // btnNy2
             // 
-            this.btnNy2.Location = new System.Drawing.Point(1009, 376);
+            this.btnNy2.Location = new System.Drawing.Point(986, 376);
             this.btnNy2.Name = "btnNy2";
             this.btnNy2.Size = new System.Drawing.Size(118, 37);
             this.btnNy2.TabIndex = 12;
             this.btnNy2.Text = "Ny...";
             this.btnNy2.UseVisualStyleBackColor = true;
             // 
+            // cbUppdFrekvens
+            // 
+            this.cbUppdFrekvens.FormattingEnabled = true;
+            this.cbUppdFrekvens.Location = new System.Drawing.Point(369, 388);
+            this.cbUppdFrekvens.Name = "cbUppdFrekvens";
+            this.cbUppdFrekvens.Size = new System.Drawing.Size(244, 33);
+            this.cbUppdFrekvens.TabIndex = 15;
+            // 
+            // cbKategori
+            // 
+            this.cbKategori.FormattingEnabled = true;
+            this.cbKategori.Location = new System.Drawing.Point(689, 388);
+            this.cbKategori.Name = "cbKategori";
+            this.cbKategori.Size = new System.Drawing.Size(244, 33);
+            this.cbKategori.TabIndex = 16;
+            // 
+            // avsnittsBeskrivningTextruta
+            // 
+            this.avsnittsBeskrivningTextruta.Location = new System.Drawing.Point(954, 632);
+            this.avsnittsBeskrivningTextruta.Margin = new System.Windows.Forms.Padding(6);
+            this.avsnittsBeskrivningTextruta.Multiline = true;
+            this.avsnittsBeskrivningTextruta.Name = "avsnittsBeskrivningTextruta";
+            this.avsnittsBeskrivningTextruta.ReadOnly = true;
+            this.avsnittsBeskrivningTextruta.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.avsnittsBeskrivningTextruta.Size = new System.Drawing.Size(718, 189);
+            this.avsnittsBeskrivningTextruta.TabIndex = 27;
+            // 
+            // lblAvsnittsbeskrivning
+            // 
+            this.lblAvsnittsbeskrivning.AutoSize = true;
+            this.lblAvsnittsbeskrivning.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAvsnittsbeskrivning.Location = new System.Drawing.Point(949, 572);
+            this.lblAvsnittsbeskrivning.Name = "lblAvsnittsbeskrivning";
+            this.lblAvsnittsbeskrivning.Size = new System.Drawing.Size(448, 50);
+            this.lblAvsnittsbeskrivning.TabIndex = 28;
+            this.lblAvsnittsbeskrivning.Text = "Avsnittsbeskrivning:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1687, 866);
+            this.Controls.Add(this.lblAvsnittsbeskrivning);
+            this.Controls.Add(this.avsnittsBeskrivningTextruta);
+            this.Controls.Add(this.cbKategori);
+            this.Controls.Add(this.cbUppdFrekvens);
             this.Controls.Add(this.btnTaBort2);
             this.Controls.Add(this.btnSpara2);
             this.Controls.Add(this.btnNy2);
@@ -267,7 +313,7 @@
             this.Controls.Add(this.listView3);
             this.Controls.Add(this.lblKategorier);
             this.Controls.Add(this.listView2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtURL);
             this.Controls.Add(this.listView1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -283,7 +329,7 @@
         private System.Windows.Forms.ColumnHeader namn;
         private System.Windows.Forms.ColumnHeader frekvens;
         private System.Windows.Forms.ColumnHeader kategori;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtURL;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -304,6 +350,10 @@
         private System.Windows.Forms.Button btnTaBort2;
         private System.Windows.Forms.Button btnSpara2;
         private System.Windows.Forms.Button btnNy2;
+        private System.Windows.Forms.ComboBox cbUppdFrekvens;
+        private System.Windows.Forms.ComboBox cbKategori;
+        private System.Windows.Forms.TextBox avsnittsBeskrivningTextruta;
+        private System.Windows.Forms.Label lblAvsnittsbeskrivning;
     }
 }
 

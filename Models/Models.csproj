@@ -45,8 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Avsnitt.cs" />
+    <Compile Include="Feed.cs" />
     <Compile Include="Kategori.cs" />
-    <Compile Include="Podcast.cs" />
+    <Compile Include="Entitet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

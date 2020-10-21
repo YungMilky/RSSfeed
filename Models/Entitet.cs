@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Kategori : Entitet
+    public class Entitet
     {
-
-    }
+        public virtual string EntitetsTyp()
+        {
+            return "Det här är en entitet";
+        }
 }
