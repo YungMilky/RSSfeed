@@ -50,8 +50,7 @@ namespace DAL.Repositories
 
         public void Update(string URL, string nyttKategoriNamn, int uppdateringsFrekvens, string kategori)
         {
-            Path.Combine(Directory.GetCurrentDirectory(), nyttKategoriNamn, URL + @".xml");
-            //oklart om denna kod funkar?
+            //skriv kod, stämmer parametrarna??
         }
     }
 }
