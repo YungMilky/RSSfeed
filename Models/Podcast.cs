@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Entitet
+    public class Podcast
     {
         public virtual string EntitetsTyp()
         {
-            return "Det här är en entitet";
+            return "Det här är en podcast";
         }
     }
 }

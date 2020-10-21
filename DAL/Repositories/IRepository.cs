@@ -8,10 +8,11 @@ namespace DAL.Repositories
 {
     public interface IRepository<T> where T:class
     {
-        void Create(T entity);
-        void Delete(int index);
-        void Update(int index, T newEntity);
+        void Add(T entity);
+        void Delete(string valdKategori, string valdFeed);
+       // void DeleteKategori;//(vad ska den ta för parameter?)
+        void Update(string URL, string nyttKategoriNamn, int uppdateringsFrekvens, string kategori);
+        void SaveChanges();
         List<T> GetAll();
-        void saveChanges(); 
-    }
+    
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Avsnitt : Entitet
+    public class Avsnitt : Podcast
     {
         public string Beskrivning { get; set; }
         public string Titel { get; set; }
