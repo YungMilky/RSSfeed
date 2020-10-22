@@ -31,7 +31,7 @@ namespace DAL.Repositories
             //skriv kod
         }
 
-        public void DeleteKategori(string mapp)
+        public void TaBortKategori(string mapp)
         {
             //skriv kod
         }
@@ -51,6 +51,18 @@ namespace DAL.Repositories
         public void Uppdatera(string URL, string nyttKategoriNamn, int uppdateringsFrekvens, string kategori)
         {
             //skriv kod, stämmer parametrarna??
+        }
+
+        public Podcast HamtaAllaEnligtKategori(string kategoriNamn)
+        {
+            return HamtaAlla().First(p => p.KategoriNamn.Equals(kategoriNamn)); 
+            //hur hämtar man KategoriNamn från klassen Kategori?
+        }
+
+        public Podcast HamtaPodcastEnligtNamn(string titel)
+        {
+            return HamtaAlla().First(p => p.Titel.Equals(titel)); 
+            //hur hämtar man Titel från klassen Feed?
         }
     }
 }
