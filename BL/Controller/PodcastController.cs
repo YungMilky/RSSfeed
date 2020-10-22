@@ -16,6 +16,7 @@ namespace BL.Controller
         public PodcastController()
         {
             podcastRepository = new PodcastRepository();
+
         }
 
         public void SkapaPodcastObjekt(string namn, string url, int uppdateringsFrekvens, string kategori)

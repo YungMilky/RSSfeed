@@ -27,12 +27,6 @@ namespace DAL.Repositories
             Spara();    
         }
 
-        public void TaBort(int index)
-        {
-            podcastList.RemoveAt(index);
-            Spara();
-        }
-
         public void Spara()
         {
             dataManager.Serialize(podcastList);
@@ -44,23 +38,21 @@ namespace DAL.Repositories
             //skriv kod
         }
 
-        public int GetIndex(string namn)
-        {
-            return HamtaAlla().FindIndex(e => e.Namn.Equals(namn));
-
-            //funkar det?
-        }
-
-        public void Uppdatera(int index)//stämmer parametern?
-        {
-            //skriv kod
-        }
-
         public List<Podcast> HamtaAlla()
         {
             List<Podcast> podcastsToBeReturned = new List<Podcast>();
             podcastsToBeReturned = dataManager.Deserialize();
             return podcastsToBeReturned;
+        }
+
+        public void Uppdatera(string namn)
+        {
+            // skriv kod för att uppdatera en podcast
+        }
+
+        public void TaBort(string namn)
+        {
+            //skriv kod för att ta bort en podcast
         }
     }
 }

@@ -62,7 +62,9 @@
             this.lblKategori2 = new System.Windows.Forms.Label();
             this.lblAvsnitt = new System.Windows.Forms.Label();
             this.lblPodcastNamn = new System.Windows.Forms.Label();
+            this.txtNamn = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // listView1
@@ -214,6 +216,7 @@
             this.btnLaggTill1.TabIndex = 9;
             this.btnLaggTill1.Text = "Lägg till";
             this.btnLaggTill1.UseVisualStyleBackColor = true;
+            this.btnLaggTill1.Click += new System.EventHandler(this.btnLaggTill1_Click);
             // 
             // btnSpara1
             // 
@@ -263,7 +266,7 @@
             // cbUppdFrekvens
             // 
             this.cbUppdFrekvens.FormattingEnabled = true;
-            this.cbUppdFrekvens.Location = new System.Drawing.Point(369, 388);
+            this.cbUppdFrekvens.Location = new System.Drawing.Point(1063, 525);
             this.cbUppdFrekvens.Name = "cbUppdFrekvens";
             this.cbUppdFrekvens.Size = new System.Drawing.Size(244, 33);
             this.cbUppdFrekvens.TabIndex = 15;
@@ -271,7 +274,7 @@
             // cbKategori
             // 
             this.cbKategori.FormattingEnabled = true;
-            this.cbKategori.Location = new System.Drawing.Point(689, 388);
+            this.cbKategori.Location = new System.Drawing.Point(1383, 525);
             this.cbKategori.Name = "cbKategori";
             this.cbKategori.Size = new System.Drawing.Size(244, 33);
             this.cbKategori.TabIndex = 16;
@@ -321,7 +324,7 @@
             this.lblAvsnitt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAvsnitt.Location = new System.Drawing.Point(57, 528);
             this.lblAvsnitt.Name = "lblAvsnitt";
-            this.lblAvsnitt.Size = new System.Drawing.Size(196, 50);
+            this.lblAvsnitt.Size = new System.Drawing.Size(98, 25);
             this.lblAvsnitt.TabIndex = 31;
             this.lblAvsnitt.Text = "Avsnitt: ";
             this.lblAvsnitt.UseWaitCursor = true;
@@ -332,24 +335,40 @@
             this.lblPodcastNamn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPodcastNamn.Location = new System.Drawing.Point(50, 444);
             this.lblPodcastNamn.Name = "lblPodcastNamn";
-            this.lblPodcastNamn.Size = new System.Drawing.Size(158, 50);
+            this.lblPodcastNamn.Size = new System.Drawing.Size(79, 25);
             this.lblPodcastNamn.TabIndex = 32;
             this.lblPodcastNamn.Text = "Namn:";
             this.lblPodcastNamn.UseWaitCursor = true;
             // 
+            // txtNamn
+            // 
+            this.txtNamn.Location = new System.Drawing.Point(55, 472);
+            this.txtNamn.Name = "txtNamn";
+            this.txtNamn.Size = new System.Drawing.Size(251, 31);
+            this.txtNamn.TabIndex = 33;
+            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(55, 472);
+            this.textBox1.Location = new System.Drawing.Point(362, 397);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(251, 31);
-            this.textBox1.TabIndex = 33;
+            this.textBox1.TabIndex = 34;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(682, 397);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(251, 31);
+            this.textBox2.TabIndex = 35;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1687, 866);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNamn);
             this.Controls.Add(this.lblPodcastNamn);
             this.Controls.Add(this.lblAvsnitt);
             this.Controls.Add(this.lblKategori2);
@@ -415,7 +434,9 @@
         private System.Windows.Forms.Label lblKategori2;
         private System.Windows.Forms.Label lblAvsnitt;
         private System.Windows.Forms.Label lblPodcastNamn;
+        private System.Windows.Forms.TextBox txtNamn;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 

@@ -22,7 +22,7 @@ namespace DAL
                     xmlSerializer.Serialize(Outfile, podcastList);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 throw new SerializerException("Podcasts.xml", "Could not serialize file");
             }

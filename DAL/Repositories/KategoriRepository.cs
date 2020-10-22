@@ -9,12 +9,6 @@ namespace DAL.Repositories
 {
     public class KategoriRepository : IKategoriRepository<Kategori>
     {
-        public int GetIndex(string namn)
-        {
-            return 1; //ta bort raden när koden skrivs
-            //behövs den här metoden?
-        }
-
         public List<Kategori> HamtaAlla()
         {
             return null; //ta bort rad nör kod skrivs
@@ -37,14 +31,19 @@ namespace DAL.Repositories
             //skriv kod 
         }
 
-        public void TaBort(int index)
+        public void TaBort(string namn)
         {
-            //skriv kod 
+            //skriv kod för att ta bort en kategori
         }
 
         public void Uppdatera(int index)
         {
             //skriv kod 
+        }
+
+        public void Uppdatera(string namn)
+        {
+            //skriv kod för att uppdatera en kategori
         }
     }
 }

@@ -13,13 +13,19 @@ namespace Models
         public int UppdateringsFrekvens { get; set; }
         public string Kategori { get; set; }
 
-        public Podcast(string namn, string url, int uppdateringsFrekvens, string kategori)
+        public Podcast (string namn, string url, int uppdateringsFrekvens, string kategori)
         {
             Namn = namn;
             URL = url;
             UppdateringsFrekvens = uppdateringsFrekvens;
             Kategori = kategori;
         }
+
+        public Podcast()
+        {
+
+        }
+
         public override string EntitetsTyp()
         {
             return "Det här är en podcast";
