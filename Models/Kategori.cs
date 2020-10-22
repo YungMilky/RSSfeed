@@ -9,7 +9,8 @@ namespace Models
 {
     public class Kategori : Podcast
     {
-        public string KategoriNamn { get; set; }
+        public string KategoriNamn { get; set; } 
+        // ska properties vara här eller i Podcast?
 
         public Kategori(string kategoriNamn)//måste man ha en konstruktor?
         {

@@ -11,5 +11,6 @@ namespace DAL.Repositories
     {
         T HamtaAllaEnligtKategori(string namn); //hämtar alla podcasts i en kategori
         T HamtaPodcastEnligtNamn(string namn); //hämtar alla avsnitt av vald podcast
+        int GetIndex (string namn);
     }
 }

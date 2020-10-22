@@ -48,12 +48,12 @@
             this.lblURL = new System.Windows.Forms.Label();
             this.lblUppdateringsFrekvens = new System.Windows.Forms.Label();
             this.lblKategori = new System.Windows.Forms.Label();
-            this.btnNy1 = new System.Windows.Forms.Button();
+            this.btnLaggTill1 = new System.Windows.Forms.Button();
             this.btnSpara1 = new System.Windows.Forms.Button();
             this.btnTaBort1 = new System.Windows.Forms.Button();
             this.btnTaBort2 = new System.Windows.Forms.Button();
             this.btnSpara2 = new System.Windows.Forms.Button();
-            this.btnNy2 = new System.Windows.Forms.Button();
+            this.btnLaggTill2 = new System.Windows.Forms.Button();
             this.cbUppdFrekvens = new System.Windows.Forms.ComboBox();
             this.cbKategori = new System.Windows.Forms.ComboBox();
             this.avsnittsBeskrivningTextruta = new System.Windows.Forms.TextBox();
@@ -206,14 +206,14 @@
             this.lblKategori.Text = "Kategori:";
             this.lblKategori.UseWaitCursor = true;
             // 
-            // btnNy1
+            // btnLaggTill1
             // 
-            this.btnNy1.Location = new System.Drawing.Point(520, 486);
-            this.btnNy1.Name = "btnNy1";
-            this.btnNy1.Size = new System.Drawing.Size(118, 37);
-            this.btnNy1.TabIndex = 9;
-            this.btnNy1.Text = "Ny...";
-            this.btnNy1.UseVisualStyleBackColor = true;
+            this.btnLaggTill1.Location = new System.Drawing.Point(520, 486);
+            this.btnLaggTill1.Name = "btnLaggTill1";
+            this.btnLaggTill1.Size = new System.Drawing.Size(118, 37);
+            this.btnLaggTill1.TabIndex = 9;
+            this.btnLaggTill1.Text = "Lägg till";
+            this.btnLaggTill1.UseVisualStyleBackColor = true;
             // 
             // btnSpara1
             // 
@@ -230,7 +230,7 @@
             this.btnTaBort1.Name = "btnTaBort1";
             this.btnTaBort1.Size = new System.Drawing.Size(118, 37);
             this.btnTaBort1.TabIndex = 11;
-            this.btnTaBort1.Text = "Ta bort...";
+            this.btnTaBort1.Text = "Ta bort";
             this.btnTaBort1.UseVisualStyleBackColor = true;
             // 
             // btnTaBort2
@@ -239,7 +239,7 @@
             this.btnTaBort2.Name = "btnTaBort2";
             this.btnTaBort2.Size = new System.Drawing.Size(118, 37);
             this.btnTaBort2.TabIndex = 14;
-            this.btnTaBort2.Text = "Ta bort...";
+            this.btnTaBort2.Text = "Ta bort";
             this.btnTaBort2.UseVisualStyleBackColor = true;
             // 
             // btnSpara2
@@ -251,14 +251,14 @@
             this.btnSpara2.Text = "Spara";
             this.btnSpara2.UseVisualStyleBackColor = true;
             // 
-            // btnNy2
+            // btnLaggTill2
             // 
-            this.btnNy2.Location = new System.Drawing.Point(1177, 468);
-            this.btnNy2.Name = "btnNy2";
-            this.btnNy2.Size = new System.Drawing.Size(118, 37);
-            this.btnNy2.TabIndex = 12;
-            this.btnNy2.Text = "Ny...";
-            this.btnNy2.UseVisualStyleBackColor = true;
+            this.btnLaggTill2.Location = new System.Drawing.Point(1177, 468);
+            this.btnLaggTill2.Name = "btnLaggTill2";
+            this.btnLaggTill2.Size = new System.Drawing.Size(118, 37);
+            this.btnLaggTill2.TabIndex = 12;
+            this.btnLaggTill2.Text = "Lägg till";
+            this.btnLaggTill2.UseVisualStyleBackColor = true;
             // 
             // cbUppdFrekvens
             // 
@@ -360,10 +360,10 @@
             this.Controls.Add(this.cbUppdFrekvens);
             this.Controls.Add(this.btnTaBort2);
             this.Controls.Add(this.btnSpara2);
-            this.Controls.Add(this.btnNy2);
+            this.Controls.Add(this.btnLaggTill2);
             this.Controls.Add(this.btnTaBort1);
             this.Controls.Add(this.btnSpara1);
-            this.Controls.Add(this.btnNy1);
+            this.Controls.Add(this.btnLaggTill1);
             this.Controls.Add(this.lblKategori);
             this.Controls.Add(this.lblUppdateringsFrekvens);
             this.Controls.Add(this.lblURL);
@@ -401,12 +401,12 @@
         private System.Windows.Forms.Label lblURL;
         private System.Windows.Forms.Label lblUppdateringsFrekvens;
         private System.Windows.Forms.Label lblKategori;
-        private System.Windows.Forms.Button btnNy1;
+        private System.Windows.Forms.Button btnLaggTill1;
         private System.Windows.Forms.Button btnSpara1;
         private System.Windows.Forms.Button btnTaBort1;
         private System.Windows.Forms.Button btnTaBort2;
         private System.Windows.Forms.Button btnSpara2;
-        private System.Windows.Forms.Button btnNy2;
+        private System.Windows.Forms.Button btnLaggTill2;
         private System.Windows.Forms.ComboBox cbUppdFrekvens;
         private System.Windows.Forms.ComboBox cbKategori;
         private System.Windows.Forms.TextBox avsnittsBeskrivningTextruta;

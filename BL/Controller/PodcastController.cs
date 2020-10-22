@@ -17,6 +17,13 @@ namespace BL.Controller
             podcastRepository = new PodcastRepository();
         }
 
+        public void SkapaPodcastObjekt() //vilka parametrar?
+        {
+            Podcast newPodcast;
+            //skriv kod
+
+        }
+
         public List<Podcast> HamtaAllaPodcasts() //ska det vara en lista av avsnitt?
         {
             return podcastRepository.HamtaAlla();
@@ -24,8 +31,8 @@ namespace BL.Controller
 
         public void TaBortPodcast(string namn)
         {
-            int index = podcastRepository.GetIndex(namn);
-            podcastRepository.TaBort(index);
+            int index = podcastRepository.GetIndex(namn);                .GetIndex(namn);
+            podcastRepository.TaBortPodcast(index);
 
         }
     }
