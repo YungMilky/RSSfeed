@@ -12,8 +12,7 @@ namespace Models
         public string Titel { get; set; }
 
         public Avsnitt() //måste man ha en konstruktor?
-        {
-
+        { 
         }
 
         public override string Display()

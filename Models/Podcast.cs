@@ -11,7 +11,7 @@ namespace Models
 
         public string Namn { get; set; }
         public string URL { get; set; }
-        public int Uppdateringsfrekvens { get; set; }
+        public int UppdateringsFrekvens { get; set; }
         public string Kategori { get; set; }
 
         //ska klassernas properties vara här och inte i respektive klass?
@@ -19,7 +19,7 @@ namespace Models
         {
             Namn = namn;
             URL = url;
-            Uppdateringsfrekvens = uppdateringsFrekvens;
+            UppdateringsFrekvens = uppdateringsFrekvens;
             Kategori = kategori; 
         }
         public virtual string Display()

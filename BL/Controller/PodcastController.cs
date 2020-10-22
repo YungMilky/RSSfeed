@@ -31,9 +31,8 @@ namespace BL.Controller
 
         public void TaBortPodcast(string namn)
         {
-            int index = podcastRepository.GetIndex(namn);                .GetIndex(namn);
+            int index = podcastRepository.GetIndex(namn);
             podcastRepository.TaBortPodcast(index);
-
         }
     }
 }
