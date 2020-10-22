@@ -60,6 +60,9 @@
             this.lblAvsnittsbeskrivning = new System.Windows.Forms.Label();
             this.txtKategori = new System.Windows.Forms.TextBox();
             this.lblKategori2 = new System.Windows.Forms.Label();
+            this.lblAvsnitt = new System.Windows.Forms.Label();
+            this.lblPodcastNamn = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // listView1
@@ -312,11 +315,43 @@
             this.lblKategori2.Text = "Kategori:";
             this.lblKategori2.UseWaitCursor = true;
             // 
+            // lblAvsnitt
+            // 
+            this.lblAvsnitt.AutoSize = true;
+            this.lblAvsnitt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAvsnitt.Location = new System.Drawing.Point(57, 528);
+            this.lblAvsnitt.Name = "lblAvsnitt";
+            this.lblAvsnitt.Size = new System.Drawing.Size(196, 50);
+            this.lblAvsnitt.TabIndex = 31;
+            this.lblAvsnitt.Text = "Avsnitt: ";
+            this.lblAvsnitt.UseWaitCursor = true;
+            // 
+            // lblPodcastNamn
+            // 
+            this.lblPodcastNamn.AutoSize = true;
+            this.lblPodcastNamn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPodcastNamn.Location = new System.Drawing.Point(50, 444);
+            this.lblPodcastNamn.Name = "lblPodcastNamn";
+            this.lblPodcastNamn.Size = new System.Drawing.Size(158, 50);
+            this.lblPodcastNamn.TabIndex = 32;
+            this.lblPodcastNamn.Text = "Namn:";
+            this.lblPodcastNamn.UseWaitCursor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(55, 472);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(251, 31);
+            this.textBox1.TabIndex = 33;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1687, 866);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblPodcastNamn);
+            this.Controls.Add(this.lblAvsnitt);
             this.Controls.Add(this.lblKategori2);
             this.Controls.Add(this.txtKategori);
             this.Controls.Add(this.lblAvsnittsbeskrivning);
@@ -378,6 +413,9 @@
         private System.Windows.Forms.Label lblAvsnittsbeskrivning;
         private System.Windows.Forms.TextBox txtKategori;
         private System.Windows.Forms.Label lblKategori2;
+        private System.Windows.Forms.Label lblAvsnitt;
+        private System.Windows.Forms.Label lblPodcastNamn;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

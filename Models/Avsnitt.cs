@@ -16,5 +16,10 @@ namespace Models
 
         }
 
+        public override string Display()
+        {
+            return "Det här är ett podcast avsnitt.";
+        }
+
     }
 }

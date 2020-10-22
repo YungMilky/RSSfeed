@@ -8,6 +8,8 @@ namespace Models
 {
     public class Podcast
     {
+
+        //ska klassernas properties vara här och inte i respektive klass?
         public Podcast()
         {
         }
