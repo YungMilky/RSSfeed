@@ -53,16 +53,16 @@ namespace DAL.Repositories
             //skriv kod, stämmer parametrarna??
         }
 
-        public Podcast HamtaAllaEnligtKategori(string kategoriNamn)
-        {
-            return HamtaAlla().First(p => p.KategoriNamn.Equals(kategoriNamn)); 
-            //hur hämtar man KategoriNamn från klassen Kategori?
-        }
+        //public Podcast HamtaAllaEnligtKategori(string kategoriNamn)
+        //{
+        //    return HamtaAlla().First(p => p.KategoriNamn.Equals(kategoriNamn)); 
+        //    hur hämtar man KategoriNamn från klassen Kategori?
+        //}
 
-        public Podcast HamtaPodcastEnligtNamn(string titel)
-        {
-            return HamtaAlla().First(p => p.Titel.Equals(titel)); 
-            //hur hämtar man Titel från klassen Feed?
-        }
+        //public Podcast HamtaPodcastEnligtNamn(string titel)
+        //{
+        //    return HamtaAlla().First(p => p.Titel.Equals(titel)); 
+        //    hur hämtar man Titel från klassen Feed?
+        //}
     }
 }
