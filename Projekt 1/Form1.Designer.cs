@@ -58,6 +58,8 @@
             this.cbKategori = new System.Windows.Forms.ComboBox();
             this.avsnittsBeskrivningTextruta = new System.Windows.Forms.TextBox();
             this.lblAvsnittsbeskrivning = new System.Windows.Forms.Label();
+            this.txtKategori = new System.Windows.Forms.TextBox();
+            this.lblKategori2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listView1
@@ -134,7 +136,7 @@
             this.lblKategorier.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKategorier.Location = new System.Drawing.Point(987, 76);
             this.lblKategorier.Name = "lblKategorier";
-            this.lblKategorier.Size = new System.Drawing.Size(256, 50);
+            this.lblKategorier.Size = new System.Drawing.Size(128, 25);
             this.lblKategorier.TabIndex = 4;
             this.lblKategorier.Text = "Kategorier:";
             // 
@@ -230,7 +232,7 @@
             // 
             // btnTaBort2
             // 
-            this.btnTaBort2.Location = new System.Drawing.Point(1296, 376);
+            this.btnTaBort2.Location = new System.Drawing.Point(1487, 468);
             this.btnTaBort2.Name = "btnTaBort2";
             this.btnTaBort2.Size = new System.Drawing.Size(118, 37);
             this.btnTaBort2.TabIndex = 14;
@@ -239,7 +241,7 @@
             // 
             // btnSpara2
             // 
-            this.btnSpara2.Location = new System.Drawing.Point(1138, 376);
+            this.btnSpara2.Location = new System.Drawing.Point(1329, 468);
             this.btnSpara2.Name = "btnSpara2";
             this.btnSpara2.Size = new System.Drawing.Size(118, 37);
             this.btnSpara2.TabIndex = 13;
@@ -248,7 +250,7 @@
             // 
             // btnNy2
             // 
-            this.btnNy2.Location = new System.Drawing.Point(986, 376);
+            this.btnNy2.Location = new System.Drawing.Point(1177, 468);
             this.btnNy2.Name = "btnNy2";
             this.btnNy2.Size = new System.Drawing.Size(118, 37);
             this.btnNy2.TabIndex = 12;
@@ -288,15 +290,35 @@
             this.lblAvsnittsbeskrivning.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAvsnittsbeskrivning.Location = new System.Drawing.Point(949, 572);
             this.lblAvsnittsbeskrivning.Name = "lblAvsnittsbeskrivning";
-            this.lblAvsnittsbeskrivning.Size = new System.Drawing.Size(448, 50);
+            this.lblAvsnittsbeskrivning.Size = new System.Drawing.Size(224, 25);
             this.lblAvsnittsbeskrivning.TabIndex = 28;
             this.lblAvsnittsbeskrivning.Text = "Avsnittsbeskrivning:";
+            // 
+            // txtKategori
+            // 
+            this.txtKategori.Location = new System.Drawing.Point(1177, 388);
+            this.txtKategori.Name = "txtKategori";
+            this.txtKategori.Size = new System.Drawing.Size(444, 31);
+            this.txtKategori.TabIndex = 29;
+            // 
+            // lblKategori2
+            // 
+            this.lblKategori2.AutoSize = true;
+            this.lblKategori2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKategori2.Location = new System.Drawing.Point(1172, 346);
+            this.lblKategori2.Name = "lblKategori2";
+            this.lblKategori2.Size = new System.Drawing.Size(107, 25);
+            this.lblKategori2.TabIndex = 30;
+            this.lblKategori2.Text = "Kategori:";
+            this.lblKategori2.UseWaitCursor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1687, 866);
+            this.Controls.Add(this.lblKategori2);
+            this.Controls.Add(this.txtKategori);
             this.Controls.Add(this.lblAvsnittsbeskrivning);
             this.Controls.Add(this.avsnittsBeskrivningTextruta);
             this.Controls.Add(this.cbKategori);
@@ -354,6 +376,8 @@
         private System.Windows.Forms.ComboBox cbKategori;
         private System.Windows.Forms.TextBox avsnittsBeskrivningTextruta;
         private System.Windows.Forms.Label lblAvsnittsbeskrivning;
+        private System.Windows.Forms.TextBox txtKategori;
+        private System.Windows.Forms.Label lblKategori2;
     }
 }
 

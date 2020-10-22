@@ -10,14 +10,16 @@ namespace Models
     {
         public string URL { get; set; }
         public string Titel { get; set; }
-        public Kategori Kategori { get; set; }
-        public int AntaletAvsnitt { get; set; }
-        public AvsnittLista avsnitt { get; set; }
+        public string Kategori { get; set; }
         public int UppdateraFrekvens { get; set; }
+        public List<Avsnitt> Avsnitt { get; set; }
 
-        public override string EntitetsTyp()
+        public Feed()//måste man ha en konstruktor?
         {
-            return "Podcast feed.";
+        }
+        public override string Display()
+        {
+            return "Det här är en podcast feed.";
         }
     }
 }

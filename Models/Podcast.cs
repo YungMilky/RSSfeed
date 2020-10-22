@@ -8,7 +8,10 @@ namespace Models
 {
     public class Podcast
     {
-        public virtual string EntitetsTyp()
+        public Podcast()
+        {
+        }
+        public virtual string Display()
         {
             return "Det här är en podcast";
         }

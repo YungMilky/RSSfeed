@@ -16,7 +16,7 @@ namespace DAL
         {
             try
             {
-                XmlSerializer xmlSerializer = new XmlSerializer(personList.GetType());
+                XmlSerializer xmlSerializer = new XmlSerializer(podcastList.GetType());
                 using (FileStream Outfile = new FileStream("Persons.xml", FileMode.Create, FileAccess.Write))
                 {
                     xmlSerializer.Serialize(Outfile, podcastList);
@@ -34,7 +34,7 @@ namespace DAL
             {
 
                 List<Podcast> listOfPodcastsToBeReturned;
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Person>));
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Podcast>));
                 using (FileStream inFile = new FileStream("Persons.xml", FileMode.Open, FileAccess.Read))
                 {
                     listOfPodcastsToBeReturned = (List<Podcast>)xmlSerializer.Deserialize(inFile);

@@ -1,0 +1,6 @@
+C:\GitHub\RSSfeed\Models\obj\Debug\Models.csprojAssemblyReference.cache
+C:\GitHub\RSSfeed\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\GitHub\RSSfeed\Models\bin\Debug\Models.dll
+C:\GitHub\RSSfeed\Models\bin\Debug\Models.pdb
+C:\GitHub\RSSfeed\Models\obj\Debug\Models.dll
+C:\GitHub\RSSfeed\Models\obj\Debug\Models.pdb

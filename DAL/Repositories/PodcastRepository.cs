@@ -17,16 +17,16 @@ namespace DAL.Repositories
         {
             podcastList = new List<Podcast>();
             dataManager = new DataManager();
-            podcastList = GetAll();
+            podcastList = HamtaAlla();
         }
 
-        public void Add(Podcast entity)
+        public void LaggTill(Podcast entity)
         {
             podcastList.Add(entity);
-            SaveChanges();    
+            Spara();    
         }
 
-        public void Delete(string valdKategori, string valdFeed)
+        public void TaBort(string valdKategori, string valdFeed)
         {
             //skriv kod
         }
@@ -36,19 +36,19 @@ namespace DAL.Repositories
             //skriv kod
         }
 
-        public List<Podcast> GetAll()
+        public List<Podcast> HamtaAlla() //eller är det en lista av avsnitt vi vill hämta?
         {
             List<Podcast> podcastsToBeReturned = new List<Podcast>();
             podcastsToBeReturned = dataManager.Deserialize();
             return podcastsToBeReturned;
         }
 
-        public void SaveChanges()
+        public void Spara()
         {
             dataManager.Serialize(podcastList);
         }
 
-        public void Update(string URL, string nyttKategoriNamn, int uppdateringsFrekvens, string kategori)
+        public void Uppdatera(string URL, string nyttKategoriNamn, int uppdateringsFrekvens, string kategori)
         {
             //skriv kod, stämmer parametrarna??
         }

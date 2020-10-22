@@ -11,9 +11,10 @@ namespace Models
         public string Beskrivning { get; set; }
         public string Titel { get; set; }
 
-    }
+        public Avsnitt() //måste man ha en konstruktor?
+        {
 
-    public class AvsnittLista : List<Avsnitt>
-    {
+        }
+
     }
 }
