@@ -14,7 +14,6 @@ namespace Models
         public int UppdateringsFrekvens { get; set; }
         public string Kategori { get; set; }
 
-        //ska klassernas properties vara här och inte i respektive klass?
         public Podcast(string namn, string url, int uppdateringsFrekvens, string kategori)
         {
             Namn = namn;
