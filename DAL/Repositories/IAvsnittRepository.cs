@@ -3,17 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Models; 
 
 namespace DAL.Repositories
 {
-    public interface IRepository<T> where T : class
+    public interface IAvsnittRepository<T> where T : Avsnitt
     {
-        void Skapa(T Entity);
-        void Uppdatera(int index);
-        void TaBort(int index);
-        void Spara();
         List<T> HamtaAlla();
-
     }
-    
 }

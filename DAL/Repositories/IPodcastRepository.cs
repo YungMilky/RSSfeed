@@ -9,8 +9,7 @@ namespace DAL.Repositories
 {
     public interface IPodcastRepository<T> : IRepository<T> where T : Podcast
     {
-        T HamtaAllaEnligtKategori(string namn); //hämtar alla podcasts i en kategori
         T HamtaPodcastEnligtNamn(string namn); //hämtar alla avsnitt av vald podcast
-        int GetIndex (string namn);
+
     }
 }

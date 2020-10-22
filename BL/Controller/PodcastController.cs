@@ -1,10 +1,11 @@
-﻿using Models;
-using DAL.Repositories;
+﻿using DAL.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Models;
+using System.Xml;
 
 namespace BL.Controller
 {
@@ -17,10 +18,11 @@ namespace BL.Controller
             podcastRepository = new PodcastRepository();
         }
 
-        public void SkapaPodcastObjekt() //vilka parametrar?
+        public void SkapaPodcastObjekt(string namn, string url, int uppdateringsFrekvens, string kategori)
         {
-            Podcast newPodcast;
-            //skriv kod
+            Podcast newPodcast = new Podcast(namn, url, uppdateringsFrekvens, kategori);
+            podcastRepository.Skapa(newPodcast);
+            //tror att det här borde funka?
 
         }
 
@@ -31,21 +33,8 @@ namespace BL.Controller
 
         public void TaBortPodcast(string namn)
         {
-            int index = podcastRepository.GetIndex(namn);
-            podcastRepository.TaBortPodcast(index);
+            //skriv kod
         }
 
-        //public string HamtaAllaEnligtKategori(string kategoriNamn)
-        //{
-        //    return HamtaAlla().First(p => p.KategoriNamn.Equals(kategoriNamn)); 
-        //    hur hämtar man KategoriNamn från klassen Kategori?
-
-        //}
-
-        //public string HamtaPodcastEnligtNamn(string titel)
-        //{
-        //    return HamtaAlla().First(p => p.Titel.Equals(titel)); 
-        //    hur hämtar man Titel från klassen Feed?
-        //}
     }
 }

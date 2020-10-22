@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AvsnittController.cs" />
+    <Compile Include="Controller\KategoriController.cs" />
     <Compile Include="Controller\PodcastController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

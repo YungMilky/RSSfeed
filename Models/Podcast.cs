@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Podcast
+    public class Podcast : Entitet
     {
-
         public string Namn { get; set; }
         public string URL { get; set; }
         public int UppdateringsFrekvens { get; set; }
@@ -19,11 +18,12 @@ namespace Models
             Namn = namn;
             URL = url;
             UppdateringsFrekvens = uppdateringsFrekvens;
-            Kategori = kategori; 
+            Kategori = kategori;
         }
-        public virtual string Display()
+        public override string EntitetsTyp()
         {
             return "Det här är en podcast";
         }
     }
 }
+

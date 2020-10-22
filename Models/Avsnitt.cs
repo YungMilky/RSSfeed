@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Avsnitt : Podcast
+    public class Avsnitt : Entitet
     {
-        public string Beskrivning { get; set; }
         public string Titel { get; set; }
-
-        public Avsnitt() //måste man ha en konstruktor?
-        { 
-        }
-
-        public override string Display()
+        public string Beskrivning { get; set; }
+        public override string EntitetsTyp()
         {
-            return "Det här är ett podcast avsnitt.";
+            return "Ett avsnitt.\n";
         }
+    }
 
+    public class AvsnittsLista : List<Avsnitt>
+    {
+        public AvsnittsLista()
+        {
+
+        }
     }
 }
