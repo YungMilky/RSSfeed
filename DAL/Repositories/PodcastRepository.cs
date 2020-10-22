@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace DAL.Repositories
 {
     public class PodcastRepository : IPodcastRepository<Podcast>
+    //error på rad 11 eftersom två metoder är bortkommenterade
     {
         DataManager dataManager;
         List<Podcast> podcastList; 
@@ -26,12 +27,13 @@ namespace DAL.Repositories
             Spara();    
         }
 
-        public void TaBort(string valdKategori, string valdFeed)
+        public void TaBortPodcast(int index)
         {
-            //skriv kod
+            podcastList.RemoveAt(index);
+            Spara();
         }
 
-        public void TaBortKategori(string mapp)
+        public void TaBortKategori(int index)
         {
             //skriv kod
         }
@@ -55,8 +57,9 @@ namespace DAL.Repositories
 
         //public Podcast HamtaAllaEnligtKategori(string kategoriNamn)
         //{
-        //    return HamtaAlla().First(p => p.KategoriNamn.Equals(kategoriNamn)); 
-        //    hur hämtar man KategoriNamn från klassen Kategori?
+            //    return HamtaAlla().First(p => p.KategoriNamn.Equals(kategoriNamn)); 
+            //    hur hämtar man KategoriNamn från klassen Kategori?
+            
         //}
 
         //public Podcast HamtaPodcastEnligtNamn(string titel)

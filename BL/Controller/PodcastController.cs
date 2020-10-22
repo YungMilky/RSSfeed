@@ -17,6 +17,16 @@ namespace BL.Controller
             podcastRepository = new PodcastRepository();
         }
 
+        public List<Podcast> HamtaAllaPodcasts() //ska det vara en lista av avsnitt?
+        {
+            return podcastRepository.HamtaAlla();
+        }
 
+        public void TaBortPodcast(string namn)
+        {
+            int index = podcastRepository.GetIndex(namn);
+            podcastRepository.TaBort(index);
+
+        }
     }
 }
