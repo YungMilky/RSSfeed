@@ -9,9 +9,10 @@ namespace DAL.Repositories
     public interface IRepository<T> where T : class
     {
         void Skapa(T Entity);
-        void Uppdatera(string namn);
-        void TaBort(string namn);
+        void Uppdatera(int index, T newEntity);
+        void TaBort(int index);
         void Spara();
+        int HamtaIndex(string namn);
         List<T> HamtaAlla();
 
     }

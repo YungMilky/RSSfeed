@@ -3,11 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Models;
+using DAL.Repositories;
+
 
 namespace BL.Controller
 {
     public class KategoriController
     {
+        IKategoriRepository<Kategori> kategoriRepository;
+
+        public KategoriController()
+        {
+            kategoriRepository = new KategoriRepository();
+        }
+        public void SkapaKategoritObjekt(string titel)
+        {
+            Kategori newKategori = new Kategori(titel);
+            kategoriRepository.Skapa(newKategori);
+        }
+
         //public string HamtaAllaEnligtKategori(string kategoriNamn)
         //{
         //    return HamtaAlla().First(p => p.KategoriNamn.Equals(kategoriNamn)); 

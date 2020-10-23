@@ -262,6 +262,7 @@
             this.btnLaggTill2.TabIndex = 12;
             this.btnLaggTill2.Text = "Lägg till";
             this.btnLaggTill2.UseVisualStyleBackColor = true;
+            this.btnLaggTill2.Click += new System.EventHandler(this.btnLaggTill2_Click);
             // 
             // cbUppdFrekvens
             // 

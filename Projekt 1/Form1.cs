@@ -13,19 +13,23 @@ namespace Projekt_1
 {
     public partial class Form1 : Form
     {
-        PodcastController podcastController; 
+        PodcastController podcastController;
+        KategoriController kategoriController;
         public Form1()
         {
             InitializeComponent();
             podcastController = new PodcastController();
+            kategoriController = new KategoriController();
         }
 
         private void btnLaggTill1_Click(object sender, EventArgs e)
         {
-            //podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, Convert.ToInt32(cbUppdFrekvens.SelectedItem), cbKategori.SelectedItem.ToString());
-            //det är den övre raden som gäller, med comboboxes. Den nedre ska tas bort sen när allt funkar
+            podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, Convert.ToInt32(cbUppdFrekvens.SelectedItem), cbKategori.SelectedItem.ToString());
+        }
 
-            podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, Int32.Parse(textBox1.Text), textBox2.Text);
+        private void btnLaggTill2_Click(object sender, EventArgs e)
+        {
+            kategoriController.SkapaKategoritObjekt(txtKategori.Text);
         }
     }
 }

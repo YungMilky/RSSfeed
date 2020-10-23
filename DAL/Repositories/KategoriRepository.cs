@@ -9,41 +9,58 @@ namespace DAL.Repositories
 {
     public class KategoriRepository : IKategoriRepository<Kategori>
     {
+        DataManager dataManager;
+        List<Kategori> kategoriList;
+
+        public KategoriRepository()
+        {
+            kategoriList = new List<Kategori>();
+            dataManager = new DataManager();
+            kategoriList = HamtaAlla();
+        }
         public List<Kategori> HamtaAlla()
         {
-            return null; //ta bort rad nör kod skrivs
-            //skriv kod 
+            List<Kategori> categoriesToBeReturned = new List<Kategori>();
+            categoriesToBeReturned = dataManager.DeserializeKategori();
+            return categoriesToBeReturned;
         }
 
         public Kategori HamtaAllaEnligtKategori(string namn)
         {
-            return null; //ta bort när kod skrivs
-            //skriv kod
+            return null; //ta bort när kod skrivs. koden nedan stämmer inte
+            //return HamtaAlla().First(p => p.Namn.Equals(namn));
         }
 
-        public void Skapa(Kategori Entity)
+        public int HamtaIndex(string titel)
         {
-            //skriv kod 
+            return HamtaAlla().FindIndex(e => e.Titel.Equals(titel));
+        }
+
+        public void Skapa(Kategori entity)
+        {
+            kategoriList.Add(entity);
+            Spara();
         }
 
         public void Spara()
         {
-            //skriv kod 
+            dataManager.SerializeKategori(kategoriList);
         }
 
-        public void TaBort(string namn)
+        public void TaBort(int index)
         {
-            //skriv kod för att ta bort en kategori
+            kategoriList.RemoveAt(index);
+            Spara();
         }
 
-        public void Uppdatera(int index)
+        public void Uppdatera(int index, Kategori newEntity)
         {
-            //skriv kod 
+            if (index >= 0)
+            {
+                kategoriList[index] = newEntity;
+            }
+            Spara();
         }
 
-        public void Uppdatera(string namn)
-        {
-            //skriv kod för att uppdatera en kategori
-        }
     }
 }

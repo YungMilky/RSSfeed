@@ -16,15 +16,12 @@ namespace BL.Controller
         public PodcastController()
         {
             podcastRepository = new PodcastRepository();
-
         }
 
         public void SkapaPodcastObjekt(string namn, string url, int uppdateringsFrekvens, string kategori)
         {
             Podcast newPodcast = new Podcast(namn, url, uppdateringsFrekvens, kategori);
             podcastRepository.Skapa(newPodcast);
-            //tror att det här borde funka?
-
         }
 
         public List<Podcast> HamtaAllaPodcasts() //ska det vara en lista av avsnitt?

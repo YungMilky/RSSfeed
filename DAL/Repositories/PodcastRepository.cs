@@ -29,30 +29,35 @@ namespace DAL.Repositories
 
         public void Spara()
         {
-            dataManager.Serialize(podcastList);
+            dataManager.SerializePodcast(podcastList);
         }
 
         public Podcast HamtaPodcastEnligtNamn(string namn)
         {
-            return null; //ta bort denna rad sen när koden skrivs
-            //skriv kod
+            return HamtaAlla().First(p => p.Namn.Equals(namn));
         }
 
         public List<Podcast> HamtaAlla()
         {
             List<Podcast> podcastsToBeReturned = new List<Podcast>();
-            podcastsToBeReturned = dataManager.Deserialize();
+            podcastsToBeReturned = dataManager.DeserializePodcast();
             return podcastsToBeReturned;
         }
 
-        public void Uppdatera(string namn)
+        public void Uppdatera(int index, Podcast newEntity)
         {
-            // skriv kod för att uppdatera en podcast
+            throw new NotImplementedException();
         }
 
-        public void TaBort(string namn)
+        public void TaBort(int index)
         {
-            //skriv kod för att ta bort en podcast
+            kategoriList.RemoveAt(index);
+            Spara();
+        }
+
+        public int HamtaIndex(string namn)
+        {
+            return HamtaAlla().FindIndex(e => e.Namn.Equals(namn));
         }
     }
 }
