@@ -30,12 +30,10 @@ namespace Projekt_1
 
         private void btnLaggTill1_Click(object sender, EventArgs e)
         {
-
-            
-            InputValidator validator = new InputValidator();
-
+            //konvertera user input av frekvens till int32
             Int32.TryParse(txtFrekvens.Text.ToString(), out int frek);
 
+            InputValidator validator = new InputValidator();
             ValidationResult results = validator.Validate(
                 podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, frek, txtKat.Text.ToString()));
 
@@ -43,7 +41,7 @@ namespace Projekt_1
             {
                 foreach(ValidationFailure fail in results.Errors)
                 {
-                    errorList.Add($"Error: {fail.PropertyName}, {fail.ErrorMessage}");
+                    errorList.Add(fail.ErrorMessage);
                 }
 
                 string errorMessage = "";
@@ -51,6 +49,7 @@ namespace Projekt_1
                 {
                     errorMessage = string.Join(Environment.NewLine, err);
                 }
+                Console.WriteLine(errorMessage);
                 MessageBox.Show($"{errorMessage}", "Fel", //hitta på ett sätt att visa user friendly errors + lägg till console errors
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
