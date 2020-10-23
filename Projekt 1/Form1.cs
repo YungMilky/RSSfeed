@@ -20,36 +20,56 @@ namespace Projekt_1
             InitializeComponent();
             podcastController = new PodcastController();
             kategoriController = new KategoriController();
-            uppdateraKategoriLista(); 
+            uppdateraKategoriLista();
+            uppdateringsFrekvens();
+            uppdateraPodcastLista(); 
+        }
+
+        private void uppdateraPodcastLista() //går inte att välja när det subitems - kanske får ändra? 
+        {
+            lwAvsnitt.Items.Clear();
+            foreach (var item in podcastController.HamtaAllaPodcasts())
+            {
+                if (item != null)
+                {
+                    ListViewItem newList = new ListViewItem("antalet avsnitt");//skriv in hur många avsnitt det finns
+                    newList.SubItems.Add(item.Namn);
+                    newList.SubItems.Add(item.UppdateringsFrekvens.ToString());
+                    newList.SubItems.Add(item.Kategori);
+                    lwAvsnitt.Items.Add(newList);
+                    lwAvsnitt.FullRowSelect = true;
+                }
+
+            }
+            cbKategori.SelectedIndex = 0;
         }
 
         private void uppdateraKategoriLista()
         {
             lbKategorier.Items.Clear();
+            cbKategori.Items.Clear(); 
             foreach (var item in kategoriController.HamtaAllaKategorier())
             {
                 if (item != null)
                 {
                     lbKategorier.Items.Add(item.Titel);
+                    cbKategori.Items.Add(item.Titel);
                 }
             }
+            cbKategori.SelectedIndex = 0;
         }
 
-        private void uppdateraPodcastLista()
+        private void uppdateringsFrekvens()
         {
-            lwAvsnitt.Items.Clear();
-            foreach (var items in podcastController.HamtaAllaPodcasts())
-            {
-                if (items != null)
-                {
-                    lwAvsnitt.Items.Add(items.Namn);
-                }
-            }
+            cbFrekvens.Items.Add("10");
+            cbFrekvens.Items.Add("30");
+            cbFrekvens.Items.Add("60");
+            cbFrekvens.SelectedIndex = 0; 
         }
 
         private void btnLaggTill1_Click(object sender, EventArgs e)
         {
-            podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, Convert.ToInt32(cbUppdFrekvens.SelectedItem), cbKategori.SelectedItem.ToString());
+            podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, Convert.ToInt32(cbFrekvens.SelectedItem), cbKategori.SelectedItem.ToString());
             uppdateraPodcastLista();
         }
 
@@ -64,6 +84,16 @@ namespace Projekt_1
         {
             kategoriController.TaBortKategori(lbKategorier.SelectedItem.ToString());
             uppdateraKategoriLista(); 
+        }
+
+        private void btnSpara2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTaBort1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

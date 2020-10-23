@@ -32,8 +32,8 @@ namespace BL.Controller
 
         public void TaBortPodcast(string namn)
         {
-            //skriv kod
+            int index = podcastRepository.HamtaIndex(namn);
+            podcastRepository.TaBort(index);
         }
-
     }
 }

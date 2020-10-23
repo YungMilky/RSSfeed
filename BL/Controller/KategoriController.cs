@@ -23,15 +23,22 @@ namespace BL.Controller
             kategoriRepository.Skapa(newKategori);
         }
 
-        public List<Kategori> HamtaAllaKategorier() //ska det vara en lista av kategorier?
+        public List<Kategori> HamtaAllaKategorier()
         {
-            return kategoriRepository.HamtaAlla(); //funkar den?
+            return kategoriRepository.HamtaAlla(); 
         }
 
         public void TaBortKategori(string titel)
         {
             int index = kategoriRepository.HamtaIndex(titel);
             kategoriRepository.TaBort(index);
+        }
+
+        public void UppdateraKategoriLista(string titel)
+        {
+            //funkar inte
+            //int index = kategoriRepository.HamtaIndex(titel);
+            //kategoriRepository.Uppdatera(index);
         }
 
         //public string HamtaAllaEnligtKategori(string kategoriNamn)

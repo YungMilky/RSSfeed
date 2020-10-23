@@ -49,7 +49,7 @@
             this.btnTaBort2 = new System.Windows.Forms.Button();
             this.btnSpara2 = new System.Windows.Forms.Button();
             this.btnLaggTill2 = new System.Windows.Forms.Button();
-            this.cbUppdFrekvens = new System.Windows.Forms.ComboBox();
+            this.cbFrekvens = new System.Windows.Forms.ComboBox();
             this.cbKategori = new System.Windows.Forms.ComboBox();
             this.avsnittsBeskrivningTextruta = new System.Windows.Forms.TextBox();
             this.lblAvsnittsbeskrivning = new System.Windows.Forms.Label();
@@ -199,6 +199,7 @@
             this.btnTaBort1.TabIndex = 11;
             this.btnTaBort1.Text = "Ta bort";
             this.btnTaBort1.UseVisualStyleBackColor = true;
+            this.btnTaBort1.Click += new System.EventHandler(this.btnTaBort1_Click);
             // 
             // btnTaBort2
             // 
@@ -218,6 +219,7 @@
             this.btnSpara2.TabIndex = 13;
             this.btnSpara2.Text = "Spara";
             this.btnSpara2.UseVisualStyleBackColor = true;
+            this.btnSpara2.Click += new System.EventHandler(this.btnSpara2_Click);
             // 
             // btnLaggTill2
             // 
@@ -229,13 +231,13 @@
             this.btnLaggTill2.UseVisualStyleBackColor = true;
             this.btnLaggTill2.Click += new System.EventHandler(this.btnLaggTill2_Click);
             // 
-            // cbUppdFrekvens
+            // cbFrekvens
             // 
-            this.cbUppdFrekvens.FormattingEnabled = true;
-            this.cbUppdFrekvens.Location = new System.Drawing.Point(369, 388);
-            this.cbUppdFrekvens.Name = "cbUppdFrekvens";
-            this.cbUppdFrekvens.Size = new System.Drawing.Size(244, 33);
-            this.cbUppdFrekvens.TabIndex = 15;
+            this.cbFrekvens.FormattingEnabled = true;
+            this.cbFrekvens.Location = new System.Drawing.Point(369, 388);
+            this.cbFrekvens.Name = "cbFrekvens";
+            this.cbFrekvens.Size = new System.Drawing.Size(244, 33);
+            this.cbFrekvens.TabIndex = 15;
             // 
             // cbKategori
             // 
@@ -336,7 +338,7 @@
             this.Controls.Add(this.lblAvsnittsbeskrivning);
             this.Controls.Add(this.avsnittsBeskrivningTextruta);
             this.Controls.Add(this.cbKategori);
-            this.Controls.Add(this.cbUppdFrekvens);
+            this.Controls.Add(this.cbFrekvens);
             this.Controls.Add(this.btnTaBort2);
             this.Controls.Add(this.btnSpara2);
             this.Controls.Add(this.btnLaggTill2);
@@ -380,7 +382,7 @@
         private System.Windows.Forms.Button btnTaBort2;
         private System.Windows.Forms.Button btnSpara2;
         private System.Windows.Forms.Button btnLaggTill2;
-        private System.Windows.Forms.ComboBox cbUppdFrekvens;
+        private System.Windows.Forms.ComboBox cbFrekvens;
         private System.Windows.Forms.ComboBox cbKategori;
         private System.Windows.Forms.TextBox avsnittsBeskrivningTextruta;
         private System.Windows.Forms.Label lblAvsnittsbeskrivning;
