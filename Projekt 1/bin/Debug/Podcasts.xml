@@ -6,4 +6,40 @@
     <UppdateringsFrekvens>100</UppdateringsFrekvens>
     <Kategori>enKategori</Kategori>
   </Podcast>
+  <Podcast>
+    <Namn />
+    <URL />
+    <UppdateringsFrekvens>0</UppdateringsFrekvens>
+    <Kategori />
+  </Podcast>
+  <Podcast>
+    <Namn />
+    <URL />
+    <UppdateringsFrekvens>0</UppdateringsFrekvens>
+    <Kategori />
+  </Podcast>
+  <Podcast>
+    <Namn />
+    <URL />
+    <UppdateringsFrekvens>0</UppdateringsFrekvens>
+    <Kategori />
+  </Podcast>
+  <Podcast>
+    <Namn />
+    <URL />
+    <UppdateringsFrekvens>0</UppdateringsFrekvens>
+    <Kategori />
+  </Podcast>
+  <Podcast>
+    <Namn />
+    <URL />
+    <UppdateringsFrekvens>0</UppdateringsFrekvens>
+    <Kategori />
+  </Podcast>
+  <Podcast>
+    <Namn />
+    <URL />
+    <UppdateringsFrekvens>0</UppdateringsFrekvens>
+    <Kategori />
+  </Podcast>
 </ArrayOfPodcast>
