@@ -46,12 +46,16 @@ namespace DAL.Repositories
 
         public void Uppdatera(int index, Podcast newEntity)
         {
-            throw new NotImplementedException();
+            if (index >= 0)
+            {
+                podcastList[index] = newEntity;
+            }
+            Spara();
         }
 
         public void TaBort(int index)
         {
-            kategoriList.RemoveAt(index);
+            podcastList.RemoveAt(index);
             Spara();
         }
 

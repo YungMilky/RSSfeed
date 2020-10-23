@@ -27,8 +27,8 @@ namespace DAL.Repositories
 
         public Kategori HamtaAllaEnligtKategori(string namn)
         {
-            return null; //ta bort när kod skrivs. koden nedan stämmer inte
-            //return HamtaAlla().First(p => p.Namn.Equals(namn));
+            return null; // ta bort när kod skrivs
+            //skriv kod här
         }
 
         public int HamtaIndex(string titel)

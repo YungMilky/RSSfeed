@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lwAvsnitt = new System.Windows.Forms.ListView();
             this.avsnitt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.namn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.frekvens = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.kategori = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtURL = new System.Windows.Forms.TextBox();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.lwKategorier = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -67,20 +67,20 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // listView1
+            // lwAvsnitt
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lwAvsnitt.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.avsnitt,
             this.namn,
             this.frekvens,
             this.kategori});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(55, 76);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(878, 249);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lwAvsnitt.HideSelection = false;
+            this.lwAvsnitt.Location = new System.Drawing.Point(55, 76);
+            this.lwAvsnitt.Name = "lwAvsnitt";
+            this.lwAvsnitt.Size = new System.Drawing.Size(878, 249);
+            this.lwAvsnitt.TabIndex = 1;
+            this.lwAvsnitt.UseCompatibleStateImageBehavior = false;
+            this.lwAvsnitt.View = System.Windows.Forms.View.Details;
             // 
             // avsnitt
             // 
@@ -105,19 +105,19 @@
             this.txtURL.Size = new System.Drawing.Size(251, 31);
             this.txtURL.TabIndex = 2;
             // 
-            // listView2
+            // lwKategorier
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lwKategorier.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(986, 107);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(623, 218);
-            this.listView2.TabIndex = 3;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.lwKategorier.HideSelection = false;
+            this.lwKategorier.Location = new System.Drawing.Point(986, 107);
+            this.lwKategorier.Name = "lwKategorier";
+            this.lwKategorier.Size = new System.Drawing.Size(623, 218);
+            this.lwKategorier.TabIndex = 3;
+            this.lwKategorier.UseCompatibleStateImageBehavior = false;
             // 
             // columnHeader1
             // 
@@ -389,9 +389,9 @@
             this.Controls.Add(this.lblURL);
             this.Controls.Add(this.listView3);
             this.Controls.Add(this.lblKategorier);
-            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.lwKategorier);
             this.Controls.Add(this.txtURL);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lwAvsnitt);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -401,13 +401,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lwAvsnitt;
         private System.Windows.Forms.ColumnHeader avsnitt;
         private System.Windows.Forms.ColumnHeader namn;
         private System.Windows.Forms.ColumnHeader frekvens;
         private System.Windows.Forms.ColumnHeader kategori;
         private System.Windows.Forms.TextBox txtURL;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView lwKategorier;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
