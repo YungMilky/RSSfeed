@@ -20,16 +20,50 @@ namespace Projekt_1
             InitializeComponent();
             podcastController = new PodcastController();
             kategoriController = new KategoriController();
+            uppdateraKategoriLista(); 
+        }
+
+        private void uppdateraKategoriLista()
+        {
+            lbKategorier.Items.Clear();
+            foreach (var item in kategoriController.HamtaAllaKategorier())
+            {
+                if (item != null)
+                {
+                    lbKategorier.Items.Add(item.Titel);
+                }
+            }
+        }
+
+        private void uppdateraPodcastLista()
+        {
+            lwAvsnitt.Items.Clear();
+            foreach (var items in podcastController.HamtaAllaPodcasts())
+            {
+                if (items != null)
+                {
+                    lwAvsnitt.Items.Add(items.Namn);
+                }
+            }
         }
 
         private void btnLaggTill1_Click(object sender, EventArgs e)
         {
             podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, Convert.ToInt32(cbUppdFrekvens.SelectedItem), cbKategori.SelectedItem.ToString());
+            uppdateraPodcastLista();
         }
 
         private void btnLaggTill2_Click(object sender, EventArgs e)
         {
+
             kategoriController.SkapaKategoritObjekt(txtKategori.Text);
+            uppdateraKategoriLista();
+        }
+
+        private void btnTaBort2_Click(object sender, EventArgs e)
+        {
+            kategoriController.TaBortKategori(lbKategorier.SelectedItem.ToString());
+            uppdateraKategoriLista(); 
         }
     }
 }

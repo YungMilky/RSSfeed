@@ -34,11 +34,6 @@
             this.frekvens = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.kategori = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtURL = new System.Windows.Forms.TextBox();
-            this.lwKategorier = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblKategorier = new System.Windows.Forms.Label();
             this.listView3 = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -63,8 +58,7 @@
             this.lblAvsnitt = new System.Windows.Forms.Label();
             this.lblPodcastNamn = new System.Windows.Forms.Label();
             this.txtNamn = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lbKategorier = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lwAvsnitt
@@ -105,41 +99,11 @@
             this.txtURL.Size = new System.Drawing.Size(251, 31);
             this.txtURL.TabIndex = 2;
             // 
-            // lwKategorier
-            // 
-            this.lwKategorier.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.lwKategorier.HideSelection = false;
-            this.lwKategorier.Location = new System.Drawing.Point(986, 107);
-            this.lwKategorier.Name = "lwKategorier";
-            this.lwKategorier.Size = new System.Drawing.Size(623, 218);
-            this.lwKategorier.TabIndex = 3;
-            this.lwKategorier.UseCompatibleStateImageBehavior = false;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Avsnitt";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Namn";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Frekvens";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Kategori";
-            // 
             // lblKategorier
             // 
             this.lblKategorier.AutoSize = true;
             this.lblKategorier.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKategorier.Location = new System.Drawing.Point(987, 76);
+            this.lblKategorier.Location = new System.Drawing.Point(987, 71);
             this.lblKategorier.Name = "lblKategorier";
             this.lblKategorier.Size = new System.Drawing.Size(128, 25);
             this.lblKategorier.TabIndex = 4;
@@ -201,7 +165,7 @@
             // 
             this.lblKategori.AutoSize = true;
             this.lblKategori.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKategori.Location = new System.Drawing.Point(680, 360);
+            this.lblKategori.Location = new System.Drawing.Point(664, 360);
             this.lblKategori.Name = "lblKategori";
             this.lblKategori.Size = new System.Drawing.Size(107, 25);
             this.lblKategori.TabIndex = 8;
@@ -244,6 +208,7 @@
             this.btnTaBort2.TabIndex = 14;
             this.btnTaBort2.Text = "Ta bort";
             this.btnTaBort2.UseVisualStyleBackColor = true;
+            this.btnTaBort2.Click += new System.EventHandler(this.btnTaBort2_Click);
             // 
             // btnSpara2
             // 
@@ -267,7 +232,7 @@
             // cbUppdFrekvens
             // 
             this.cbUppdFrekvens.FormattingEnabled = true;
-            this.cbUppdFrekvens.Location = new System.Drawing.Point(1063, 525);
+            this.cbUppdFrekvens.Location = new System.Drawing.Point(369, 388);
             this.cbUppdFrekvens.Name = "cbUppdFrekvens";
             this.cbUppdFrekvens.Size = new System.Drawing.Size(244, 33);
             this.cbUppdFrekvens.TabIndex = 15;
@@ -275,7 +240,7 @@
             // cbKategori
             // 
             this.cbKategori.FormattingEnabled = true;
-            this.cbKategori.Location = new System.Drawing.Point(1383, 525);
+            this.cbKategori.Location = new System.Drawing.Point(669, 388);
             this.cbKategori.Name = "cbKategori";
             this.cbKategori.Size = new System.Drawing.Size(244, 33);
             this.cbKategori.TabIndex = 16;
@@ -348,27 +313,21 @@
             this.txtNamn.Size = new System.Drawing.Size(251, 31);
             this.txtNamn.TabIndex = 33;
             // 
-            // textBox1
+            // lbKategorier
             // 
-            this.textBox1.Location = new System.Drawing.Point(362, 397);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 31);
-            this.textBox1.TabIndex = 34;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(682, 397);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(251, 31);
-            this.textBox2.TabIndex = 35;
+            this.lbKategorier.FormattingEnabled = true;
+            this.lbKategorier.ItemHeight = 25;
+            this.lbKategorier.Location = new System.Drawing.Point(992, 100);
+            this.lbKategorier.Name = "lbKategorier";
+            this.lbKategorier.Size = new System.Drawing.Size(629, 229);
+            this.lbKategorier.TabIndex = 34;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1687, 866);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lbKategorier);
             this.Controls.Add(this.txtNamn);
             this.Controls.Add(this.lblPodcastNamn);
             this.Controls.Add(this.lblAvsnitt);
@@ -389,7 +348,6 @@
             this.Controls.Add(this.lblURL);
             this.Controls.Add(this.listView3);
             this.Controls.Add(this.lblKategorier);
-            this.Controls.Add(this.lwKategorier);
             this.Controls.Add(this.txtURL);
             this.Controls.Add(this.lwAvsnitt);
             this.Name = "Form1";
@@ -407,11 +365,6 @@
         private System.Windows.Forms.ColumnHeader frekvens;
         private System.Windows.Forms.ColumnHeader kategori;
         private System.Windows.Forms.TextBox txtURL;
-        private System.Windows.Forms.ListView lwKategorier;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Label lblKategorier;
         private System.Windows.Forms.ListView listView3;
         private System.Windows.Forms.ColumnHeader columnHeader5;
@@ -436,8 +389,7 @@
         private System.Windows.Forms.Label lblAvsnitt;
         private System.Windows.Forms.Label lblPodcastNamn;
         private System.Windows.Forms.TextBox txtNamn;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ListBox lbKategorier;
     }
 }
 

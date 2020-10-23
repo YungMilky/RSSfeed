@@ -9,4 +9,10 @@
   <Kategori>
     <Titel>kategori2</Titel>
   </Kategori>
+  <Kategori>
+    <Titel>enKategori</Titel>
+  </Kategori>
+  <Kategori>
+    <Titel>tvåKategorier</Titel>
+  </Kategori>
 </ArrayOfKategori>

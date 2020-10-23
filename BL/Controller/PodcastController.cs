@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Models;
 using System.Xml;
+using System.ServiceModel.Syndication;
 
 namespace BL.Controller
 {
