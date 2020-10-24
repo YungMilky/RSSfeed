@@ -30,12 +30,19 @@ namespace Projekt_1
 
         private void btnLaggTill1_Click(object sender, EventArgs e)
         {
-            //konvertera user input av frekvens till int32
+            //konvertera user input av frekvens till int32 och tilldela värdet till frek
             Int32.TryParse(txtFrekvens.Text.ToString(), out int frek);
 
+            Dictionary<string, object> userInput = new Dictionary<string, object>
+            {
+                { "Namn", txtNamn.Text },
+                { "URL", txtURL.Text },
+                { "Uppdateringsfrekvens", frek },
+                { "Kategori", txtKat.Text.ToString() }
+            };
+
             InputValidator validator = new InputValidator();
-            ValidationResult results = validator.Validate(
-                podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, frek, txtKat.Text.ToString()));
+            ValidationResult results = validator.Validate(userInput);
 
             if(results.IsValid == false)
             {
@@ -47,11 +54,15 @@ namespace Projekt_1
                 string errorMessage = "";
                 foreach (string err in errorList)
                 {
-                    errorMessage = string.Join(Environment.NewLine, err);
+                    errorMessage = string.Join(Environment.NewLine, err); //samla error messages i en string, med nya rader emellan
                 }
                 Console.WriteLine(errorMessage);
-                MessageBox.Show($"{errorMessage}", "Fel", //hitta på ett sätt att visa user friendly errors + lägg till console errors
+                MessageBox.Show($"{errorMessage}", "Fel", //lägg till console errors
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            } else
+            {
+                podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, frek, txtKat.Text.ToString());
             }
 
             

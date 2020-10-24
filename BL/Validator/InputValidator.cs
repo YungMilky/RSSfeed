@@ -8,31 +8,30 @@ using System.Threading.Tasks;
 
 namespace BL.Validator
 {
-    public class InputValidator : AbstractValidator<Podcast>
+    public class InputValidator : AbstractValidator<Dictionary<string, object>>
     {
         public InputValidator()
         {
             //Regler för validering
-            RuleFor(pod => pod.Namn)
+            RuleFor(pod => pod["Namn"].ToString())
                 .Cascade(CascadeMode.Stop) //stoppar validering (async) så fort en regel bryts
                 .NotEmpty().WithMessage("Fältet '{PropertyName}' är tomt.")
-                .Length(2, 30).WithMessage("Fältet '{PropertyName}' kräver 2-30 bokstäver/symboler.");
+                .Length(2, 30).WithMessage("Fältet 'Namn' kräver 2-30 bokstäver/symboler.");
 
-            RuleFor(pod => pod.Kategori)
+            RuleFor(pod => pod["Kategori"].ToString())
                 .Cascade(CascadeMode.Stop)
-                .NotEmpty().WithMessage("Fältet '{PropertyName}' är tomt.")
-                .Length(2, 30).WithMessage("Fältet '{PropertyName}' kräver 2-30 bokstäver/symboler.");
+                .NotEmpty().WithMessage("Fältet 'Kategori' är tomt.")
+                .Length(2, 30).WithMessage("Fältet 'Kategori' kräver 2-30 bokstäver/symboler.");
             
-            RuleFor(pod => pod.UppdateringsFrekvens)
+            RuleFor(pod => pod["Uppdateringsfrekvens"])
                 .Cascade(CascadeMode.Stop)
-                .NotEmpty().WithMessage("Fältet '{PropertyName}' är tomt.");
+                .NotEmpty().WithMessage("Fältet 'Uppdateringsfrekvens' är tomt.");
 
-            RuleFor(pod => pod.URL)
+            RuleFor(pod => pod["URL"].ToString())
                 .Cascade(CascadeMode.Stop) 
-                .NotEmpty().WithMessage("Fältet '{PropertyName}' är tomt.")
-                .Must(pod=> pod.Length > 16).WithMessage("Fältet '{PropertyName}' kräver minst 13 bokstäver/symboler.") 
-                //minsta möjliga urlen är egentligen 17 symboler; "http://.x.x/x.xml", men Length index börjar ju på 0
-                .Must(validURL).WithMessage("Felaktig {PropertyName}. Måste börja med http(s) och sluta med .xml ."); //validURL måste returnera true
+                .NotEmpty().WithMessage("Fältet 'URL' är tomt.")
+                .Must(ValidURLLength).WithMessage("Fältet 'URL' kräver minst 17 symboler.") //ValidURLLength måste returnera true
+                .Must(ValidURL).WithMessage("Felaktig URL. Måste börja med http(s) och sluta med .xml ."); //ValidURL måste returnera true
         }
 
         /*
@@ -41,7 +40,7 @@ namespace BL.Validator
          * eller så avbryter man användaren om den skriver fel. XMLReader kanske får exception om man försöker mata in icke-xml,
          * så autoFormatURL verkar bäst imo
          */
-        protected bool validURL(string url)
+        protected bool ValidURL(string url)
         {
             url = url.Replace(" ", ""); //tar bort mellanrum
 
@@ -52,12 +51,21 @@ namespace BL.Validator
             else return false; //finare utan brackets
         }
 
-        protected string autoFormatURL(string url)
+        protected bool ValidURLLength(string url)
+        {
+            //minsta möjliga urlen är egentligen 17 symboler; "http://.x.x/x.xml", men Length index börjar ju på 0
+            return url.Length > 16; 
+        }
+        
+        protected string AutoFormatURL(string url)
         {
             url = url.Replace(" ", ""); //tar bort mellanrum
             string prefix = "http://";
             string prefixSecure = "https://";
             string suffix = ".xml";
+
+            //det finns egentligen fler webb-protokoll än http och https,
+            //men de är mer esoteriska, så för enkelhetens skull togs de inte med
 
             //om urlen inte börjar med http:// eller https://
             if (!(url.StartsWith(prefix) || url.StartsWith(prefixSecure)))
