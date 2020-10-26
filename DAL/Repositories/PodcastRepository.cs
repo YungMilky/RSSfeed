@@ -1,6 +1,7 @@
 ﻿using Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,9 @@ using System.Threading.Tasks;
 namespace DAL.Repositories
 {
     public class PodcastRepository : IPodcastRepository<Podcast>
-    //error på rad 11 eftersom två metoder är bortkommenterade
     {
         DataManager dataManager;
-        List<Podcast> podcastList; 
+        List<Podcast> podcastList;
 
         public PodcastRepository()
         {
@@ -39,18 +39,22 @@ namespace DAL.Repositories
 
         public List<Podcast> HamtaAlla()
         {
-            List<Podcast> podcastsToBeReturned = new List<Podcast>();
-            podcastsToBeReturned = dataManager.DeserializePodcast();
-            return podcastsToBeReturned;
+            List<Podcast> podcastListToBeReturned = new List<Podcast>();
+            podcastListToBeReturned = dataManager.DeserializePodcast();
+            return podcastListToBeReturned;
         }
 
-        public void Uppdatera(int index, Podcast newEntity)
+        //public void Uppdatera(int index, Podcast newEntity)
+        //{
+        //    if (index >= 0)
+        //    {
+        //        podcastList[index] = newEntity;
+        //    }
+        //    Spara();
+        //} //funkar inte 
+        public int HamtaIndex(string namn)
         {
-            if (index >= 0)
-            {
-                podcastList[index] = newEntity;
-            }
-            Spara();
+            return HamtaAlla().FindIndex(e => e.Namn.Equals(namn));
         }
 
         public void TaBort(int index)
@@ -59,9 +63,11 @@ namespace DAL.Repositories
             Spara();
         }
 
-        public int HamtaIndex(string namn)
+        public void Uppdatera(int index, Podcast newEntity)
         {
-            return HamtaAlla().FindIndex(e => e.Namn.Equals(namn));
+            throw new NotImplementedException();
         }
     }
 }
+    
+

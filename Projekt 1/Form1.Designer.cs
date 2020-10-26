@@ -64,8 +64,8 @@
             // lwAvsnitt
             // 
             this.lwAvsnitt.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.avsnitt,
             this.namn,
+            this.avsnitt,
             this.frekvens,
             this.kategori});
             this.lwAvsnitt.HideSelection = false;
@@ -190,6 +190,7 @@
             this.btnSpara1.TabIndex = 10;
             this.btnSpara1.Text = "Spara";
             this.btnSpara1.UseVisualStyleBackColor = true;
+            this.btnSpara1.Click += new System.EventHandler(this.btnSpara2_Click);
             // 
             // btnTaBort1
             // 
@@ -219,7 +220,7 @@
             this.btnSpara2.TabIndex = 13;
             this.btnSpara2.Text = "Spara";
             this.btnSpara2.UseVisualStyleBackColor = true;
-            this.btnSpara2.Click += new System.EventHandler(this.btnSpara2_Click);
+            this.btnSpara2.Click += new System.EventHandler(this.btnSpara2_Click_1);
             // 
             // btnLaggTill2
             // 
@@ -233,6 +234,7 @@
             // 
             // cbFrekvens
             // 
+            this.cbFrekvens.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFrekvens.FormattingEnabled = true;
             this.cbFrekvens.Location = new System.Drawing.Point(369, 388);
             this.cbFrekvens.Name = "cbFrekvens";
@@ -241,6 +243,7 @@
             // 
             // cbKategori
             // 
+            this.cbKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKategori.FormattingEnabled = true;
             this.cbKategori.Location = new System.Drawing.Point(669, 388);
             this.cbKategori.Name = "cbKategori";

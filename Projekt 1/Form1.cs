@@ -32,8 +32,8 @@ namespace Projekt_1
             {
                 if (item != null)
                 {
-                    ListViewItem newList = new ListViewItem("antalet avsnitt");//skriv in hur många avsnitt det finns
-                    newList.SubItems.Add(item.Namn);
+                    ListViewItem newList = new ListViewItem(item.Namn);
+                    newList.SubItems.Add("Antalet avsnitt");//skriv in hur många avsnitt det finns
                     newList.SubItems.Add(item.UppdateringsFrekvens.ToString());
                     newList.SubItems.Add(item.Kategori);
                     lwAvsnitt.Items.Add(newList);
@@ -88,10 +88,17 @@ namespace Projekt_1
 
         private void btnSpara2_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnTaBort1_Click(object sender, EventArgs e)
+        {
+            string titel = lwAvsnitt.SelectedItems[0].Text;
+            podcastController.TaBortPodcast(titel);
+                uppdateraPodcastLista(); //funkar inte
+        }
+
+        private void btnSpara2_Click_1(object sender, EventArgs e)
         {
 
         }

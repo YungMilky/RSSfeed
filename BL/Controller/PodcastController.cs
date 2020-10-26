@@ -25,7 +25,7 @@ namespace BL.Controller
             podcastRepository.Skapa(newPodcast);
         }
 
-        public List<Podcast> HamtaAllaPodcasts() //ska det vara en lista av avsnitt?
+        public List<Podcast> HamtaAllaPodcasts()
         {
             return podcastRepository.HamtaAlla();
         }
@@ -34,6 +34,7 @@ namespace BL.Controller
         {
             int index = podcastRepository.HamtaIndex(namn);
             podcastRepository.TaBort(index);
+
         }
     }
 }
