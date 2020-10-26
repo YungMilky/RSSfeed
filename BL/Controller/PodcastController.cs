@@ -34,19 +34,6 @@ namespace BL.Controller
             return podcastRepository.HamtaAlla();
         }
 
-        public string HamtaDetaljerNamn(string namn)
-        {
-            Podcast podcastObj;
-            podcastObj = podcastRepository.HamtaPodcastEnligtNamn(namn); 
-                return podcastObj.Namn;
-        }
-
-        public string HamtaDetaljerURL(string url)
-        {
-            Podcast podcastObj;
-            podcastObj = podcastRepository.HamtaDetaljerUrl(url);
-            return podcastObj.URL; 
-        }
         public void TaBortPodcast(string namn)
         {
             int index = podcastRepository.HamtaIndex(namn);

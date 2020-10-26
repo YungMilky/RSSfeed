@@ -34,7 +34,7 @@ namespace DAL.Repositories
 
         public Podcast HamtaPodcastEnligtNamn(string namn)
         {
-            return HamtaAlla().First(p => p.Namn.Equals(namn));
+            return null; //skriv kod här
         }
 
         public List<Podcast> HamtaAlla()
@@ -63,10 +63,6 @@ namespace DAL.Repositories
             Spara();
         }
 
-        public Podcast HamtaDetaljerUrl(string url)
-        {
-            return HamtaAlla().First(p => p.URL.Equals(url));
-        }
     }
 }
     
