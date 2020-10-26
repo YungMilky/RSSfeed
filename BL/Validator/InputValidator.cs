@@ -1,7 +1,9 @@
 ﻿using FluentValidation;
+using FluentValidation.Results;
 using Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,7 +61,7 @@ namespace BL.Validator
         
         protected string AutoFormatURL(string url)
         {
-            url = url.Replace(" ", ""); //tar bort mellanrum
+            url = url.Replace(" ", "");
             string prefix = "http://";
             string prefixSecure = "https://";
             string suffix = ".xml";
@@ -79,6 +81,48 @@ namespace BL.Validator
             }
 
             return url;
+        }
+
+        public string LogValidationErrors(ValidationResult results)
+        {
+            List<string> errorList;
+            string errorMessage = "";
+
+            if (results.IsValid == false)
+            {
+                errorList = new List<string>();
+
+                foreach (ValidationFailure fail in results.Errors)
+                {
+                    errorList.Add(fail.ErrorMessage);
+                }
+
+                foreach (string err in errorList)
+                {
+                    errorMessage = string.Join(Environment.NewLine, err);
+                }
+            }
+            return errorMessage;
+
+        }
+
+        public string CreateUniqueFilename(string filePath)
+        {
+            string newFilePath = filePath;
+
+            if (File.Exists(filePath))
+            {
+                string dir = Path.GetDirectoryName(filePath);
+                string fileName = Path.GetFileNameWithoutExtension(filePath);
+                string fileExt = Path.GetExtension(filePath);
+
+                for (int i = 1; ; ++i)
+                {
+                    newFilePath = Path.Combine($"({dir}({fileName}({i}({fileExt})");
+                }
+            }
+
+            return newFilePath;
         }
     }
 

@@ -18,14 +18,13 @@ namespace Projekt_1
     {
         PodcastController podcastController;
         KategoriController kategoriController;
-        List<string> errorList;
+        
         public Form1()
         {
             InitializeComponent();
             podcastController = new PodcastController();
             kategoriController = new KategoriController();
 
-            errorList = new List<string>();
         }
 
         private void btnLaggTill1_Click(object sender, EventArgs e)
@@ -43,29 +42,17 @@ namespace Projekt_1
 
             InputValidator validator = new InputValidator();
             ValidationResult results = validator.Validate(userInput);
+            string errorMessage = validator.LogValidationErrors(results);
 
-            if(results.IsValid == false)
+            if (string.IsNullOrEmpty(errorMessage))
             {
-                foreach(ValidationFailure fail in results.Errors)
-                {
-                    errorList.Add(fail.ErrorMessage);
-                }
-
-                string errorMessage = "";
-                foreach (string err in errorList)
-                {
-                    errorMessage = string.Join(Environment.NewLine, err); //samla error messages i en string, med nya rader emellan
-                }
-                Console.WriteLine(errorMessage);
-                MessageBox.Show($"{errorMessage}", "Fel", //lägg till console errors
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                podcastController.SkapaPodcastObjekt(userInput);
             } else
             {
-                podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, frek, txtKat.Text.ToString());
+                Console.WriteLine(errorMessage);
+                MessageBox.Show($"{errorMessage}", "Fel",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            
         }
 
         private void btnLaggTill2_Click(object sender, EventArgs e)

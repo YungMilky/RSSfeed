@@ -18,8 +18,13 @@ namespace BL.Controller
             podcastRepository = new PodcastRepository();
         }
 
-        public Podcast SkapaPodcastObjekt(string namn, string url, int uppdateringsFrekvens, string kategori)
+        public Podcast SkapaPodcastObjekt(Dictionary<string, object> podcastProperties)
         {
+            string namn = podcastProperties["Namn"].ToString();
+            string url = podcastProperties["URL"].ToString();
+            int uppdateringsFrekvens = (int)podcastProperties["Uppdateringsfrekvens"];
+            string kategori = podcastProperties["Kategori"].ToString();
+
             Podcast newPodcast = new Podcast(namn, url, uppdateringsFrekvens, kategori);
             podcastRepository.Skapa(newPodcast);
 
