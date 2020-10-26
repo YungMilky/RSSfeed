@@ -14,14 +14,18 @@ namespace BL.Controller
     {
         IPodcastRepository<Podcast> podcastRepository;
 
+        private AvsnittRepository avsnittRepository; 
+
         public PodcastController()
         {
             podcastRepository = new PodcastRepository();
+            avsnittRepository = new AvsnittRepository();  
         }
 
         public void SkapaPodcastObjekt(string namn, string url, int uppdateringsFrekvens, string kategori)
         {
-            Podcast newPodcast = new Podcast(namn, url, uppdateringsFrekvens, kategori);
+            List<Avsnitt> avsnitt = avsnittRepository.HamtaAllaAvsnitt(url);
+            Podcast newPodcast = new Podcast(namn, url, uppdateringsFrekvens, kategori, avsnitt);
             podcastRepository.Skapa(newPodcast);
         }
 

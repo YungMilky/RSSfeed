@@ -9,6 +9,6 @@ namespace DAL.Repositories
 {
     public interface IAvsnittRepository<T> where T : Avsnitt
     {
-        List<T> HamtaAlla();
+        List<T> HamtaAllaAvsnitt(string url);
     }
 }

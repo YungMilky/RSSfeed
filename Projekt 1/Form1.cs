@@ -25,7 +25,7 @@ namespace Projekt_1
             uppdateraPodcastLista(); 
         }
 
-        private void uppdateraPodcastLista() //går inte att välja när det subitems - kanske får ändra? 
+        private void uppdateraPodcastLista() 
         {
             lwAvsnitt.Items.Clear();
             foreach (var item in podcastController.HamtaAllaPodcasts())
@@ -78,13 +78,28 @@ namespace Projekt_1
 
             kategoriController.SkapaKategoritObjekt(txtKategori.Text);
             uppdateraKategoriLista();
+            txtKategori.Text = "";
         }
 
         private void btnTaBort2_Click(object sender, EventArgs e)
         {
-            kategoriController.TaBortKategori(lbKategorier.SelectedItem.ToString());
-            uppdateraKategoriLista(); 
+            if (lbKategorier.SelectedItems.Count == 1)
+            {
+                string titel = lbKategorier.SelectedItem.ToString();
+                DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort kategorin " + titel + " och alla tillhörande podcasts?", "Varning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    kategoriController.TaBortKategori(lbKategorier.SelectedItem.ToString());
+                    uppdateraKategoriLista();
+                    txtKategori.Text = ""; 
+                }
+                else
+                {
+
+                }
+            }
         }
+
 
         private void btnSpara2_Click(object sender, EventArgs e)
         {
@@ -93,9 +108,21 @@ namespace Projekt_1
 
         private void btnTaBort1_Click(object sender, EventArgs e)
         {
-            string titel = lwAvsnitt.SelectedItems[0].Text;
-            podcastController.TaBortPodcast(titel);
-                uppdateraPodcastLista(); //funkar inte
+            if (lwAvsnitt.SelectedItems.Count == 1)
+            {
+                string titel = lwAvsnitt.SelectedItems[0].Text;
+                DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort podcasten " + titel + "?", "Varning", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    podcastController.TaBortPodcast(titel);
+                    uppdateraPodcastLista();
+                }
+                else
+                {
+
+                }
+            }
         }
 
         private void btnSpara2_Click_1(object sender, EventArgs e)

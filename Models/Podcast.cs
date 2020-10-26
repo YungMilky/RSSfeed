@@ -12,13 +12,15 @@ namespace Models
         public string URL { get; set; }
         public int UppdateringsFrekvens { get; set; }
         public string Kategori { get; set; }
+        public List<Avsnitt> AvsnittsLista { get; set; }
 
-        public Podcast (string namn, string url, int uppdateringsFrekvens, string kategori)
+        public Podcast (string namn, string url, int uppdateringsFrekvens, string kategori, List<Avsnitt> avsnittsLista)
         {
             Namn = namn;
             URL = url;
             UppdateringsFrekvens = uppdateringsFrekvens;
             Kategori = kategori;
+            AvsnittsLista = avsnittsLista; 
         }
 
         public Podcast()
