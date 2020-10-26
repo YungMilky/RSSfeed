@@ -7,6 +7,8 @@ using DAL.Exceptions;
 using System.Xml.Serialization;
 using Models;
 using System.IO;
+using System.Xml;
+using System.ServiceModel.Syndication;
 
 namespace DAL
 {
@@ -82,6 +84,26 @@ namespace DAL
             {
                 throw new SerializerException("Kategori.xml", "Could not deserialize file");
             }
+        }
+
+        public List<string> FeedReader(string userInputUrl)
+        {
+            List<string> feedData = new List<string>();
+
+            Uri noEscapeCharacters = new Uri(userInputUrl);
+
+            XmlReader reader = XmlReader.Create(noEscapeCharacters.ToString());
+            SyndicationFeed feed = SyndicationFeed.Load(reader);
+
+            feedData.Add(feed.Title.Text);
+            feedData.Add(feed.Description.Text);
+            foreach (SyndicationItem item in feed.Items)
+            {
+                feedData.Add(item.Title.Text);
+                feedData.Add(item.Summary.Text);
+            }
+
+            return feedData;
         }
     }
 }

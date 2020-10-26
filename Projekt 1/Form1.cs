@@ -4,10 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL.Controller;
+using BL.Validator;
+using FluentValidation.Results;
 
 namespace Projekt_1
 {
@@ -15,6 +18,7 @@ namespace Projekt_1
     {
         PodcastController podcastController;
         KategoriController kategoriController;
+        
         public Form1()
         {
             InitializeComponent();
@@ -85,8 +89,30 @@ namespace Projekt_1
 
         private void btnLaggTill1_Click(object sender, EventArgs e)
         {
-            podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, Convert.ToInt32(cbFrekvens.SelectedItem), cbKategori.SelectedItem.ToString());
-            uppdateraPodcastLista();
+            //konvertera user input av frekvens till int32 och tilldela värdet till frek
+            Int32.TryParse(cbFrekvens.Text.ToString(), out int frek);
+
+            Dictionary<string, object> userInput = new Dictionary<string, object>
+            {
+                { "Namn", txtNamn.Text },
+                { "URL", txtURL.Text },
+                { "Uppdateringsfrekvens", frek },
+                { "Kategori", cbKategori.Text.ToString() }
+            };
+
+            InputValidator validator = new InputValidator();
+            ValidationResult results = validator.Validate(userInput);
+            string errorMessage = validator.LogValidationErrors(results);
+
+            if (string.IsNullOrEmpty(errorMessage))
+            {
+                podcastController.SkapaPodcastObjekt(userInput);
+            } else
+            {
+                Console.WriteLine(errorMessage);
+                MessageBox.Show($"{errorMessage}", "Fel",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnLaggTill2_Click(object sender, EventArgs e)
@@ -147,6 +173,16 @@ namespace Projekt_1
         }
 
         private void lwAvsnitt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbKategori_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

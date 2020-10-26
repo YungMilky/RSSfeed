@@ -32,6 +32,18 @@ namespace Models
         {
             return "Det här är en podcast";
         }
+        //public override List<object> getProperties()
+        //{
+        //    var propertyList = new List<object>();
+
+        //    foreach (var prop in this.GetType().GetProperties())
+        //    {
+        //        propertyList.Add(prop.Name, prop.GetValue(this.GetType()));
+        //    }
+
+        //    this.GetType().GetProperties());
+        //    return propertyList;
+        //}
     }
 }
 
