@@ -44,14 +44,14 @@ namespace DAL.Repositories
             return podcastListToBeReturned;
         }
 
-        //public void Uppdatera(int index, Podcast newEntity)
-        //{
-        //    if (index >= 0)
-        //    {
-        //        podcastList[index] = newEntity;
-        //    }
-        //    Spara();
-        //} //funkar inte 
+        public void Uppdatera(int index, Podcast newEntity) //funkar inte än
+        {
+            if (index >= 0)
+            {
+                podcastList[index] = newEntity;
+            }
+            Spara();
+        } 
         public int HamtaIndex(string namn)
         {
             return HamtaAlla().FindIndex(e => e.Namn.Equals(namn));
@@ -63,9 +63,9 @@ namespace DAL.Repositories
             Spara();
         }
 
-        public void Uppdatera(int index, Podcast newEntity)
+        public Podcast HamtaDetaljerUrl(string url)
         {
-            throw new NotImplementedException();
+            return HamtaAlla().First(p => p.URL.Equals(url));
         }
     }
 }

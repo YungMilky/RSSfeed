@@ -75,6 +75,7 @@
             this.lwAvsnitt.TabIndex = 1;
             this.lwAvsnitt.UseCompatibleStateImageBehavior = false;
             this.lwAvsnitt.View = System.Windows.Forms.View.Details;
+            this.lwAvsnitt.SelectedIndexChanged += new System.EventHandler(this.lwAvsnitt_SelectedIndexChanged);
             // 
             // avsnitt
             // 

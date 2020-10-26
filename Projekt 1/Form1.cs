@@ -129,5 +129,11 @@ namespace Projekt_1
         {
 
         }
+
+        private void lwAvsnitt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtNamn.Text = podcastController.HamtaDetaljerNamn(lwAvsnitt.SelectedItems.ToString());
+            txtURL.Text = podcastController.HamtaDetaljerURL(lwAvsnitt.SelectedItems.ToString()); 
+        }
     }
 }
