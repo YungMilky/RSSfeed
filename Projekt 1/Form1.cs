@@ -41,7 +41,15 @@ namespace Projekt_1
                 }
 
             }
-            cbKategori.SelectedIndex = 0;
+            try 
+            {
+                cbKategori.SelectedIndex = 0;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+
+            }
+            
         }
 
         private void uppdateraKategoriLista()
@@ -56,7 +64,15 @@ namespace Projekt_1
                     cbKategori.Items.Add(item.Titel);
                 }
             }
-            cbKategori.SelectedIndex = 0;
+
+            try 
+            { 
+                cbKategori.SelectedIndex = 0; 
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+
+            }
         }
 
         private void uppdateringsFrekvens()
@@ -132,8 +148,7 @@ namespace Projekt_1
 
         private void lwAvsnitt_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtNamn.Text = podcastController.HamtaDetaljerNamn(lwAvsnitt.SelectedItems.ToString());
-            txtURL.Text = podcastController.HamtaDetaljerURL(lwAvsnitt.SelectedItems.ToString()); 
+
         }
     }
 }
