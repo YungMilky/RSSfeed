@@ -4,11 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-<<<<<<< HEAD
-using System.Security.Cryptography.X509Certificates;
-=======
 using System.Security.Policy;
->>>>>>> 8c7df9574f7d169d4cf99bb21b87584c46522503
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,13 +18,8 @@ namespace Projekt_1
     {
         PodcastController podcastController;
         KategoriController kategoriController;
-<<<<<<< HEAD
-        
-        public Form1()
-=======
 
         public Podcast()
->>>>>>> 8c7df9574f7d169d4cf99bb21b87584c46522503
         {
             InitializeComponent();
             podcastController = new PodcastController();
@@ -99,30 +90,8 @@ namespace Projekt_1
 
         private void btnLaggTill1_Click(object sender, EventArgs e)
         {
-            //konvertera user input av frekvens till int32 och tilldela värdet till frek
-            Int32.TryParse(cbFrekvens.Text.ToString(), out int frek);
-
-            Dictionary<string, object> userInput = new Dictionary<string, object>
-            {
-                { "Namn", txtNamn.Text },
-                { "URL", txtURL.Text },
-                { "Uppdateringsfrekvens", frek },
-                { "Kategori", cbKategori.Text.ToString() }
-            };
-
-            InputValidator validator = new InputValidator();
-            ValidationResult results = validator.Validate(userInput);
-            string errorMessage = validator.LogValidationErrors(results);
-
-            if (string.IsNullOrEmpty(errorMessage))
-            {
-                podcastController.SkapaPodcastObjekt(userInput);
-            } else
-            {
-                Console.WriteLine(errorMessage);
-                MessageBox.Show($"{errorMessage}", "Fel",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, Convert.ToInt32(cbFrekvens.SelectedItem), cbKategori.SelectedItem.ToString());
+            uppdateraPodcastLista();
         }
 
         private void btnLaggTill2_Click(object sender, EventArgs e)

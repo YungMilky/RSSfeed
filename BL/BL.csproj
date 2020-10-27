@@ -52,6 +52,9 @@
     <Compile Include="Validator\InputValidator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{d97bac06-228e-471f-98d8-3c3e5bce8099}</Project>
       <Name>DAL</Name>
@@ -60,9 +63,6 @@
       <Project>{650fde8a-bf33-4a03-b96a-9ff63e46cae6}</Project>
       <Name>Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
