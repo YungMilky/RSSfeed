@@ -34,14 +34,30 @@ namespace BL.Controller
             return podcastRepository.HamtaAlla();
         }
 
+        public int HamtaPodcastIndex(string titel)
+        {
+            int index = podcastRepository.HamtaIndex(titel);
+            return index; 
+        }
+
+        public string HamtaUrl(string titel)
+        {
+            Podcast podcast = podcastRepository.HamtaPodcastEnligtNamn(titel);
+            string url = podcast.URL;
+            return url; 
+        }
+
         public void TaBortPodcast(string namn)
         {
             int index = podcastRepository.HamtaIndex(namn);
             podcastRepository.TaBort(index);
         }
 
-        public void UppdateraPodcast()
+        public void UppdateraPodcast(string podcastNamn, string url, int frekvens, string kategori, int index)
         {
+            List<Avsnitt> avsnittsLista = avsnittRepository.HamtaAllaAvsnitt(url);
+            Podcast podcast = new Podcast(podcastNamn, url, frekvens, kategori, avsnittsLista);
+            podcastRepository.Uppdatera(index, podcast);
 
         }
     }

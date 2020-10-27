@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -11,12 +12,12 @@ using BL.Controller;
 
 namespace Projekt_1
 {
-    public partial class Form1 : Form
+    public partial class Podcast : Form
     {
         PodcastController podcastController;
         KategoriController kategoriController;
 
-        public Form1()
+        public Podcast()
         {
             InitializeComponent();
             podcastController = new PodcastController();
@@ -112,11 +113,9 @@ namespace Projekt_1
                 }
                 else
                 {
-
                 }
             }
         }
-
 
         private void btnSpara2_Click(object sender, EventArgs e)
         {
@@ -137,7 +136,6 @@ namespace Projekt_1
                 }
                 else
                 {
-
                 }
             }
         }
@@ -149,6 +147,19 @@ namespace Projekt_1
 
         private void lwPodcast_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (lwPodcast.SelectedItems.Count == 1)
+            {
+                string namn = lwPodcast.SelectedItems[0].Text;
+                txtNamn.Text = namn;
+                txtURL.Text = podcastController.HamtaUrl(namn); 
+                cbKategori.SelectedItem = lwPodcast.SelectedItems[0].SubItems[3].Text;
+                cbFrekvens.SelectedItem = lwPodcast.SelectedItems[0].SubItems[2].Text;
+                btnLaggTillPodcast.Enabled = false;
+                btnSparaPodcast.Enabled = true;
+                btnTaBortPodcast.Enabled = true;
+                txtURL.Enabled = true;
+            }
+
             lbAvsnitt.Items.Clear();
             if (lwPodcast.SelectedItems.Count == 1)
             {
@@ -169,6 +180,7 @@ namespace Projekt_1
 
         private void lbAvsnitt_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+
             txtAvsnittsBeskrivning.Clear();
             if (lbAvsnitt.SelectedItems.Count == 1)
             {
@@ -184,6 +196,77 @@ namespace Projekt_1
                     }
                 }
             }
+        }
+
+        private void btnSparaPodcast_Click(object sender, EventArgs e)
+        {
+            if (lwPodcast.SelectedItems.Count == 1)
+            {
+                string namn = txtNamn.Text;
+                string url = txtURL.Text;
+                int frekvens = Convert.ToInt32(cbFrekvens.Text);
+                string kategori = cbKategori.Text;
+                int index = podcastController.HamtaPodcastIndex(lwPodcast.SelectedItems[0].Text);
+
+                podcastController.UppdateraPodcast(namn, url, frekvens, kategori, index);
+                uppdateraPodcastLista();
+                txtNamn.Text = "";
+                txtURL.Text = "";
+
+            }
+            else
+            {
+                MessageBox.Show("Vänligen välj en podcast i listan.");
+            }
+        }
+
+        private void txtURL_TextChanged(object sender, EventArgs e)
+        {
+            btnLaggTillPodcast.Enabled = string.IsNullOrWhiteSpace(txtURL.Text) ? false : true;
+        }
+
+        private void lbKategorier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if((lbKategorier.SelectedItems.Count == 1))
+            {
+                string namn = lbKategorier.SelectedItem.ToString();
+                txtKategori.Text = namn;
+                btnLaggTillKategori.Enabled = false;
+                btnSparaKategori.Enabled = true;
+                btnTaBortKategori.Enabled = true;
+                txtURL.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Vänligen välj en kategori i listan.");
+            }
+        }
+
+        private void btnSparaKategori_Click(object sender, EventArgs e)
+        {
+            if (lbKategorier.SelectedItems.Count == 1)
+            {
+                string namn = txtKategori.Text;
+                int index = kategoriController.HamtaKategoriIndex(lbKategorier.SelectedItem.ToString());
+                kategoriController.UppdateraKategoriLista(namn, index);
+                uppdateraKategoriLista();
+                txtKategori.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Vänligen välj en kategori i listan.");
+            }
+        }
+
+        private void txtKategori_TextChanged(object sender, EventArgs e)
+        {
+            btnLaggTillKategori.Enabled = string.IsNullOrWhiteSpace(txtKategori.Text) ? false : true;
+        }
+
+        private void btnLaggTillPodcast_Click(object sender, EventArgs e)
+        {
+            podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, Convert.ToInt32(cbFrekvens.SelectedItem), cbKategori.SelectedItem.ToString());
+            uppdateraPodcastLista();
         }
     }
 }

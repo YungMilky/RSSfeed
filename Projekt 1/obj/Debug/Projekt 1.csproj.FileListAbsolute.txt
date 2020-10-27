@@ -9,7 +9,6 @@ C:\Users\selda\OneDrive - Örebro universitet\Objektorienterad programmering med
 C:\Users\selda\OneDrive - Örebro universitet\Objektorienterad programmering med C#\Projekt i Visual Studio\repos\Projekt 1\Projekt 1\obj\Debug\Projekt 1.exe
 C:\Users\selda\OneDrive - Örebro universitet\Objektorienterad programmering med C#\Projekt i Visual Studio\repos\Projekt 1\Projekt 1\obj\Debug\Projekt 1.pdb
 C:\GitHub\RSSfeed\Projekt 1\obj\Debug\Projekt 1.csprojAssemblyReference.cache
-C:\GitHub\RSSfeed\Projekt 1\obj\Debug\Projekt_1.Form1.resources
 C:\GitHub\RSSfeed\Projekt 1\obj\Debug\Projekt_1.Properties.Resources.resources
 C:\GitHub\RSSfeed\Projekt 1\obj\Debug\Projekt 1.csproj.GenerateResource.cache
 C:\GitHub\RSSfeed\Projekt 1\obj\Debug\Projekt 1.csproj.CoreCompileInputs.cache
@@ -25,3 +24,4 @@ C:\GitHub\RSSfeed\Projekt 1\bin\Debug\BL.pdb
 C:\GitHub\RSSfeed\Projekt 1\bin\Debug\Models.pdb
 C:\GitHub\RSSfeed\Projekt 1\bin\Debug\DAL.pdb
 C:\GitHub\RSSfeed\Projekt 1\obj\Debug\Projekt 1.csproj.CopyComplete
+C:\GitHub\RSSfeed\Projekt 1\obj\Debug\Projekt_1.Podcast.resources

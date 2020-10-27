@@ -34,24 +34,33 @@ namespace BL.Controller
             kategoriRepository.TaBort(index);
         }
 
-        public void UppdateraKategoriLista(string titel)
+        public void UppdateraKategoriLista(string nyTitel, int index)
         {
-            //funkar inte
-            //int index = kategoriRepository.HamtaIndex(titel);
-            //kategoriRepository.Uppdatera(index);
+            //List<Kategori> kategoriLista = kategoriLista.HamtaAllaKategorier();
+            Kategori kategori = new Kategori(nyTitel);
+            kategoriRepository.Uppdatera(index, kategori);
+
         }
+
+        public int HamtaKategoriIndex(string titel)
+        {
+            int index = kategoriRepository.HamtaIndex(titel);
+            return index;
+        }
+
+        //public void UppdateraPodcast(string podcastNamn, string url, int frekvens, string kategori, int index)
+        //{
+        //    List<Avsnitt> avsnittsLista = avsnittRepository.HamtaAllaAvsnitt(url);
+        //    Podcast podcast = new Podcast(podcastNamn, url, frekvens, kategori, avsnittsLista);
+        //    podcastRepository.Uppdatera(index, podcast);
+
+        //}
 
         //public string HamtaAllaEnligtKategori(string kategoriNamn)
         //{
         //    return HamtaAlla().First(p => p.KategoriNamn.Equals(kategoriNamn)); 
         //    hur hämtar man KategoriNamn från klassen Kategori?
 
-        //}
-
-        //public string HamtaPodcastEnligtNamn(string titel)
-        //{
-        //    return HamtaAlla().First(p => p.Titel.Equals(titel)); 
-        //    hur hämtar man Titel från klassen Feed?
         //}
     }
 }

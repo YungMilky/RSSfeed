@@ -1,6 +1,6 @@
 ﻿namespace Projekt_1
 {
-    partial class Form1
+    partial class Podcast
     {
         /// <summary>
         /// Required designer variable.
@@ -38,12 +38,12 @@
             this.lblURL = new System.Windows.Forms.Label();
             this.lblUppdateringsFrekvens = new System.Windows.Forms.Label();
             this.lblKategori = new System.Windows.Forms.Label();
-            this.btnLaggTill1 = new System.Windows.Forms.Button();
-            this.btnSpara1 = new System.Windows.Forms.Button();
-            this.btnTaBort1 = new System.Windows.Forms.Button();
-            this.btnTaBort2 = new System.Windows.Forms.Button();
-            this.btnSpara2 = new System.Windows.Forms.Button();
-            this.btnLaggTill2 = new System.Windows.Forms.Button();
+            this.btnLaggTillPodcast = new System.Windows.Forms.Button();
+            this.btnSparaPodcast = new System.Windows.Forms.Button();
+            this.btnTaBortPodcast = new System.Windows.Forms.Button();
+            this.btnTaBortKategori = new System.Windows.Forms.Button();
+            this.btnSparaKategori = new System.Windows.Forms.Button();
+            this.btnLaggTillKategori = new System.Windows.Forms.Button();
             this.cbFrekvens = new System.Windows.Forms.ComboBox();
             this.cbKategori = new System.Windows.Forms.ComboBox();
             this.lblAvsnittsbeskrivning = new System.Windows.Forms.Label();
@@ -76,22 +76,22 @@
             // namn
             // 
             this.namn.Text = "Namn";
-            this.namn.Width = 80;
+            this.namn.Width = 85;
             // 
             // avsnitt
             // 
             this.avsnitt.Text = "Avsnitt";
-            this.avsnitt.Width = 80;
+            this.avsnitt.Width = 85;
             // 
             // frekvens
             // 
             this.frekvens.Text = "Frekvens";
-            this.frekvens.Width = 80;
+            this.frekvens.Width = 85;
             // 
             // kategori
             // 
             this.kategori.Text = "Kategori";
-            this.kategori.Width = 80;
+            this.kategori.Width = 85;
             // 
             // txtURL
             // 
@@ -99,6 +99,7 @@
             this.txtURL.Name = "txtURL";
             this.txtURL.Size = new System.Drawing.Size(251, 31);
             this.txtURL.TabIndex = 2;
+            this.txtURL.TextChanged += new System.EventHandler(this.txtURL_TextChanged);
             // 
             // lblKategorier
             // 
@@ -143,65 +144,65 @@
             this.lblKategori.Text = "Kategori:";
             this.lblKategori.UseWaitCursor = true;
             // 
-            // btnLaggTill1
+            // btnLaggTillPodcast
             // 
-            this.btnLaggTill1.Location = new System.Drawing.Point(520, 486);
-            this.btnLaggTill1.Name = "btnLaggTill1";
-            this.btnLaggTill1.Size = new System.Drawing.Size(118, 37);
-            this.btnLaggTill1.TabIndex = 9;
-            this.btnLaggTill1.Text = "Lägg till";
-            this.btnLaggTill1.UseVisualStyleBackColor = true;
-            this.btnLaggTill1.Click += new System.EventHandler(this.btnLaggTill1_Click);
+            this.btnLaggTillPodcast.Location = new System.Drawing.Point(520, 486);
+            this.btnLaggTillPodcast.Name = "btnLaggTillPodcast";
+            this.btnLaggTillPodcast.Size = new System.Drawing.Size(118, 37);
+            this.btnLaggTillPodcast.TabIndex = 9;
+            this.btnLaggTillPodcast.Text = "Lägg till";
+            this.btnLaggTillPodcast.UseVisualStyleBackColor = true;
+            this.btnLaggTillPodcast.Click += new System.EventHandler(this.btnLaggTillPodcast_Click);
             // 
-            // btnSpara1
+            // btnSparaPodcast
             // 
-            this.btnSpara1.Location = new System.Drawing.Point(669, 486);
-            this.btnSpara1.Name = "btnSpara1";
-            this.btnSpara1.Size = new System.Drawing.Size(118, 37);
-            this.btnSpara1.TabIndex = 10;
-            this.btnSpara1.Text = "Spara";
-            this.btnSpara1.UseVisualStyleBackColor = true;
-            this.btnSpara1.Click += new System.EventHandler(this.btnSpara2_Click);
+            this.btnSparaPodcast.Location = new System.Drawing.Point(669, 486);
+            this.btnSparaPodcast.Name = "btnSparaPodcast";
+            this.btnSparaPodcast.Size = new System.Drawing.Size(118, 37);
+            this.btnSparaPodcast.TabIndex = 10;
+            this.btnSparaPodcast.Text = "Spara";
+            this.btnSparaPodcast.UseVisualStyleBackColor = true;
+            this.btnSparaPodcast.Click += new System.EventHandler(this.btnSparaPodcast_Click);
             // 
-            // btnTaBort1
+            // btnTaBortPodcast
             // 
-            this.btnTaBort1.Location = new System.Drawing.Point(815, 486);
-            this.btnTaBort1.Name = "btnTaBort1";
-            this.btnTaBort1.Size = new System.Drawing.Size(118, 37);
-            this.btnTaBort1.TabIndex = 11;
-            this.btnTaBort1.Text = "Ta bort";
-            this.btnTaBort1.UseVisualStyleBackColor = true;
-            this.btnTaBort1.Click += new System.EventHandler(this.btnTaBort1_Click);
+            this.btnTaBortPodcast.Location = new System.Drawing.Point(815, 486);
+            this.btnTaBortPodcast.Name = "btnTaBortPodcast";
+            this.btnTaBortPodcast.Size = new System.Drawing.Size(118, 37);
+            this.btnTaBortPodcast.TabIndex = 11;
+            this.btnTaBortPodcast.Text = "Ta bort";
+            this.btnTaBortPodcast.UseVisualStyleBackColor = true;
+            this.btnTaBortPodcast.Click += new System.EventHandler(this.btnTaBort1_Click);
             // 
-            // btnTaBort2
+            // btnTaBortKategori
             // 
-            this.btnTaBort2.Location = new System.Drawing.Point(1487, 468);
-            this.btnTaBort2.Name = "btnTaBort2";
-            this.btnTaBort2.Size = new System.Drawing.Size(118, 37);
-            this.btnTaBort2.TabIndex = 14;
-            this.btnTaBort2.Text = "Ta bort";
-            this.btnTaBort2.UseVisualStyleBackColor = true;
-            this.btnTaBort2.Click += new System.EventHandler(this.btnTaBort2_Click);
+            this.btnTaBortKategori.Location = new System.Drawing.Point(1487, 468);
+            this.btnTaBortKategori.Name = "btnTaBortKategori";
+            this.btnTaBortKategori.Size = new System.Drawing.Size(118, 37);
+            this.btnTaBortKategori.TabIndex = 14;
+            this.btnTaBortKategori.Text = "Ta bort";
+            this.btnTaBortKategori.UseVisualStyleBackColor = true;
+            this.btnTaBortKategori.Click += new System.EventHandler(this.btnTaBort2_Click);
             // 
-            // btnSpara2
+            // btnSparaKategori
             // 
-            this.btnSpara2.Location = new System.Drawing.Point(1329, 468);
-            this.btnSpara2.Name = "btnSpara2";
-            this.btnSpara2.Size = new System.Drawing.Size(118, 37);
-            this.btnSpara2.TabIndex = 13;
-            this.btnSpara2.Text = "Spara";
-            this.btnSpara2.UseVisualStyleBackColor = true;
-            this.btnSpara2.Click += new System.EventHandler(this.btnSpara2_Click_1);
+            this.btnSparaKategori.Location = new System.Drawing.Point(1329, 468);
+            this.btnSparaKategori.Name = "btnSparaKategori";
+            this.btnSparaKategori.Size = new System.Drawing.Size(118, 37);
+            this.btnSparaKategori.TabIndex = 13;
+            this.btnSparaKategori.Text = "Spara";
+            this.btnSparaKategori.UseVisualStyleBackColor = true;
+            this.btnSparaKategori.Click += new System.EventHandler(this.btnSparaKategori_Click);
             // 
-            // btnLaggTill2
+            // btnLaggTillKategori
             // 
-            this.btnLaggTill2.Location = new System.Drawing.Point(1177, 468);
-            this.btnLaggTill2.Name = "btnLaggTill2";
-            this.btnLaggTill2.Size = new System.Drawing.Size(118, 37);
-            this.btnLaggTill2.TabIndex = 12;
-            this.btnLaggTill2.Text = "Lägg till";
-            this.btnLaggTill2.UseVisualStyleBackColor = true;
-            this.btnLaggTill2.Click += new System.EventHandler(this.btnLaggTill2_Click);
+            this.btnLaggTillKategori.Location = new System.Drawing.Point(1177, 468);
+            this.btnLaggTillKategori.Name = "btnLaggTillKategori";
+            this.btnLaggTillKategori.Size = new System.Drawing.Size(118, 37);
+            this.btnLaggTillKategori.TabIndex = 12;
+            this.btnLaggTillKategori.Text = "Lägg till";
+            this.btnLaggTillKategori.UseVisualStyleBackColor = true;
+            this.btnLaggTillKategori.Click += new System.EventHandler(this.btnLaggTill2_Click);
             // 
             // cbFrekvens
             // 
@@ -237,6 +238,7 @@
             this.txtKategori.Name = "txtKategori";
             this.txtKategori.Size = new System.Drawing.Size(444, 31);
             this.txtKategori.TabIndex = 29;
+            this.txtKategori.TextChanged += new System.EventHandler(this.txtKategori_TextChanged);
             // 
             // lblKategori2
             // 
@@ -286,6 +288,7 @@
             this.lbKategorier.Name = "lbKategorier";
             this.lbKategorier.Size = new System.Drawing.Size(629, 229);
             this.lbKategorier.TabIndex = 34;
+            this.lbKategorier.SelectedIndexChanged += new System.EventHandler(this.lbKategorier_SelectedIndexChanged);
             // 
             // lbAvsnitt
             // 
@@ -306,7 +309,7 @@
             this.txtAvsnittsBeskrivning.TabIndex = 36;
             this.txtAvsnittsBeskrivning.Text = "";
             // 
-            // Form1
+            // Podcast
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -322,20 +325,20 @@
             this.Controls.Add(this.lblAvsnittsbeskrivning);
             this.Controls.Add(this.cbKategori);
             this.Controls.Add(this.cbFrekvens);
-            this.Controls.Add(this.btnTaBort2);
-            this.Controls.Add(this.btnSpara2);
-            this.Controls.Add(this.btnLaggTill2);
-            this.Controls.Add(this.btnTaBort1);
-            this.Controls.Add(this.btnSpara1);
-            this.Controls.Add(this.btnLaggTill1);
+            this.Controls.Add(this.btnTaBortKategori);
+            this.Controls.Add(this.btnSparaKategori);
+            this.Controls.Add(this.btnLaggTillKategori);
+            this.Controls.Add(this.btnTaBortPodcast);
+            this.Controls.Add(this.btnSparaPodcast);
+            this.Controls.Add(this.btnLaggTillPodcast);
             this.Controls.Add(this.lblKategori);
             this.Controls.Add(this.lblUppdateringsFrekvens);
             this.Controls.Add(this.lblURL);
             this.Controls.Add(this.lblKategorier);
             this.Controls.Add(this.txtURL);
             this.Controls.Add(this.lwPodcast);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Podcast";
+            this.Text = "Podcast RSS Feed";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,12 +356,12 @@
         private System.Windows.Forms.Label lblURL;
         private System.Windows.Forms.Label lblUppdateringsFrekvens;
         private System.Windows.Forms.Label lblKategori;
-        private System.Windows.Forms.Button btnLaggTill1;
-        private System.Windows.Forms.Button btnSpara1;
-        private System.Windows.Forms.Button btnTaBort1;
-        private System.Windows.Forms.Button btnTaBort2;
-        private System.Windows.Forms.Button btnSpara2;
-        private System.Windows.Forms.Button btnLaggTill2;
+        private System.Windows.Forms.Button btnLaggTillPodcast;
+        private System.Windows.Forms.Button btnSparaPodcast;
+        private System.Windows.Forms.Button btnTaBortPodcast;
+        private System.Windows.Forms.Button btnTaBortKategori;
+        private System.Windows.Forms.Button btnSparaKategori;
+        private System.Windows.Forms.Button btnLaggTillKategori;
         private System.Windows.Forms.ComboBox cbFrekvens;
         private System.Windows.Forms.ComboBox cbKategori;
         private System.Windows.Forms.Label lblAvsnittsbeskrivning;
