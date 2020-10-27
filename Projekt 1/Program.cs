@@ -17,14 +17,8 @@ namespace Projekt_1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new Form1());
 
-            Podcast p = new Podcast();
-            Console.WriteLine($"test {p.GetType().GetProperties()}"); 
-=======
             Application.Run(new Podcast());
->>>>>>> 8c7df9574f7d169d4cf99bb21b87584c46522503
         }
     }
 }
