@@ -147,11 +147,6 @@ namespace Projekt_1
 
         }
 
-        private void lwAvsnitt_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void lwPodcast_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbAvsnitt.Items.Clear();
@@ -166,6 +161,25 @@ namespace Projekt_1
                         foreach (var avsnitt in item.AvsnittsLista)
                         {
                             lbAvsnitt.Items.Add(avsnitt.Titel);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void lbAvsnitt_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            txtAvsnittsBeskrivning.Clear();
+            if (lbAvsnitt.SelectedItems.Count == 1)
+            {
+                var valtAvsnitt = lbAvsnitt.SelectedItems[0];
+                foreach (var item in podcastController.HamtaAllaPodcasts())
+                {
+                    foreach (var ettAvsnitt in item.AvsnittsLista)
+                    {
+                        if (ettAvsnitt.Titel.Equals(valtAvsnitt))
+                        {
+                            txtAvsnittsBeskrivning.Text = (ettAvsnitt.Beskrivning);
                         }
                     }
                 }

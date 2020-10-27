@@ -46,7 +46,6 @@
             this.btnLaggTill2 = new System.Windows.Forms.Button();
             this.cbFrekvens = new System.Windows.Forms.ComboBox();
             this.cbKategori = new System.Windows.Forms.ComboBox();
-            this.avsnittsBeskrivningTextruta = new System.Windows.Forms.TextBox();
             this.lblAvsnittsbeskrivning = new System.Windows.Forms.Label();
             this.txtKategori = new System.Windows.Forms.TextBox();
             this.lblKategori2 = new System.Windows.Forms.Label();
@@ -55,6 +54,7 @@
             this.txtNamn = new System.Windows.Forms.TextBox();
             this.lbKategorier = new System.Windows.Forms.ListBox();
             this.lbAvsnitt = new System.Windows.Forms.ListBox();
+            this.txtAvsnittsBeskrivning = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // lwPodcast
@@ -65,7 +65,7 @@
             this.frekvens,
             this.kategori});
             this.lwPodcast.HideSelection = false;
-            this.lwPodcast.Location = new System.Drawing.Point(55, 76);
+            this.lwPodcast.Location = new System.Drawing.Point(62, 80);
             this.lwPodcast.Name = "lwPodcast";
             this.lwPodcast.Size = new System.Drawing.Size(878, 249);
             this.lwPodcast.TabIndex = 1;
@@ -76,18 +76,22 @@
             // namn
             // 
             this.namn.Text = "Namn";
+            this.namn.Width = 80;
             // 
             // avsnitt
             // 
             this.avsnitt.Text = "Avsnitt";
+            this.avsnitt.Width = 80;
             // 
             // frekvens
             // 
             this.frekvens.Text = "Frekvens";
+            this.frekvens.Width = 80;
             // 
             // kategori
             // 
             this.kategori.Text = "Kategori";
+            this.kategori.Width = 80;
             // 
             // txtURL
             // 
@@ -217,22 +221,11 @@
             this.cbKategori.Size = new System.Drawing.Size(244, 33);
             this.cbKategori.TabIndex = 16;
             // 
-            // avsnittsBeskrivningTextruta
-            // 
-            this.avsnittsBeskrivningTextruta.Location = new System.Drawing.Point(954, 632);
-            this.avsnittsBeskrivningTextruta.Margin = new System.Windows.Forms.Padding(6);
-            this.avsnittsBeskrivningTextruta.Multiline = true;
-            this.avsnittsBeskrivningTextruta.Name = "avsnittsBeskrivningTextruta";
-            this.avsnittsBeskrivningTextruta.ReadOnly = true;
-            this.avsnittsBeskrivningTextruta.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.avsnittsBeskrivningTextruta.Size = new System.Drawing.Size(718, 189);
-            this.avsnittsBeskrivningTextruta.TabIndex = 27;
-            // 
             // lblAvsnittsbeskrivning
             // 
             this.lblAvsnittsbeskrivning.AutoSize = true;
             this.lblAvsnittsbeskrivning.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvsnittsbeskrivning.Location = new System.Drawing.Point(949, 572);
+            this.lblAvsnittsbeskrivning.Location = new System.Drawing.Point(949, 528);
             this.lblAvsnittsbeskrivning.Name = "lblAvsnittsbeskrivning";
             this.lblAvsnittsbeskrivning.Size = new System.Drawing.Size(224, 25);
             this.lblAvsnittsbeskrivning.TabIndex = 28;
@@ -302,12 +295,23 @@
             this.lbAvsnitt.Name = "lbAvsnitt";
             this.lbAvsnitt.Size = new System.Drawing.Size(871, 254);
             this.lbAvsnitt.TabIndex = 35;
+            this.lbAvsnitt.SelectedIndexChanged += new System.EventHandler(this.lbAvsnitt_SelectedIndexChanged_1);
+            // 
+            // txtAvsnittsBeskrivning
+            // 
+            this.txtAvsnittsBeskrivning.Location = new System.Drawing.Point(954, 572);
+            this.txtAvsnittsBeskrivning.Name = "txtAvsnittsBeskrivning";
+            this.txtAvsnittsBeskrivning.ReadOnly = true;
+            this.txtAvsnittsBeskrivning.Size = new System.Drawing.Size(667, 254);
+            this.txtAvsnittsBeskrivning.TabIndex = 36;
+            this.txtAvsnittsBeskrivning.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1687, 866);
+            this.ClientSize = new System.Drawing.Size(1704, 866);
+            this.Controls.Add(this.txtAvsnittsBeskrivning);
             this.Controls.Add(this.lbAvsnitt);
             this.Controls.Add(this.lbKategorier);
             this.Controls.Add(this.txtNamn);
@@ -316,7 +320,6 @@
             this.Controls.Add(this.lblKategori2);
             this.Controls.Add(this.txtKategori);
             this.Controls.Add(this.lblAvsnittsbeskrivning);
-            this.Controls.Add(this.avsnittsBeskrivningTextruta);
             this.Controls.Add(this.cbKategori);
             this.Controls.Add(this.cbFrekvens);
             this.Controls.Add(this.btnTaBort2);
@@ -358,7 +361,6 @@
         private System.Windows.Forms.Button btnLaggTill2;
         private System.Windows.Forms.ComboBox cbFrekvens;
         private System.Windows.Forms.ComboBox cbKategori;
-        private System.Windows.Forms.TextBox avsnittsBeskrivningTextruta;
         private System.Windows.Forms.Label lblAvsnittsbeskrivning;
         private System.Windows.Forms.TextBox txtKategori;
         private System.Windows.Forms.Label lblKategori2;
@@ -367,6 +369,7 @@
         private System.Windows.Forms.TextBox txtNamn;
         private System.Windows.Forms.ListBox lbKategorier;
         private System.Windows.Forms.ListBox lbAvsnitt;
+        private System.Windows.Forms.RichTextBox txtAvsnittsBeskrivning;
     }
 }
 
