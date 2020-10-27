@@ -7,3 +7,12 @@ C:\GitHub\RSSfeed\DAL\bin\Debug\Models.pdb
 C:\GitHub\RSSfeed\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\GitHub\RSSfeed\DAL\obj\Debug\DAL.dll
 C:\GitHub\RSSfeed\DAL\obj\Debug\DAL.pdb
+C:\Users\Sad Hentai\Documents\RSS\DAL\bin\Debug\DAL.dll
+C:\Users\Sad Hentai\Documents\RSS\DAL\bin\Debug\DAL.pdb
+C:\Users\Sad Hentai\Documents\RSS\DAL\bin\Debug\Models.dll
+C:\Users\Sad Hentai\Documents\RSS\DAL\bin\Debug\Models.pdb
+C:\Users\Sad Hentai\Documents\RSS\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\Sad Hentai\Documents\RSS\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Sad Hentai\Documents\RSS\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Sad Hentai\Documents\RSS\DAL\obj\Debug\DAL.dll
+C:\Users\Sad Hentai\Documents\RSS\DAL\obj\Debug\DAL.pdb

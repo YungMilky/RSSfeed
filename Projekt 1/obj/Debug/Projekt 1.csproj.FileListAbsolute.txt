@@ -25,3 +25,22 @@ C:\GitHub\RSSfeed\Projekt 1\bin\Debug\BL.pdb
 C:\GitHub\RSSfeed\Projekt 1\bin\Debug\Models.pdb
 C:\GitHub\RSSfeed\Projekt 1\bin\Debug\DAL.pdb
 C:\GitHub\RSSfeed\Projekt 1\obj\Debug\Projekt 1.csproj.CopyComplete
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\bin\Debug\Projekt 1.exe.config
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\bin\Debug\Projekt 1.exe
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\bin\Debug\Projekt 1.pdb
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\bin\Debug\BL.dll
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\bin\Debug\Models.dll
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\bin\Debug\DAL.dll
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\bin\Debug\BL.pdb
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\bin\Debug\Models.pdb
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\bin\Debug\DAL.pdb
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\obj\Debug\Projekt 1.csprojAssemblyReference.cache
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\obj\Debug\Projekt_1.Form1.resources
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\obj\Debug\Projekt_1.Properties.Resources.resources
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\obj\Debug\Projekt 1.csproj.GenerateResource.cache
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\obj\Debug\Projekt 1.csproj.CoreCompileInputs.cache
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\obj\Debug\Projekt 1.csproj.CopyComplete
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\obj\Debug\Projekt 1.exe
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\obj\Debug\Projekt 1.pdb
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\bin\Debug\FluentValidation.dll
+C:\Users\Sad Hentai\Documents\RSS\Projekt 1\bin\Debug\FluentValidation.xml

@@ -12,5 +12,10 @@ namespace Models
         {
             return "Detta är en entitet.";
         }
+
+        public virtual List<object> getProperties()
+        {
+            return new List<object>();
+        }
     }
 }
