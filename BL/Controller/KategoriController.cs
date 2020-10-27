@@ -13,14 +13,17 @@ namespace BL.Controller
     {
         IKategoriRepository<Kategori> kategoriRepository;
 
+        private PodcastController podcastController;
+
         public KategoriController()
         {
             kategoriRepository = new KategoriRepository();
+            podcastController = new PodcastController(); 
         }
         public void SkapaKategoritObjekt(string titel)
         {
-            Kategori newKategori = new Kategori(titel);
-            kategoriRepository.Skapa(newKategori);
+            Kategori nyKategori = new Kategori(titel);
+            kategoriRepository.Skapa(nyKategori);
         }
 
         public List<Kategori> HamtaAllaKategorier()
@@ -28,18 +31,25 @@ namespace BL.Controller
             return kategoriRepository.HamtaAlla(); 
         }
 
-        public void TaBortKategori(string titel)
+        public void TaBortKategori(string titel) //funkar inte att ta bort podcast som tillhör en kategori än
         {
             int index = kategoriRepository.HamtaIndex(titel);
             kategoriRepository.TaBort(index);
+            List<Podcast> podcastLista = podcastController.HamtaAllaPodcasts();
+            foreach (var item in podcastLista)
+            {
+                if(titel.Equals(item.Kategori))
+                {
+                    string podcastNamn = item.Namn;
+                    podcastController.TaBortPodcast(podcastNamn);
+                }
+            }
         }
 
         public void UppdateraKategoriLista(string nyTitel, int index)
         {
-            //List<Kategori> kategoriLista = kategoriLista.HamtaAllaKategorier();
             Kategori kategori = new Kategori(nyTitel);
             kategoriRepository.Uppdatera(index, kategori);
-
         }
 
         public int HamtaKategoriIndex(string titel)
@@ -47,14 +57,6 @@ namespace BL.Controller
             int index = kategoriRepository.HamtaIndex(titel);
             return index;
         }
-
-        //public void UppdateraPodcast(string podcastNamn, string url, int frekvens, string kategori, int index)
-        //{
-        //    List<Avsnitt> avsnittsLista = avsnittRepository.HamtaAllaAvsnitt(url);
-        //    Podcast podcast = new Podcast(podcastNamn, url, frekvens, kategori, avsnittsLista);
-        //    podcastRepository.Uppdatera(index, podcast);
-
-        //}
 
         //public string HamtaAllaEnligtKategori(string kategoriNamn)
         //{

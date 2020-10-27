@@ -51,6 +51,7 @@ namespace BL.Controller
         {
             int index = podcastRepository.HamtaIndex(namn);
             podcastRepository.TaBort(index);
+
         }
 
         public void UppdateraPodcast(string podcastNamn, string url, int frekvens, string kategori, int index)

@@ -34,14 +34,15 @@ namespace Projekt_1
             {
                 if (item != null)
                 {
+                    string antalAvsnitt = item.AvsnittsLista.Count.ToString(); 
+
                     ListViewItem newList = new ListViewItem(item.Namn);
-                    newList.SubItems.Add("Antalet avsnitt");//skriv in hur många avsnitt det finns
+                    newList.SubItems.Add(antalAvsnitt);
                     newList.SubItems.Add(item.UppdateringsFrekvens.ToString());
                     newList.SubItems.Add(item.Kategori);
                     lwPodcast.Items.Add(newList);
                     lwPodcast.FullRowSelect = true;
                 }
-
             }
             try
             {
@@ -99,7 +100,7 @@ namespace Projekt_1
             txtKategori.Text = "";
         }
 
-        private void btnTaBort2_Click(object sender, EventArgs e)
+        private void btnTaBort2_Click(object sender, EventArgs e) //funkar inte än
         {
             if (lbKategorier.SelectedItems.Count == 1)
             {
@@ -109,8 +110,9 @@ namespace Projekt_1
                 {
                     kategoriController.TaBortKategori(lbKategorier.SelectedItem.ToString());
                     uppdateraKategoriLista();
+                    uppdateraPodcastLista();
                     txtKategori.Text = "";
-                }
+            }
                 else
                 {
                 }
@@ -212,7 +214,6 @@ namespace Projekt_1
                 uppdateraPodcastLista();
                 txtNamn.Text = "";
                 txtURL.Text = "";
-
             }
             else
             {
