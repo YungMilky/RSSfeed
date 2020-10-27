@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using DAL.Repositories;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,12 @@ namespace BL.Controller
 
     public class AvsnittController
     {
+        private AvsnittRepository avsnittRepository;
+
+        public AvsnittController()
+        {
+            avsnittRepository = new AvsnittRepository();
+        }
 
     }
 
