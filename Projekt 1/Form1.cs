@@ -15,6 +15,7 @@ namespace Projekt_1
     {
         PodcastController podcastController;
         KategoriController kategoriController;
+
         public Form1()
         {
             InitializeComponent();
@@ -22,12 +23,12 @@ namespace Projekt_1
             kategoriController = new KategoriController();
             uppdateraKategoriLista();
             uppdateringsFrekvens();
-            uppdateraPodcastLista(); 
+            uppdateraPodcastLista();
         }
 
-        private void uppdateraPodcastLista() 
+        private void uppdateraPodcastLista()
         {
-            lwAvsnitt.Items.Clear();
+            lwPodcast.Items.Clear();
             foreach (var item in podcastController.HamtaAllaPodcasts())
             {
                 if (item != null)
@@ -36,12 +37,12 @@ namespace Projekt_1
                     newList.SubItems.Add("Antalet avsnitt");//skriv in hur många avsnitt det finns
                     newList.SubItems.Add(item.UppdateringsFrekvens.ToString());
                     newList.SubItems.Add(item.Kategori);
-                    lwAvsnitt.Items.Add(newList);
-                    lwAvsnitt.FullRowSelect = true;
+                    lwPodcast.Items.Add(newList);
+                    lwPodcast.FullRowSelect = true;
                 }
 
             }
-            try 
+            try
             {
                 cbKategori.SelectedIndex = 0;
             }
@@ -49,13 +50,13 @@ namespace Projekt_1
             {
 
             }
-            
+
         }
 
         private void uppdateraKategoriLista()
         {
             lbKategorier.Items.Clear();
-            cbKategori.Items.Clear(); 
+            cbKategori.Items.Clear();
             foreach (var item in kategoriController.HamtaAllaKategorier())
             {
                 if (item != null)
@@ -65,9 +66,9 @@ namespace Projekt_1
                 }
             }
 
-            try 
-            { 
-                cbKategori.SelectedIndex = 0; 
+            try
+            {
+                cbKategori.SelectedIndex = 0;
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -80,7 +81,7 @@ namespace Projekt_1
             cbFrekvens.Items.Add("10");
             cbFrekvens.Items.Add("30");
             cbFrekvens.Items.Add("60");
-            cbFrekvens.SelectedIndex = 0; 
+            cbFrekvens.SelectedIndex = 0;
         }
 
         private void btnLaggTill1_Click(object sender, EventArgs e)
@@ -107,7 +108,7 @@ namespace Projekt_1
                 {
                     kategoriController.TaBortKategori(lbKategorier.SelectedItem.ToString());
                     uppdateraKategoriLista();
-                    txtKategori.Text = ""; 
+                    txtKategori.Text = "";
                 }
                 else
                 {
@@ -119,14 +120,14 @@ namespace Projekt_1
 
         private void btnSpara2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnTaBort1_Click(object sender, EventArgs e)
         {
-            if (lwAvsnitt.SelectedItems.Count == 1)
+            if (lwPodcast.SelectedItems.Count == 1)
             {
-                string titel = lwAvsnitt.SelectedItems[0].Text;
+                string titel = lwPodcast.SelectedItems[0].Text;
                 DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort podcasten " + titel + "?", "Varning", MessageBoxButtons.YesNo);
 
                 if (dialogResult == DialogResult.Yes)
@@ -149,6 +150,26 @@ namespace Projekt_1
         private void lwAvsnitt_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void lwPodcast_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbAvsnitt.Items.Clear();
+            if (lwPodcast.SelectedItems.Count == 1)
+            {
+                var selectedEpisode = lwPodcast.SelectedItems[0].Text;
+
+                foreach (var item in podcastController.HamtaAllaPodcasts())
+                {
+                    if (item.Namn.Equals(selectedEpisode))
+                    {
+                        foreach (var avsnitt in item.AvsnittsLista)
+                        {
+                            lbAvsnitt.Items.Add(avsnitt.Titel);
+                        }
+                    }
+                }
+            }
         }
     }
 }

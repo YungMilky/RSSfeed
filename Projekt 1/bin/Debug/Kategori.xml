@@ -1,12 +1,15 @@
 <?xml version="1.0"?>
 <ArrayOfKategori xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Kategori>
-    <Titel>Nyheter</Titel>
-  </Kategori>
-  <Kategori>
     <Titel>Sport</Titel>
   </Kategori>
   <Kategori>
+    <Titel>Dokumentärer</Titel>
+  </Kategori>
+  <Kategori>
     <Titel>Nöje</Titel>
+  </Kategori>
+  <Kategori>
+    <Titel>Nyheter</Titel>
   </Kategori>
 </ArrayOfKategori>

@@ -28,18 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lwAvsnitt = new System.Windows.Forms.ListView();
-            this.avsnitt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lwPodcast = new System.Windows.Forms.ListView();
             this.namn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.avsnitt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.frekvens = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.kategori = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtURL = new System.Windows.Forms.TextBox();
             this.lblKategorier = new System.Windows.Forms.Label();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblURL = new System.Windows.Forms.Label();
             this.lblUppdateringsFrekvens = new System.Windows.Forms.Label();
             this.lblKategori = new System.Windows.Forms.Label();
@@ -59,31 +54,32 @@
             this.lblPodcastNamn = new System.Windows.Forms.Label();
             this.txtNamn = new System.Windows.Forms.TextBox();
             this.lbKategorier = new System.Windows.Forms.ListBox();
+            this.lbAvsnitt = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // lwAvsnitt
+            // lwPodcast
             // 
-            this.lwAvsnitt.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lwPodcast.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.namn,
             this.avsnitt,
             this.frekvens,
             this.kategori});
-            this.lwAvsnitt.HideSelection = false;
-            this.lwAvsnitt.Location = new System.Drawing.Point(55, 76);
-            this.lwAvsnitt.Name = "lwAvsnitt";
-            this.lwAvsnitt.Size = new System.Drawing.Size(878, 249);
-            this.lwAvsnitt.TabIndex = 1;
-            this.lwAvsnitt.UseCompatibleStateImageBehavior = false;
-            this.lwAvsnitt.View = System.Windows.Forms.View.Details;
-            this.lwAvsnitt.SelectedIndexChanged += new System.EventHandler(this.lwAvsnitt_SelectedIndexChanged);
-            // 
-            // avsnitt
-            // 
-            this.avsnitt.Text = "Avsnitt";
+            this.lwPodcast.HideSelection = false;
+            this.lwPodcast.Location = new System.Drawing.Point(55, 76);
+            this.lwPodcast.Name = "lwPodcast";
+            this.lwPodcast.Size = new System.Drawing.Size(878, 249);
+            this.lwPodcast.TabIndex = 1;
+            this.lwPodcast.UseCompatibleStateImageBehavior = false;
+            this.lwPodcast.View = System.Windows.Forms.View.Details;
+            this.lwPodcast.SelectedIndexChanged += new System.EventHandler(this.lwPodcast_SelectedIndexChanged);
             // 
             // namn
             // 
             this.namn.Text = "Namn";
+            // 
+            // avsnitt
+            // 
+            this.avsnitt.Text = "Avsnitt";
             // 
             // frekvens
             // 
@@ -109,36 +105,6 @@
             this.lblKategorier.Size = new System.Drawing.Size(128, 25);
             this.lblKategorier.TabIndex = 4;
             this.lblKategorier.Text = "Kategorier:";
-            // 
-            // listView3
-            // 
-            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8});
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(55, 572);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(878, 249);
-            this.listView3.TabIndex = 5;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Avsnitt";
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Namn";
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Frekvens";
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Kategori";
             // 
             // lblURL
             // 
@@ -328,11 +294,21 @@
             this.lbKategorier.Size = new System.Drawing.Size(629, 229);
             this.lbKategorier.TabIndex = 34;
             // 
+            // lbAvsnitt
+            // 
+            this.lbAvsnitt.FormattingEnabled = true;
+            this.lbAvsnitt.ItemHeight = 25;
+            this.lbAvsnitt.Location = new System.Drawing.Point(62, 572);
+            this.lbAvsnitt.Name = "lbAvsnitt";
+            this.lbAvsnitt.Size = new System.Drawing.Size(871, 254);
+            this.lbAvsnitt.TabIndex = 35;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1687, 866);
+            this.Controls.Add(this.lbAvsnitt);
             this.Controls.Add(this.lbKategorier);
             this.Controls.Add(this.txtNamn);
             this.Controls.Add(this.lblPodcastNamn);
@@ -352,10 +328,9 @@
             this.Controls.Add(this.lblKategori);
             this.Controls.Add(this.lblUppdateringsFrekvens);
             this.Controls.Add(this.lblURL);
-            this.Controls.Add(this.listView3);
             this.Controls.Add(this.lblKategorier);
             this.Controls.Add(this.txtURL);
-            this.Controls.Add(this.lwAvsnitt);
+            this.Controls.Add(this.lwPodcast);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -365,18 +340,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView lwAvsnitt;
+        private System.Windows.Forms.ListView lwPodcast;
         private System.Windows.Forms.ColumnHeader avsnitt;
         private System.Windows.Forms.ColumnHeader namn;
         private System.Windows.Forms.ColumnHeader frekvens;
         private System.Windows.Forms.ColumnHeader kategori;
         private System.Windows.Forms.TextBox txtURL;
         private System.Windows.Forms.Label lblKategorier;
-        private System.Windows.Forms.ListView listView3;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.Label lblURL;
         private System.Windows.Forms.Label lblUppdateringsFrekvens;
         private System.Windows.Forms.Label lblKategori;
@@ -396,6 +366,7 @@
         private System.Windows.Forms.Label lblPodcastNamn;
         private System.Windows.Forms.TextBox txtNamn;
         private System.Windows.Forms.ListBox lbKategorier;
+        private System.Windows.Forms.ListBox lbAvsnitt;
     }
 }
 

@@ -37,7 +37,7 @@ namespace DAL
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Podcast>));
                 using (FileStream inFile = new FileStream("Podcasts.xml", FileMode.Open, FileAccess.Read))
                 {
-                    listOfPodcastsToBeReturned = (List<Podcast>)xmlSerializer.Deserialize(inFile);
+                     listOfPodcastsToBeReturned = (List<Podcast>)xmlSerializer.Deserialize(inFile);
                 }
                 return listOfPodcastsToBeReturned;
 

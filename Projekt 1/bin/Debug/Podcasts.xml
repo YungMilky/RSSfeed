@@ -1,94 +1,192 @@
 <?xml version="1.0"?>
 <ArrayOfPodcast xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Podcast>
-    <Namn>SVT Nyheter</Namn>
+    <Namn>Nyheter</Namn>
     <URL>http://www.svt.se/nyheter/rss.xml</URL>
-    <UppdateringsFrekvens>10</UppdateringsFrekvens>
-    <Kategori>kategori1</Kategori>
+    <UppdateringsFrekvens>30</UppdateringsFrekvens>
+    <Kategori>Nyheter</Kategori>
     <AvsnittsLista>
       <Avsnitt>
-        <Titel>Kvinna i Eslöv utsatt för kidnappning</Titel>
-        <Beskrivning>En kvinna i Eslöv utsattes i helgen för kidnappning. En man har anhållits misstänkt för brottet. </Beskrivning>
+        <Titel>Fortsatt minoritetsstyre i Bromölla</Titel>
+        <Beskrivning>Det nya styret i Bromölla presenterade sig på tisdagsmorgonen. Socialdemokraterna, Vänsterpartiet, Liberalerna, Centern och Kristdemokraterna bildar Samverkan för Bromölla och ska tillsammans styra i minoritet. Och det nya styret står inför tuffa utmaningar.</Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>Oenighet när Umeås miljarder ska klubbas </Titel>
-        <Beskrivning>I dag hålls kommunfullmäktige i Umeå, där 7,5 miljarder ska fördelas för nästa år. Men hur det ska göras råder det delade meningar om. </Beskrivning>
+        <Titel>Elisabeth Marmorstein: Det lyckades och misslyckades Jonas Sjöstedt med</Titel>
+        <Beskrivning>Vänsterpartiets Jonas Sjöstedt avgår efter åtta år som partiledare. Under sin tid vid rodret har han strävat efter att partiet ska uppfattas som regeringsdugligt och pålitiligt, enligt Elisabeth Marmorstein, SVT:s politikreporter.
+– Hela Jonas Sjöstedts projekt med Vänsterpartiet har gått ut på att göra det bredare, till ett mer valbart parti. Bort från det tvärradikala och idealistiska.</Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>Älmhultspolitiker om fusket med barnutredningar: ”Kan inte svara på varför” </Titel>
-        <Beskrivning>Varför har Älmhults kommun använt lagt ner barnutredningar och öppnat upp dem igen? IVO uppfattar det som ett sätt att dölja missförhållanden med långa utredningstider. Nu svarar Vidar Lundbäck (C), vice ordförande i socialnämnden på kritiken.</Beskrivning>
+        <Titel>Kvinna avliden efter lägenhetsbrand i Umeå</Titel>
+        <Beskrivning>Den äldre kvinna som skadades svårt i samband med en lägenhetsbrand på Glassgränd i Umeå på söndagsmorgonen har nu avlidit till följd av sina skador.</Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>Regionen förbereder sig inför en kraftig coronaökning</Titel>
-        <Beskrivning>Just nu ökar antalet fall av covid-19 i Jönköpings län och den negativa utvecklingen gör att region Jönköpings län förberder sig för en allt tuffare period på sjukhusen framöver. </Beskrivning>
+        <Titel>Coronautbrott på äldreboende i Olofström </Titel>
+        <Beskrivning>Antalet smittade i corona ökar nu i västra Blekinge – och i går konstaterades ett utbrott på ett äldreboende i Olofström. 
+– Tyvärr är det så, säger smittskyddsläkare Bengt Wittesjö.</Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>Unisa får uppehållstillstånd</Titel>
-        <Beskrivning>Unisa Turay, som kom till Sverige från Sierra Leone 2010, har fått uppehållstillstånd i Sverige.</Beskrivning>
+        <Titel>Belysningskoncern minskar personalstyrkan med drygt 60 anställda</Titel>
+        <Beskrivning>I somras varslade belysningskoncernen Fagerhult, med säte i Habo, 82 anställda om uppsägning som en följd av minskad försäljning under coronapandemin. När de fackliga förhandlingarna nu har avslutats är personalstyrkan drygt 60 personer färre.</Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>Danmarksresenärer krävs på covidintyg</Titel>
+        <Titel>Åres kommunchef: ”Vi behöver agera annorlunda”</Titel>
+        <Beskrivning>Avgångsvederlag tyder på ett misslyckande, det menar Åres nya kommunchef Kaj Söder. Hans vision är att kommunen i framtiden inte ska teckna några sådana avtal alls.</Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>Einar blev utköpt av Åre kommun: ”Jag fick aldrig någon förklaring”</Titel>
+        <Beskrivning>Från 2018 och framåt har Åre kommun tecknat avgångsvederlag med 10 anställda. Den sammalagda summan är 5,3 miljoner kronor.
+Einar Hyldmo är en av dem som kommunen köpt ut under den här perioden. I videon berättar han hur det har påverkat honom.</Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>Ny biljettyp ska underlätta för pendlare under pandemin</Titel>
+        <Beskrivning>Det är färre som reser kollektivt under pandemin. Många som tidigare arbetspendlade med buss och tåg arbetar hemifrån. Försäljningen av månadskort har därför gått ner.
+– Vi vill införa en flexibel 10-dagarsbiljett för dessa och andra som ibland åker kollektivt men inte 30 dagar i månaden, säger Carina Zachau (M), ordförande i kollektivtrafiknämden i Region Skåne.</Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>Jätteläcka från säkerhetsbolag </Titel>
         <Beskrivning />
       </Avsnitt>
       <Avsnitt>
-        <Titel>Fem ungdomar från Bromangymnasiet i krock – skolan aktiverar krisgrupp</Titel>
-        <Beskrivning>Fem ungdomar var inblandade i gårdagskvällens trafikolycka i Delsbo. Alla går på Bromangymnasiet i Hudiksvall. Skolan aktiverar nu sin krisgrupp.</Beskrivning>
+        <Titel>Lastbil med släp i olycka på E45</Titel>
+        <Beskrivning>En lastbil med släp har kört av vägen och hamnat på sidan i Öje i Malung-Sälens kommun.</Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>Spring i benen på höstlovet</Titel>
-        <Beskrivning>Det springs, kastas och hoppas i gymnastikhallen på Fröding skola på måndagsmorgonen, trots att det är lov. IF Göta har riggat tjocka mattor och häckar i gymnastiksalen. IF Göta är en av de tio föreningar som är med och arrangerar höstlovsaktiviteterna tillsammans med Riksidrottsförbundet och SISU Värmland. </Beskrivning>
+        <Titel>USA-experten om valspurten: ”Viktigt att visa sig stark”</Titel>
+        <Beskrivning>Joe Biden och Donald Trump har valt olika strategier för hur de ska använda den sista veckan innan presidentvalet i USA. Samtidigt lutar opinionsläget åt Bidens fördel.
+– Det har varit ganska stabilt under lång tid, säger professor Dag Blanck i SVT Morgonstudion.</Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>Larmet: Droger används av mellanstadieelever</Titel>
-        <Beskrivning>Polisen larmar nu om att barn kommer i kontakt med droger – redan i mellanstadiet. Karlskrona kommun vill nu genom en informationskampanj nå ut till föräldrar i hopp om att hjälpa fler barn. 
-– De har ärenden så långt ner som i årskurs sex, säger Marie Gustavsson, enhetschef för elevhälsan i Karlskrona.</Beskrivning>
+        <Titel>Ny budget i pandemitider: IVA byggs ut och nära vård prioriteras i Region Västmanland</Titel>
+        <Beskrivning>På en presskonferens under måndagen presenterade region Västmanlands styrande majoritet sitt förslag på budget kommande år och regionens plan framåt.</Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>Erdogan till turkarna: Bojkotta franska varor</Titel>
-        <Beskrivning>Turkiets president Recep Tayyip Erdoğan uppmanar till bojkott av franska varor, rapporterar Hurriyet News. Detta efter ett allt mer infekterat tonläge mellan länderna.</Beskrivning>
+        <Titel>20-åring jagades av polis i Lycksele – försökte köra på polisbil</Titel>
+        <Beskrivning>Klockan 00.28, natten mot tisdag, skulle polis stanna och kontrollera en personbil i Lycksele men istället för att stanna så försöker föraren köra in i polisbilens förardörr och han smiter sen från platsen.</Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>HV-spelarna som ska lyfta Tre Kronor</Titel>
-        <Beskrivning>HV71:s Lias Andersson och Anton Wedin har tagits ut till det svenska hockeylandslaget Tre Kronor i Karjala Tournament. – Jag förväntar att han kommer in hos oss och driver det här laget framåt, säger förbundskapten Johan Garpenlöv om Andersson.</Beskrivning>
+        <Titel>I dag invigs nya E10 i Kiruna – här är alla turer under 16 år</Titel>
+        <Beskrivning>I eftermiddag är det klart för invigning av nya E10 som ska leda trafiken förbi Kiruna norr om samhället. Därmed är det målgång för en 16 år lång historia  </Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>Uppgift: Norge skärper coronakraven på utländsk arbetskraft</Titel>
-        <Beskrivning>Enligt uppgifter till NRK kommer Norges regering inom kort skärpa kontrollen av utländska medborgare som arbetar i landet, bland annat genom att begränsa undantagen från karantänsreglerna. Orsaken är oro för importerad coronasmitta.</Beskrivning>
+        <Titel>Flera missade larm av polisen – nya larmorganisationen inte utvärderad</Titel>
+        <Beskrivning>Kalix, Skanstull och nu senast Härnösand. Det är några fall med dödlig utgång där polisen dröjt efter larm. Nu riktas ny kritik mot polisens nya larmorganisation som infördes för fem år sedan.</Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>Nytt storfängelse kan byggas i Kalmar</Titel>
-        <Beskrivning>På måndagen fattade Kriminalvårdens generaldirektör Martin Holmgren beslut om att Kalmar är den stad som myndigheten ska rikta in sig på för att förverkliga planerna om en ny anstalt och ett nytt häkte i östra Sverige.</Beskrivning>
+        <Titel>Jonas Sjöstedt lämnar V – så blir livet efter politiken</Titel>
+        <Beskrivning>Jonas Sjöstedt lämnar politiken – mitt i brinnande kris. Nu väntar ett ostört liv i Vietnam med familjen. Men V-ledaren har inga planer på att skruva ner tonläget sina sista dagar vid makten.
+– Om regeringen kör över LO, då smäller det, säger Sjöstedt om de kraschade las-förhandlingarna.</Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>Spridningen av covid-19 fortsätter öka i Skåne</Titel>
-        <Beskrivning>Spridningen av covid-19 fortsätter att öka i Skåne. Just nu vårdas 43 patienter på sjukhus varav fem på intensivvårdsavdelning.</Beskrivning>
+        <Titel>SVT:s korrespondent: Amy Coney Barrett kan påverka valutgången</Titel>
+        <Beskrivning>Att Amy Coney Barrett blir ny domare i amerikanska Högsta domstolen kan påverka presidentvalet på flera plan. 
+– Det här är förmodligen Donald Trumps största framgång under sina fyra år som president, säger SVT:s korrespondent Stefan Åsberg.</Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>Så blev domen i fallet Dick Nord</Titel>
-        <Beskrivning>Under måndagseftermiddagen kom domen i fallet Dick Nord. Den vårdare som stått åtalad för ofredande på ett gruppboende döms vid Varbergs tingsrätt till villkorlig dom samt skadestånd på 15 000 kronor.
-– Det här är en otroligt viktig dom för många, säger advokaten Elisabeth Massi Fritz, som varit målsägandebiträde åt Dick Nord under rättegången. </Beskrivning>
+        <Titel>Man sköts av polis i Värmland </Titel>
+        <Beskrivning />
       </Avsnitt>
       <Avsnitt>
-        <Titel>Unga som varken jobbar eller studerar </Titel>
-        <Beskrivning>Rapporten Unga som varken arbetar eller studerar är en kartläggning och kunskapsöversikt. Förutom att beskriva denna grupp av unga går rapporten igenom forskningen kring effekter av olika insatser inom skola och arbetsmarknad.</Beskrivning>
+        <Titel>Man skjuten av polis i Grums i natt – en person frihetsberövad</Titel>
+        <Beskrivning>En man i Grums har skottskadats av polisen under natten och har fått föras till sjukhus. </Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>Minibuss i singelolycka utanför Kiruna: ”Bergvägg inblandad” </Titel>
-        <Beskrivning>Sex personer är förda till sjukhus med ambulans efter en singelolycka på E10 utanför Kiruna.</Beskrivning>
+        <Titel>Nya hastighetsbegränsningar genom Småland </Titel>
+        <Beskrivning>Under tisdagen kommer en ny hastighetsbegränsning att börja gälla på E4:an genom Småland. Trafikverkets arbete med att anpassa hastighetsgränserna innebär både höjd och sänkt hastighet.</Beskrivning>
+      </Avsnitt>
+    </AvsnittsLista>
+  </Podcast>
+  <Podcast>
+    <Namn>Nyheter</Namn>
+    <URL>http://www.svt.se/nyheter/rss.xml</URL>
+    <UppdateringsFrekvens>30</UppdateringsFrekvens>
+    <Kategori>Sport</Kategori>
+    <AvsnittsLista>
+      <Avsnitt>
+        <Titel>Fortsatt minoritetsstyre i Bromölla</Titel>
+        <Beskrivning>Det nya styret i Bromölla presenterade sig på tisdagsmorgonen. Socialdemokraterna, Vänsterpartiet, Liberalerna, Centern och Kristdemokraterna bildar Samverkan för Bromölla och ska tillsammans styra i minoritet. Och det nya styret står inför tuffa utmaningar.</Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>Sjukskrivningar bakom många avgångsvederlag i Krokom</Titel>
-        <Beskrivning>Krokoms kommun har det senaste ett och ett halvt året tecknat avgångsvederlag med 19 personer. 
-– I de allra flesta fall handlar det om en lång sjukskrivning där vi provat allt men kommit till vägs ände, säger kommunens HR-chef Hanna Vesterlund. </Beskrivning>
+        <Titel>Elisabeth Marmorstein: Det lyckades och misslyckades Jonas Sjöstedt med</Titel>
+        <Beskrivning>Vänsterpartiets Jonas Sjöstedt avgår efter åtta år som partiledare. Under sin tid vid rodret har han strävat efter att partiet ska uppfattas som regeringsdugligt och pålitiligt, enligt Elisabeth Marmorstein, SVT:s politikreporter.
+– Hela Jonas Sjöstedts projekt med Vänsterpartiet har gått ut på att göra det bredare, till ett mer valbart parti. Bort från det tvärradikala och idealistiska.</Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>19-åring åtalas efter dödsolycka</Titel>
-        <Beskrivning>Det var i slutet av mars som en bil krockade med en transformatorstation intill Ritorpsleden och en 18-årig man omkom. Nu åtalas den 19-åriga föraren för grov vårdslöshet i trafik och vållande till annans död.</Beskrivning>
+        <Titel>Kvinna avliden efter lägenhetsbrand i Umeå</Titel>
+        <Beskrivning>Den äldre kvinna som skadades svårt i samband med en lägenhetsbrand på Glassgränd i Umeå på söndagsmorgonen har nu avlidit till följd av sina skador.</Beskrivning>
       </Avsnitt>
       <Avsnitt>
-        <Titel>Efter kommunens inspektioner: ”Lönehelgen ovanligt lugn”</Titel>
-        <Beskrivning>Första helgen sedan de lokala restriktionerna infördes beskrivs som lugn.
-– Det var mindre folk ute – både på serveringsställen och ute på stan, säger Tobias Johansson, avdelningschef på miljöförvaltningen.</Beskrivning>
+        <Titel>Coronautbrott på äldreboende i Olofström </Titel>
+        <Beskrivning>Antalet smittade i corona ökar nu i västra Blekinge – och i går konstaterades ett utbrott på ett äldreboende i Olofström. 
+– Tyvärr är det så, säger smittskyddsläkare Bengt Wittesjö.</Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>Belysningskoncern minskar personalstyrkan med drygt 60 anställda</Titel>
+        <Beskrivning>I somras varslade belysningskoncernen Fagerhult, med säte i Habo, 82 anställda om uppsägning som en följd av minskad försäljning under coronapandemin. När de fackliga förhandlingarna nu har avslutats är personalstyrkan drygt 60 personer färre.</Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>Åres kommunchef: ”Vi behöver agera annorlunda”</Titel>
+        <Beskrivning>Avgångsvederlag tyder på ett misslyckande, det menar Åres nya kommunchef Kaj Söder. Hans vision är att kommunen i framtiden inte ska teckna några sådana avtal alls.</Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>Einar blev utköpt av Åre kommun: ”Jag fick aldrig någon förklaring”</Titel>
+        <Beskrivning>Från 2018 och framåt har Åre kommun tecknat avgångsvederlag med 10 anställda. Den sammalagda summan är 5,3 miljoner kronor.
+Einar Hyldmo är en av dem som kommunen köpt ut under den här perioden. I videon berättar han hur det har påverkat honom.</Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>Ny biljettyp ska underlätta för pendlare under pandemin</Titel>
+        <Beskrivning>Det är färre som reser kollektivt under pandemin. Många som tidigare arbetspendlade med buss och tåg arbetar hemifrån. Försäljningen av månadskort har därför gått ner.
+– Vi vill införa en flexibel 10-dagarsbiljett för dessa och andra som ibland åker kollektivt men inte 30 dagar i månaden, säger Carina Zachau (M), ordförande i kollektivtrafiknämden i Region Skåne.</Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>Jätteläcka från säkerhetsbolag </Titel>
+        <Beskrivning />
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>Lastbil med släp i olycka på E45</Titel>
+        <Beskrivning>En lastbil med släp har kört av vägen och hamnat på sidan i Öje i Malung-Sälens kommun.</Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>USA-experten om valspurten: ”Viktigt att visa sig stark”</Titel>
+        <Beskrivning>Joe Biden och Donald Trump har valt olika strategier för hur de ska använda den sista veckan innan presidentvalet i USA. Samtidigt lutar opinionsläget åt Bidens fördel.
+– Det har varit ganska stabilt under lång tid, säger professor Dag Blanck i SVT Morgonstudion.</Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>Ny budget i pandemitider: IVA byggs ut och nära vård prioriteras i Region Västmanland</Titel>
+        <Beskrivning>På en presskonferens under måndagen presenterade region Västmanlands styrande majoritet sitt förslag på budget kommande år och regionens plan framåt.</Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>20-åring jagades av polis i Lycksele – försökte köra på polisbil</Titel>
+        <Beskrivning>Klockan 00.28, natten mot tisdag, skulle polis stanna och kontrollera en personbil i Lycksele men istället för att stanna så försöker föraren köra in i polisbilens förardörr och han smiter sen från platsen.</Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>I dag invigs nya E10 i Kiruna – här är alla turer under 16 år</Titel>
+        <Beskrivning>I eftermiddag är det klart för invigning av nya E10 som ska leda trafiken förbi Kiruna norr om samhället. Därmed är det målgång för en 16 år lång historia  </Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>Flera missade larm av polisen – nya larmorganisationen inte utvärderad</Titel>
+        <Beskrivning>Kalix, Skanstull och nu senast Härnösand. Det är några fall med dödlig utgång där polisen dröjt efter larm. Nu riktas ny kritik mot polisens nya larmorganisation som infördes för fem år sedan.</Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>Jonas Sjöstedt lämnar V – så blir livet efter politiken</Titel>
+        <Beskrivning>Jonas Sjöstedt lämnar politiken – mitt i brinnande kris. Nu väntar ett ostört liv i Vietnam med familjen. Men V-ledaren har inga planer på att skruva ner tonläget sina sista dagar vid makten.
+– Om regeringen kör över LO, då smäller det, säger Sjöstedt om de kraschade las-förhandlingarna.</Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>SVT:s korrespondent: Amy Coney Barrett kan påverka valutgången</Titel>
+        <Beskrivning>Att Amy Coney Barrett blir ny domare i amerikanska Högsta domstolen kan påverka presidentvalet på flera plan. 
+– Det här är förmodligen Donald Trumps största framgång under sina fyra år som president, säger SVT:s korrespondent Stefan Åsberg.</Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>Man sköts av polis i Värmland </Titel>
+        <Beskrivning />
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>Man skjuten av polis i Grums i natt – en person frihetsberövad</Titel>
+        <Beskrivning>En man i Grums har skottskadats av polisen under natten och har fått föras till sjukhus. </Beskrivning>
+      </Avsnitt>
+      <Avsnitt>
+        <Titel>Nya hastighetsbegränsningar genom Småland </Titel>
+        <Beskrivning>Under tisdagen kommer en ny hastighetsbegränsning att börja gälla på E4:an genom Småland. Trafikverkets arbete med att anpassa hastighetsgränserna innebär både höjd och sänkt hastighet.</Beskrivning>
       </Avsnitt>
     </AvsnittsLista>
   </Podcast>
