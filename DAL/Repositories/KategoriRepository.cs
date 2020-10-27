@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using DAL.Exceptions;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,14 @@ namespace DAL.Repositories
         public List<Kategori> HamtaAlla()
         {
             List<Kategori> categoriesToBeReturned = new List<Kategori>();
-            categoriesToBeReturned = dataManager.DeserializeKategori();
+            try
+            {
+                categoriesToBeReturned = dataManager.DeserializeKategori();
+            }
+            catch (SerializerException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             return categoriesToBeReturned;
         }
 

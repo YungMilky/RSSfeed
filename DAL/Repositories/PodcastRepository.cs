@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using DAL.Exceptions;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,7 +41,14 @@ namespace DAL.Repositories
         public List<Podcast> HamtaAlla()
         {
             List<Podcast> podcastListToBeReturned = new List<Podcast>();
-            podcastListToBeReturned = dataManager.DeserializePodcast();
+            try
+            {
+                podcastListToBeReturned = dataManager.DeserializePodcast();
+            }
+            catch (SerializerException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             return podcastListToBeReturned;
         }
 
