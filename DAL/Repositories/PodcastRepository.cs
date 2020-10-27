@@ -34,7 +34,7 @@ namespace DAL.Repositories
 
         public Podcast HamtaPodcastEnligtNamn(string namn)
         {
-            return null; //skriv kod här
+            return HamtaAlla().First(p => p.Namn.Equals(namn)); 
         }
 
         public List<Podcast> HamtaAlla()
@@ -44,7 +44,7 @@ namespace DAL.Repositories
             return podcastListToBeReturned;
         }
 
-        public void Uppdatera(int index, Podcast newEntity) //funkar inte än
+        public void Uppdatera(int index, Podcast newEntity)
         {
             if (index >= 0)
             {

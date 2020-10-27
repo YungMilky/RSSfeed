@@ -13,14 +13,17 @@ namespace BL.Controller
     {
         IKategoriRepository<Kategori> kategoriRepository;
 
+        private PodcastController podcastController;
+
         public KategoriController()
         {
             kategoriRepository = new KategoriRepository();
+            podcastController = new PodcastController(); 
         }
         public void SkapaKategoritObjekt(string titel)
         {
-            Kategori newKategori = new Kategori(titel);
-            kategoriRepository.Skapa(newKategori);
+            Kategori nyKategori = new Kategori(titel);
+            kategoriRepository.Skapa(nyKategori);
         }
 
         public List<Kategori> HamtaAllaKategorier()
@@ -28,17 +31,31 @@ namespace BL.Controller
             return kategoriRepository.HamtaAlla(); 
         }
 
-        public void TaBortKategori(string titel)
+        public void TaBortKategori(string titel) //funkar inte att ta bort podcast som tillhör en kategori än
         {
             int index = kategoriRepository.HamtaIndex(titel);
             kategoriRepository.TaBort(index);
+            List<Podcast> podcastLista = podcastController.HamtaAllaPodcasts();
+            foreach (var item in podcastLista)
+            {
+                if(titel.Equals(item.Kategori))
+                {
+                    string podcastNamn = item.Namn;
+                    podcastController.TaBortPodcast(podcastNamn);
+                }
+            }
         }
 
-        public void UppdateraKategoriLista(string titel)
+        public void UppdateraKategoriLista(string nyTitel, int index)
         {
-            //funkar inte
-            //int index = kategoriRepository.HamtaIndex(titel);
-            //kategoriRepository.Uppdatera(index);
+            Kategori kategori = new Kategori(nyTitel);
+            kategoriRepository.Uppdatera(index, kategori);
+        }
+
+        public int HamtaKategoriIndex(string titel)
+        {
+            int index = kategoriRepository.HamtaIndex(titel);
+            return index;
         }
 
         //public string HamtaAllaEnligtKategori(string kategoriNamn)
@@ -46,12 +63,6 @@ namespace BL.Controller
         //    return HamtaAlla().First(p => p.KategoriNamn.Equals(kategoriNamn)); 
         //    hur hämtar man KategoriNamn från klassen Kategori?
 
-        //}
-
-        //public string HamtaPodcastEnligtNamn(string titel)
-        //{
-        //    return HamtaAlla().First(p => p.Titel.Equals(titel)); 
-        //    hur hämtar man Titel från klassen Feed?
         //}
     }
 }
