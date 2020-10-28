@@ -59,7 +59,6 @@ namespace BL.Controller
             List<Avsnitt> avsnittsLista = avsnittRepository.HamtaAllaAvsnitt(url);
             Podcast podcast = new Podcast(podcastNamn, url, frekvens, kategori, avsnittsLista);
             podcastRepository.Uppdatera(index, podcast);
-
         }
     }
 }

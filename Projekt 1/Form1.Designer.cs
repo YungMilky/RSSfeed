@@ -349,7 +349,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1852, 1017);
+            this.ClientSize = new System.Drawing.Size(1974, 1783);
             this.Controls.Add(this.lblPodcast);
             this.Controls.Add(this.txtAvsnittsBeskrivning);
             this.Controls.Add(this.lbAvsnitt);

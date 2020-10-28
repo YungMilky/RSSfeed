@@ -52,7 +52,6 @@ namespace Projekt_1
             }
             catch (ArgumentOutOfRangeException)
             {
-
             }
 
         }
@@ -69,14 +68,12 @@ namespace Projekt_1
                     cbKategori.Items.Add(item.Titel);
                 }
             }
-
             try
             {
                 cbKategori.SelectedIndex = 0;
             }
             catch (ArgumentOutOfRangeException)
             {
-
             }
         }
 
@@ -96,7 +93,6 @@ namespace Projekt_1
 
         private void btnLaggTill2_Click(object sender, EventArgs e)
         {
-
             kategoriController.SkapaKategoritObjekt(txtKategori.Text);
             uppdateraKategoriLista();
             txtKategori.Text = "";
@@ -106,17 +102,14 @@ namespace Projekt_1
         {
             if (lbKategorier.SelectedItems.Count == 1)
             {
-                string titel = lbKategorier.SelectedItem.ToString();
+                string titel = txtKategori.Text;
                 DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort kategorin " + titel + " och alla tillhörande podcasts?", "Varning", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    kategoriController.TaBortKategori(lbKategorier.SelectedItem.ToString());
+                    kategoriController.TaBortKategori(titel);
                     uppdateraKategoriLista();
                     uppdateraPodcastLista();
-                    txtKategori.Text = "";
-            }
-                else
-                {
+                    txtKategori.Clear(); 
                 }
             }
         }
@@ -218,9 +211,12 @@ namespace Projekt_1
             {
                 string namn = txtKategori.Text;
                 int index = kategoriController.HamtaKategoriIndex(lbKategorier.SelectedItem.ToString());
-                kategoriController.UppdateraKategoriLista(namn, index);
+                kategoriController.UppdateraKategoriLista(lbKategorier.SelectedItem.ToString(), namn, index);
                 uppdateraKategoriLista();
+                uppdateraPodcastLista(); 
                 txtKategori.Text = "";
+
+
             }
             else
             {

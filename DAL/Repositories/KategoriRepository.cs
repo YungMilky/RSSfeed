@@ -20,6 +20,25 @@ namespace DAL.Repositories
             dataManager = new DataManager();
             kategoriList = HamtaAlla();
         }
+
+        public void BytaKategori(int index, string nyTitel, List<Podcast> podcastIKategori)
+        {
+            Kategori enKategori = kategoriList.ElementAt(index);
+            enKategori.Titel = nyTitel;
+            PodcastRepository podcastRepository = new PodcastRepository();
+            foreach (Podcast item in podcastIKategori)
+            {
+                Podcast podcast = new Podcast();
+                podcast.Namn = item.Namn;
+                podcast.URL = item.URL;
+                podcast.UppdateringsFrekvens = item.UppdateringsFrekvens;
+                podcast.Kategori = nyTitel; 
+                int i = podcastRepository.HamtaIndex(podcast.Namn);
+                podcastRepository.Uppdatera(i, podcast); 
+            }
+            Spara(); 
+        }
+
         public List<Kategori> HamtaAlla()
         {
             List<Kategori> categoriesToBeReturned = new List<Kategori>();
@@ -29,7 +48,7 @@ namespace DAL.Repositories
             }
             catch (SerializerException e)
             {
-                Console.WriteLine(DateTime.Now + e.Message);
+                Console.WriteLine(DateTime.Now + " " + e.Message);
             }
             return categoriesToBeReturned;
         }

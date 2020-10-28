@@ -47,7 +47,7 @@ namespace DAL.Repositories
             }
             catch (SerializerException e)
             {
-                Console.WriteLine(DateTime.Now + e.Message);
+                Console.WriteLine(DateTime.Now + " " + e.Message);
             }
             return podcastListToBeReturned;
         }
@@ -67,8 +67,8 @@ namespace DAL.Repositories
 
         public void TaBort(int index)
         {
-            podcastList.RemoveAt(index);
-            Spara();
+                podcastList.RemoveAt(index);
+                Spara();
         }
 
     }
