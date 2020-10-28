@@ -95,28 +95,7 @@ namespace Projekt_1
         {
             kategoriController.SkapaKategoritObjekt(txtKategori.Text);
             uppdateraKategoriLista();
-            txtKategori.Text = "";
-        }
-
-        private void btnTaBort2_Click(object sender, EventArgs e) //funkar inte än
-        {
-            if (lbKategorier.SelectedItems.Count == 1)
-            {
-                string titel = txtKategori.Text;
-                DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort kategorin " + titel + " och alla tillhörande podcasts?", "Varning", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    kategoriController.TaBortKategori(titel);
-                    uppdateraKategoriLista();
-                    uppdateraPodcastLista();
-                    txtKategori.Clear(); 
-                }
-            }
-        }
-
-        private void btnSpara2_Click(object sender, EventArgs e)
-        {
-
+            txtKategori.Clear();
         }
 
         private void btnTaBort1_Click(object sender, EventArgs e)
@@ -276,6 +255,23 @@ namespace Projekt_1
                             }
                         }
                     }
+                }
+            }
+        }
+
+        private void btnTaBortKategori_Click(object sender, EventArgs e)
+        {
+            if (lbKategorier.SelectedItems.Count == 1)
+            {
+                string titel = txtKategori.Text;
+                //string titel = lbKategorier.SelectedItems[0].ToString(); 
+                DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort kategorin " + titel + " och alla tillhörande podcasts?", "Varning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    kategoriController.TaBortKategori(titel);
+                    uppdateraKategoriLista();
+                    uppdateraPodcastLista();
+                    txtKategori.Clear();
                 }
             }
         }

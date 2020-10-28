@@ -193,7 +193,7 @@
             this.btnTaBortKategori.TabIndex = 14;
             this.btnTaBortKategori.Text = "Ta bort";
             this.btnTaBortKategori.UseVisualStyleBackColor = true;
-            this.btnTaBortKategori.Click += new System.EventHandler(this.btnTaBort2_Click);
+            this.btnTaBortKategori.Click += new System.EventHandler(this.btnTaBortKategori_Click);
             // 
             // btnSparaKategori
             // 

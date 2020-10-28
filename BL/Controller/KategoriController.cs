@@ -41,9 +41,10 @@ namespace BL.Controller
                 {
                     string podcastNamn = item.Namn;
                     podcastController.TaBortPodcast(podcastNamn);
-                    kategoriRepository.TaBort(index);
+                    
                 }
             }
+            kategoriRepository.TaBort(index);
         }
 
         public void UppdateraKategoriLista(string gammalTitel, string nyTitel, int index)
