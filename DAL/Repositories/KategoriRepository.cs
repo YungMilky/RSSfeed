@@ -29,7 +29,7 @@ namespace DAL.Repositories
             }
             catch (SerializerException e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(DateTime.Now + e.Message);
             }
             return categoriesToBeReturned;
         }

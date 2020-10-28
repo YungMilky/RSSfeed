@@ -149,39 +149,6 @@ namespace Projekt_1
 
         }
 
-        private void lwPodcast_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lwPodcast.SelectedItems.Count == 1)
-            {
-                string namn = lwPodcast.SelectedItems[0].Text;
-                txtNamn.Text = namn;
-                txtURL.Text = podcastController.HamtaUrl(namn); 
-                cbKategori.SelectedItem = lwPodcast.SelectedItems[0].SubItems[3].Text;
-                cbFrekvens.SelectedItem = lwPodcast.SelectedItems[0].SubItems[2].Text;
-                btnLaggTillPodcast.Enabled = false;
-                btnSparaPodcast.Enabled = true;
-                btnTaBortPodcast.Enabled = true;
-                txtURL.Enabled = true;
-            }
-
-            lbAvsnitt.Items.Clear();
-            if (lwPodcast.SelectedItems.Count == 1)
-            {
-                var selectedEpisode = lwPodcast.SelectedItems[0].Text;
-
-                foreach (var item in podcastController.HamtaAllaPodcasts())
-                {
-                    if (item.Namn.Equals(selectedEpisode))
-                    {
-                        foreach (var avsnitt in item.AvsnittsLista)
-                        {
-                            lbAvsnitt.Items.Add(avsnitt.Titel);
-                        }
-                    }
-                }
-            }
-        }
-
         private void lbAvsnitt_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
@@ -280,6 +247,41 @@ namespace Projekt_1
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void lwPodcast_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            {
+                if (lwPodcast.SelectedItems.Count == 1)
+                {
+                    string namn = lwPodcast.SelectedItems[0].Text;
+                    txtNamn.Text = namn;
+                    txtURL.Text = podcastController.HamtaUrl(namn);
+                    cbKategori.SelectedItem = lwPodcast.SelectedItems[0].SubItems[3].Text;
+                    cbFrekvens.SelectedItem = lwPodcast.SelectedItems[0].SubItems[2].Text;
+                    btnLaggTillPodcast.Enabled = false;
+                    btnSparaPodcast.Enabled = true;
+                    btnTaBortPodcast.Enabled = true;
+                    txtURL.Enabled = true;
+                }
+
+                lbAvsnitt.Items.Clear();
+                if (lwPodcast.SelectedItems.Count == 1)
+                {
+                    var selectedEpisode = lwPodcast.SelectedItems[0].Text;
+
+                    foreach (var item in podcastController.HamtaAllaPodcasts())
+                    {
+                        if (item.Namn.Equals(selectedEpisode))
+                        {
+                            foreach (var avsnitt in item.AvsnittsLista)
+                            {
+                                lbAvsnitt.Items.Add(avsnitt.Titel);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
