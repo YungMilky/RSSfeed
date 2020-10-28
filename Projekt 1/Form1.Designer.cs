@@ -182,7 +182,7 @@
             this.btnTaBortPodcast.TabIndex = 11;
             this.btnTaBortPodcast.Text = "Ta bort";
             this.btnTaBortPodcast.UseVisualStyleBackColor = true;
-            this.btnTaBortPodcast.Click += new System.EventHandler(this.btnTaBort1_Click);
+            this.btnTaBortPodcast.Click += new System.EventHandler(this.btnTaBortPodcast_Click);
             // 
             // btnTaBortKategori
             // 
@@ -236,7 +236,6 @@
             this.cbKategori.Name = "cbKategori";
             this.cbKategori.Size = new System.Drawing.Size(208, 33);
             this.cbKategori.TabIndex = 16;
-            this.cbKategori.SelectedIndexChanged += new System.EventHandler(this.cbKategori_SelectedIndexChanged);
             // 
             // lblAvsnittsbeskrivning
             // 

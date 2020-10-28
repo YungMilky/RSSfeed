@@ -98,29 +98,6 @@ namespace Projekt_1
             txtKategori.Clear();
         }
 
-        private void btnTaBort1_Click(object sender, EventArgs e)
-        {
-            if (lwPodcast.SelectedItems.Count == 1)
-            {
-                string titel = lwPodcast.SelectedItems[0].Text;
-                DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort podcasten " + titel + "?", "Varning", MessageBoxButtons.YesNo);
-
-                if (dialogResult == DialogResult.Yes)
-                {
-                    podcastController.TaBortPodcast(titel);
-                    uppdateraPodcastLista();
-                }
-                else
-                {
-                }
-            }
-        }
-
-        private void btnSpara2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void lbAvsnitt_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
@@ -194,8 +171,6 @@ namespace Projekt_1
                 uppdateraKategoriLista();
                 uppdateraPodcastLista(); 
                 txtKategori.Text = "";
-
-
             }
             else
             {
@@ -212,16 +187,6 @@ namespace Projekt_1
         {
             podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, Convert.ToInt32(cbFrekvens.SelectedItem), cbKategori.SelectedItem.ToString());
             uppdateraPodcastLista();
-        }
-
-        private void cbKategori_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void lwPodcast_SelectedIndexChanged(object sender, EventArgs e)
@@ -264,7 +229,6 @@ namespace Projekt_1
             if (lbKategorier.SelectedItems.Count == 1)
             {
                 string titel = txtKategori.Text;
-                //string titel = lbKategorier.SelectedItems[0].ToString(); 
                 DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort kategorin " + titel + " och alla tillhörande podcasts?", "Varning", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -272,6 +236,24 @@ namespace Projekt_1
                     uppdateraKategoriLista();
                     uppdateraPodcastLista();
                     txtKategori.Clear();
+                }
+            }
+        }
+
+        private void btnTaBortPodcast_Click(object sender, EventArgs e)
+        {
+            if (lwPodcast.SelectedItems.Count == 1)
+            {
+                string titel = lwPodcast.SelectedItems[0].Text;
+                DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort podcasten " + titel + "?", "Varning", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    podcastController.TaBortPodcast(titel);
+                    uppdateraPodcastLista();
+                }
+                else
+                {
                 }
             }
         }
