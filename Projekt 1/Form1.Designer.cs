@@ -71,7 +71,7 @@
             this.lwPodcast.Location = new System.Drawing.Point(29, 75);
             this.lwPodcast.Margin = new System.Windows.Forms.Padding(6);
             this.lwPodcast.Name = "lwPodcast";
-            this.lwPodcast.Size = new System.Drawing.Size(850, 294);
+            this.lwPodcast.Size = new System.Drawing.Size(706, 292);
             this.lwPodcast.TabIndex = 37;
             this.lwPodcast.UseCompatibleStateImageBehavior = false;
             this.lwPodcast.View = System.Windows.Forms.View.Details;
@@ -99,7 +99,7 @@
             // 
             // txtURL
             // 
-            this.txtURL.Location = new System.Drawing.Point(29, 457);
+            this.txtURL.Location = new System.Drawing.Point(40, 416);
             this.txtURL.Margin = new System.Windows.Forms.Padding(4);
             this.txtURL.Name = "txtURL";
             this.txtURL.Size = new System.Drawing.Size(252, 31);
@@ -110,7 +110,7 @@
             // 
             this.lblKategorier.AutoSize = true;
             this.lblKategorier.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKategorier.Location = new System.Drawing.Point(932, 26);
+            this.lblKategorier.Location = new System.Drawing.Point(767, 38);
             this.lblKategorier.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblKategorier.Name = "lblKategorier";
             this.lblKategorier.Size = new System.Drawing.Size(128, 25);
@@ -121,7 +121,7 @@
             // 
             this.lblURL.AutoSize = true;
             this.lblURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblURL.Location = new System.Drawing.Point(24, 416);
+            this.lblURL.Location = new System.Drawing.Point(35, 375);
             this.lblURL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblURL.Name = "lblURL";
             this.lblURL.Size = new System.Drawing.Size(64, 25);
@@ -133,7 +133,7 @@
             // 
             this.lblUppdateringsFrekvens.AutoSize = true;
             this.lblUppdateringsFrekvens.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUppdateringsFrekvens.Location = new System.Drawing.Point(329, 416);
+            this.lblUppdateringsFrekvens.Location = new System.Drawing.Point(309, 377);
             this.lblUppdateringsFrekvens.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUppdateringsFrekvens.Name = "lblUppdateringsFrekvens";
             this.lblUppdateringsFrekvens.Size = new System.Drawing.Size(249, 25);
@@ -145,7 +145,7 @@
             // 
             this.lblKategori.AutoSize = true;
             this.lblKategori.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKategori.Location = new System.Drawing.Point(673, 416);
+            this.lblKategori.Location = new System.Drawing.Point(568, 377);
             this.lblKategori.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblKategori.Name = "lblKategori";
             this.lblKategori.Size = new System.Drawing.Size(107, 25);
@@ -155,7 +155,7 @@
             // 
             // btnLaggTillPodcast
             // 
-            this.btnLaggTillPodcast.Location = new System.Drawing.Point(522, 529);
+            this.btnLaggTillPodcast.Location = new System.Drawing.Point(368, 486);
             this.btnLaggTillPodcast.Margin = new System.Windows.Forms.Padding(6);
             this.btnLaggTillPodcast.Name = "btnLaggTillPodcast";
             this.btnLaggTillPodcast.Size = new System.Drawing.Size(103, 42);
@@ -166,7 +166,7 @@
             // 
             // btnSparaPodcast
             // 
-            this.btnSparaPodcast.Location = new System.Drawing.Point(666, 529);
+            this.btnSparaPodcast.Location = new System.Drawing.Point(512, 486);
             this.btnSparaPodcast.Margin = new System.Windows.Forms.Padding(6);
             this.btnSparaPodcast.Name = "btnSparaPodcast";
             this.btnSparaPodcast.Size = new System.Drawing.Size(95, 42);
@@ -177,7 +177,7 @@
             // 
             // btnTaBortPodcast
             // 
-            this.btnTaBortPodcast.Location = new System.Drawing.Point(783, 529);
+            this.btnTaBortPodcast.Location = new System.Drawing.Point(629, 486);
             this.btnTaBortPodcast.Margin = new System.Windows.Forms.Padding(6);
             this.btnTaBortPodcast.Name = "btnTaBortPodcast";
             this.btnTaBortPodcast.Size = new System.Drawing.Size(103, 42);
@@ -188,7 +188,7 @@
             // 
             // btnTaBortKategori
             // 
-            this.btnTaBortKategori.Location = new System.Drawing.Point(1619, 532);
+            this.btnTaBortKategori.Location = new System.Drawing.Point(1207, 489);
             this.btnTaBortKategori.Margin = new System.Windows.Forms.Padding(6);
             this.btnTaBortKategori.Name = "btnTaBortKategori";
             this.btnTaBortKategori.Size = new System.Drawing.Size(115, 41);
@@ -199,7 +199,7 @@
             // 
             // btnSparaKategori
             // 
-            this.btnSparaKategori.Location = new System.Drawing.Point(1474, 531);
+            this.btnSparaKategori.Location = new System.Drawing.Point(1062, 488);
             this.btnSparaKategori.Margin = new System.Windows.Forms.Padding(6);
             this.btnSparaKategori.Name = "btnSparaKategori";
             this.btnSparaKategori.Size = new System.Drawing.Size(118, 42);
@@ -210,7 +210,7 @@
             // 
             // btnLaggTillKategori
             // 
-            this.btnLaggTillKategori.Location = new System.Drawing.Point(1339, 531);
+            this.btnLaggTillKategori.Location = new System.Drawing.Point(927, 488);
             this.btnLaggTillKategori.Margin = new System.Windows.Forms.Padding(6);
             this.btnLaggTillKategori.Name = "btnLaggTillKategori";
             this.btnLaggTillKategori.Size = new System.Drawing.Size(106, 40);
@@ -223,27 +223,27 @@
             // 
             this.cbFrekvens.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFrekvens.FormattingEnabled = true;
-            this.cbFrekvens.Location = new System.Drawing.Point(334, 455);
+            this.cbFrekvens.Location = new System.Drawing.Point(314, 416);
             this.cbFrekvens.Margin = new System.Windows.Forms.Padding(6);
             this.cbFrekvens.Name = "cbFrekvens";
-            this.cbFrekvens.Size = new System.Drawing.Size(225, 33);
+            this.cbFrekvens.Size = new System.Drawing.Size(244, 33);
             this.cbFrekvens.TabIndex = 15;
             // 
             // cbKategori
             // 
             this.cbKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKategori.FormattingEnabled = true;
-            this.cbKategori.Location = new System.Drawing.Point(672, 455);
+            this.cbKategori.Location = new System.Drawing.Point(573, 416);
             this.cbKategori.Margin = new System.Windows.Forms.Padding(6);
             this.cbKategori.Name = "cbKategori";
-            this.cbKategori.Size = new System.Drawing.Size(208, 33);
+            this.cbKategori.Size = new System.Drawing.Size(162, 33);
             this.cbKategori.TabIndex = 16;
             // 
             // lblAvsnittsbeskrivning
             // 
             this.lblAvsnittsbeskrivning.AutoSize = true;
             this.lblAvsnittsbeskrivning.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvsnittsbeskrivning.Location = new System.Drawing.Point(942, 646);
+            this.lblAvsnittsbeskrivning.Location = new System.Drawing.Point(777, 551);
             this.lblAvsnittsbeskrivning.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblAvsnittsbeskrivning.Name = "lblAvsnittsbeskrivning";
             this.lblAvsnittsbeskrivning.Size = new System.Drawing.Size(224, 25);
@@ -252,10 +252,10 @@
             // 
             // txtKategori
             // 
-            this.txtKategori.Location = new System.Drawing.Point(1339, 457);
+            this.txtKategori.Location = new System.Drawing.Point(1015, 416);
             this.txtKategori.Margin = new System.Windows.Forms.Padding(4);
             this.txtKategori.Name = "txtKategori";
-            this.txtKategori.Size = new System.Drawing.Size(385, 31);
+            this.txtKategori.Size = new System.Drawing.Size(298, 31);
             this.txtKategori.TabIndex = 29;
             this.txtKategori.TextChanged += new System.EventHandler(this.txtKategori_TextChanged);
             // 
@@ -263,7 +263,7 @@
             // 
             this.lblKategori2.AutoSize = true;
             this.lblKategori2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKategori2.Location = new System.Drawing.Point(1334, 416);
+            this.lblKategori2.Location = new System.Drawing.Point(1014, 375);
             this.lblKategori2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKategori2.Name = "lblKategori2";
             this.lblKategori2.Size = new System.Drawing.Size(107, 25);
@@ -275,7 +275,7 @@
             // 
             this.lblAvsnitt.AutoSize = true;
             this.lblAvsnitt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvsnitt.Location = new System.Drawing.Point(23, 646);
+            this.lblAvsnitt.Location = new System.Drawing.Point(23, 551);
             this.lblAvsnitt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAvsnitt.Name = "lblAvsnitt";
             this.lblAvsnitt.Size = new System.Drawing.Size(98, 25);
@@ -287,7 +287,7 @@
             // 
             this.lblPodcastNamn.AutoSize = true;
             this.lblPodcastNamn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPodcastNamn.Location = new System.Drawing.Point(23, 513);
+            this.lblPodcastNamn.Location = new System.Drawing.Point(34, 472);
             this.lblPodcastNamn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPodcastNamn.Name = "lblPodcastNamn";
             this.lblPodcastNamn.Size = new System.Drawing.Size(79, 25);
@@ -297,7 +297,7 @@
             // 
             // txtNamn
             // 
-            this.txtNamn.Location = new System.Drawing.Point(29, 540);
+            this.txtNamn.Location = new System.Drawing.Point(40, 499);
             this.txtNamn.Margin = new System.Windows.Forms.Padding(4);
             this.txtNamn.Name = "txtNamn";
             this.txtNamn.Size = new System.Drawing.Size(252, 31);
@@ -307,10 +307,10 @@
             // 
             this.lbKategorier.FormattingEnabled = true;
             this.lbKategorier.ItemHeight = 25;
-            this.lbKategorier.Location = new System.Drawing.Point(937, 75);
+            this.lbKategorier.Location = new System.Drawing.Point(782, 88);
             this.lbKategorier.Margin = new System.Windows.Forms.Padding(6);
             this.lbKategorier.Name = "lbKategorier";
-            this.lbKategorier.Size = new System.Drawing.Size(790, 304);
+            this.lbKategorier.Size = new System.Drawing.Size(530, 279);
             this.lbKategorier.TabIndex = 34;
             this.lbKategorier.SelectedIndexChanged += new System.EventHandler(this.lbKategorier_SelectedIndexChanged);
             // 
@@ -318,20 +318,20 @@
             // 
             this.lbAvsnitt.FormattingEnabled = true;
             this.lbAvsnitt.ItemHeight = 25;
-            this.lbAvsnitt.Location = new System.Drawing.Point(29, 683);
+            this.lbAvsnitt.Location = new System.Drawing.Point(29, 588);
             this.lbAvsnitt.Margin = new System.Windows.Forms.Padding(6);
             this.lbAvsnitt.Name = "lbAvsnitt";
-            this.lbAvsnitt.Size = new System.Drawing.Size(857, 304);
+            this.lbAvsnitt.Size = new System.Drawing.Size(706, 279);
             this.lbAvsnitt.TabIndex = 35;
             this.lbAvsnitt.SelectedIndexChanged += new System.EventHandler(this.lbAvsnitt_SelectedIndexChanged_1);
             // 
             // txtAvsnittsBeskrivning
             // 
-            this.txtAvsnittsBeskrivning.Location = new System.Drawing.Point(937, 683);
+            this.txtAvsnittsBeskrivning.Location = new System.Drawing.Point(772, 588);
             this.txtAvsnittsBeskrivning.Margin = new System.Windows.Forms.Padding(6);
             this.txtAvsnittsBeskrivning.Name = "txtAvsnittsBeskrivning";
             this.txtAvsnittsBeskrivning.ReadOnly = true;
-            this.txtAvsnittsBeskrivning.Size = new System.Drawing.Size(790, 304);
+            this.txtAvsnittsBeskrivning.Size = new System.Drawing.Size(540, 279);
             this.txtAvsnittsBeskrivning.TabIndex = 36;
             this.txtAvsnittsBeskrivning.Text = "";
             // 
@@ -348,7 +348,7 @@
             // 
             // btnFiltrera
             // 
-            this.btnFiltrera.Location = new System.Drawing.Point(1619, 23);
+            this.btnFiltrera.Location = new System.Drawing.Point(1207, 26);
             this.btnFiltrera.Margin = new System.Windows.Forms.Padding(6);
             this.btnFiltrera.Name = "btnFiltrera";
             this.btnFiltrera.Size = new System.Drawing.Size(106, 40);
@@ -359,7 +359,7 @@
             // 
             // btnVisaAllaPodcasts
             // 
-            this.btnVisaAllaPodcasts.Location = new System.Drawing.Point(1389, 23);
+            this.btnVisaAllaPodcasts.Location = new System.Drawing.Point(977, 26);
             this.btnVisaAllaPodcasts.Margin = new System.Windows.Forms.Padding(6);
             this.btnVisaAllaPodcasts.Name = "btnVisaAllaPodcasts";
             this.btnVisaAllaPodcasts.Size = new System.Drawing.Size(203, 40);
@@ -372,7 +372,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1974, 1783);
+            this.ClientSize = new System.Drawing.Size(1348, 898);
             this.Controls.Add(this.btnVisaAllaPodcasts);
             this.Controls.Add(this.btnFiltrera);
             this.Controls.Add(this.lblPodcast);

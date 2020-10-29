@@ -236,7 +236,6 @@ namespace Projekt_1
             }
         }
 
-
         private void btnTaBortKategori_Click(object sender, EventArgs e) //podcasten i en viss kategori kommer tillbaka när man skapar en ny podcast. Funkar om man startar om programmet.
         {
             if (lbKategorier.SelectedItems.Count == 1)
@@ -251,6 +250,8 @@ namespace Projekt_1
                     txtKategori.Clear();
                 }
             }
+            Application.Restart();
+            Environment.Exit(0);
         }
 
         private void btnTaBortPodcast_Click(object sender, EventArgs e)
