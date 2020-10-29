@@ -257,5 +257,25 @@ namespace Projekt_1
                 }
             }
         }
+
+        private void btnFiltrera_Click(object sender, EventArgs e)
+        {
+            lwPodcast.Items.Clear();
+            foreach (var item in podcastController.HamtaAllaPodcasts())
+            {
+                if (item.Kategori.Equals(lbKategorier.SelectedItem.ToString()))
+                {
+                        string antalAvsnitt = item.AvsnittsLista.Count.ToString();
+
+                        ListViewItem newList = new ListViewItem(item.Namn);
+                        newList.SubItems.Add(antalAvsnitt);
+                        newList.SubItems.Add(item.UppdateringsFrekvens.ToString());
+                        newList.SubItems.Add(item.Kategori);
+                        lwPodcast.Items.Add(newList);
+                        lwPodcast.FullRowSelect = true;
+                }
+            }
+            
+        }
     }
 }

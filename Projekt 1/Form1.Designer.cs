@@ -56,6 +56,7 @@
             this.lbAvsnitt = new System.Windows.Forms.ListBox();
             this.txtAvsnittsBeskrivning = new System.Windows.Forms.RichTextBox();
             this.lblPodcast = new System.Windows.Forms.Label();
+            this.btnFiltrera = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lwPodcast
@@ -344,11 +345,23 @@
             this.lblPodcast.TabIndex = 38;
             this.lblPodcast.Text = "Podcast:";
             // 
+            // btnFiltrera
+            // 
+            this.btnFiltrera.Location = new System.Drawing.Point(1619, 23);
+            this.btnFiltrera.Margin = new System.Windows.Forms.Padding(6);
+            this.btnFiltrera.Name = "btnFiltrera";
+            this.btnFiltrera.Size = new System.Drawing.Size(106, 40);
+            this.btnFiltrera.TabIndex = 39;
+            this.btnFiltrera.Text = "Filtrera";
+            this.btnFiltrera.UseVisualStyleBackColor = true;
+            this.btnFiltrera.Click += new System.EventHandler(this.btnFiltrera_Click);
+            // 
             // Podcast
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1974, 1783);
+            this.Controls.Add(this.btnFiltrera);
             this.Controls.Add(this.lblPodcast);
             this.Controls.Add(this.txtAvsnittsBeskrivning);
             this.Controls.Add(this.lbAvsnitt);
@@ -411,6 +424,7 @@
         private System.Windows.Forms.ListBox lbAvsnitt;
         private System.Windows.Forms.RichTextBox txtAvsnittsBeskrivning;
         private System.Windows.Forms.Label lblPodcast;
+        private System.Windows.Forms.Button btnFiltrera;
     }
 }
 
