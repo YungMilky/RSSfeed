@@ -57,6 +57,7 @@
             this.txtAvsnittsBeskrivning = new System.Windows.Forms.RichTextBox();
             this.lblPodcast = new System.Windows.Forms.Label();
             this.btnFiltrera = new System.Windows.Forms.Button();
+            this.btnVisaAllaPodcasts = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lwPodcast
@@ -356,11 +357,23 @@
             this.btnFiltrera.UseVisualStyleBackColor = true;
             this.btnFiltrera.Click += new System.EventHandler(this.btnFiltrera_Click);
             // 
+            // btnVisaAllaPodcasts
+            // 
+            this.btnVisaAllaPodcasts.Location = new System.Drawing.Point(1389, 23);
+            this.btnVisaAllaPodcasts.Margin = new System.Windows.Forms.Padding(6);
+            this.btnVisaAllaPodcasts.Name = "btnVisaAllaPodcasts";
+            this.btnVisaAllaPodcasts.Size = new System.Drawing.Size(203, 40);
+            this.btnVisaAllaPodcasts.TabIndex = 40;
+            this.btnVisaAllaPodcasts.Text = "Visa alla podcasts";
+            this.btnVisaAllaPodcasts.UseVisualStyleBackColor = true;
+            this.btnVisaAllaPodcasts.Click += new System.EventHandler(this.btnVisaAllaPodcasts_Click);
+            // 
             // Podcast
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1974, 1783);
+            this.Controls.Add(this.btnVisaAllaPodcasts);
             this.Controls.Add(this.btnFiltrera);
             this.Controls.Add(this.lblPodcast);
             this.Controls.Add(this.txtAvsnittsBeskrivning);
@@ -425,6 +438,7 @@
         private System.Windows.Forms.RichTextBox txtAvsnittsBeskrivning;
         private System.Windows.Forms.Label lblPodcast;
         private System.Windows.Forms.Button btnFiltrera;
+        private System.Windows.Forms.Button btnVisaAllaPodcasts;
     }
 }
 

@@ -8,6 +8,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using BL.Controller;
 using BL.Validator;
 using FluentValidation.Results;
@@ -77,6 +78,12 @@ namespace Projekt_1
             }
         }
 
+        private void clearTextFaltPodcast()
+        {
+            txtNamn.Clear();
+            txtURL.Clear();
+        }
+
         private void uppdateringsFrekvens()
         {
             cbFrekvens.Items.Add("10");
@@ -130,8 +137,7 @@ namespace Projekt_1
 
                 podcastController.UppdateraPodcast(namn, url, frekvens, kategori, index);
                 uppdateraPodcastLista();
-                txtNamn.Text = "";
-                txtURL.Text = "";
+                clearTextFaltPodcast();
             }
             else
             {
@@ -187,6 +193,7 @@ namespace Projekt_1
         {
             podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, Convert.ToInt32(cbFrekvens.SelectedItem), cbKategori.SelectedItem.ToString());
             uppdateraPodcastLista();
+            clearTextFaltPodcast();
         }
 
         private void lwPodcast_SelectedIndexChanged(object sender, EventArgs e)
@@ -256,6 +263,7 @@ namespace Projekt_1
                 {
                 }
             }
+            clearTextFaltPodcast();
         }
 
         private void btnFiltrera_Click(object sender, EventArgs e)
@@ -276,6 +284,11 @@ namespace Projekt_1
                 }
             }
             
+        }
+
+        private void btnVisaAllaPodcasts_Click(object sender, EventArgs e)
+        {
+            uppdateraPodcastLista(); 
         }
     }
 }
