@@ -54,7 +54,6 @@ namespace Projekt_1
             catch (ArgumentOutOfRangeException)
             {
             }
-
         }
 
         private void uppdateraKategoriLista()
@@ -76,6 +75,12 @@ namespace Projekt_1
             catch (ArgumentOutOfRangeException)
             {
             }
+        }
+
+        async Task UseDelay()
+        {
+            await Task.Delay(300);
+            uppdateraPodcastLista();
         }
 
         private void clearTextFaltPodcast()
@@ -167,7 +172,7 @@ namespace Projekt_1
             }
         }
 
-        private void btnSparaKategori_Click(object sender, EventArgs e)
+        private void btnSparaKategori_Click(object sender, EventArgs e)//namnet på gamla kategorin kommer tillbaka när man lagt till en ny podcast. Funkar om man startar om programmet.
         {
             if (lbKategorier.SelectedItems.Count == 1)
             {
@@ -192,7 +197,7 @@ namespace Projekt_1
         private void btnLaggTillPodcast_Click(object sender, EventArgs e)
         {
             podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, Convert.ToInt32(cbFrekvens.SelectedItem), cbKategori.SelectedItem.ToString());
-            uppdateraPodcastLista();
+            UseDelay();
             clearTextFaltPodcast();
         }
 
@@ -232,7 +237,7 @@ namespace Projekt_1
         }
 
 
-        private void btnTaBortKategori_Click(object sender, EventArgs e)
+        private void btnTaBortKategori_Click(object sender, EventArgs e) //podcasten i en viss kategori kommer tillbaka när man skapar en ny podcast. Funkar om man startar om programmet.
         {
             if (lbKategorier.SelectedItems.Count == 1)
             {
