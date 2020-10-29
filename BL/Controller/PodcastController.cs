@@ -22,9 +22,9 @@ namespace BL.Controller
             avsnittRepository = new AvsnittRepository();  
         }
 
-        public void SkapaPodcastObjekt(string namn, string url, int uppdateringsFrekvens, string kategori)
+        public async void SkapaPodcastObjekt(string namn, string url, int uppdateringsFrekvens, string kategori)
         {
-            List<Avsnitt> avsnitt = avsnittRepository.HamtaAllaAvsnitt(url);
+            List<Avsnitt> avsnitt = await avsnittRepository.HamtaAllaAvsnitt(url);
             Podcast newPodcast = new Podcast(namn, url, uppdateringsFrekvens, kategori, avsnitt);
             podcastRepository.Skapa(newPodcast);
         }
@@ -54,9 +54,9 @@ namespace BL.Controller
 
         }
 
-        public void UppdateraPodcast(string podcastNamn, string url, int frekvens, string kategori, int index)
+        public async void UppdateraPodcast(string podcastNamn, string url, int frekvens, string kategori, int index)
         {
-            List<Avsnitt> avsnittsLista = avsnittRepository.HamtaAllaAvsnitt(url);
+            List<Avsnitt> avsnittsLista = await avsnittRepository.HamtaAllaAvsnitt(url);
             Podcast podcast = new Podcast(podcastNamn, url, frekvens, kategori, avsnittsLista);
             podcastRepository.Uppdatera(index, podcast);
         }

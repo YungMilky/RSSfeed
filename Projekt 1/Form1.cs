@@ -231,6 +231,7 @@ namespace Projekt_1
             }
         }
 
+
         private void btnTaBortKategori_Click(object sender, EventArgs e)
         {
             if (lbKategorier.SelectedItems.Count == 1)

@@ -17,10 +17,10 @@ namespace DAL.Repositories
         {
             avsnittsLista = new List<Avsnitt>(); 
         }
-        public List<Avsnitt> HamtaAllaAvsnitt(string url)
+        public async Task<List<Avsnitt>> HamtaAllaAvsnitt(string url)
         {
             XmlReader reader = XmlReader.Create(url);
-            SyndicationFeed feed = SyndicationFeed.Load(reader);
+            SyndicationFeed feed = await Task.Run(() => SyndicationFeed.Load(reader));
 
             List<Avsnitt> allaAvsnitt = new List<Avsnitt>();
             foreach (var item in feed.Items)
@@ -30,7 +30,7 @@ namespace DAL.Repositories
                 avsnitt.Beskrivning = item.Summary.Text;
                 allaAvsnitt.Add(avsnitt);
             }
-            return allaAvsnitt; 
+            return allaAvsnitt;
         }
     }
 }
