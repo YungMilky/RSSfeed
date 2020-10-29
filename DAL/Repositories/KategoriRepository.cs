@@ -34,9 +34,9 @@ namespace DAL.Repositories
                 podcast.UppdateringsFrekvens = item.UppdateringsFrekvens;
                 podcast.Kategori = nyTitel; 
                 int i = podcastRepository.HamtaIndex(podcast.Namn);
-                podcastRepository.Uppdatera(i, podcast); 
+                podcastRepository.SparaUppdatering(i, podcast); 
             }
-            Spara(); 
+            SparaUppdatering(); 
         }
 
         public List<Kategori> HamtaAlla()
@@ -53,12 +53,6 @@ namespace DAL.Repositories
             return categoriesToBeReturned;
         }
 
-        public Kategori HamtaAllaEnligtKategori(string namn)
-        {
-            return null; // ta bort när kod skrivs
-            //skriv kod här
-        }
-
         public int HamtaIndex(string titel)
         {
             return HamtaAlla().FindIndex(e => e.Titel.Equals(titel));
@@ -67,10 +61,10 @@ namespace DAL.Repositories
         public void Skapa(Kategori entity)
         {
             kategoriList.Add(entity);
-            Spara();
+            SparaUppdatering();
         }
 
-        public void Spara()
+        public void SparaUppdatering()
         {
             dataManager.SerializeKategori(kategoriList);
         }
@@ -78,16 +72,16 @@ namespace DAL.Repositories
         public void TaBort(int index)
         {
             kategoriList.RemoveAt(index);
-            Spara();
+            SparaUppdatering();
         }
 
-        public void Uppdatera(int index, Kategori newEntity)
+        public void SparaUppdatering(int index, Kategori newEntity)
         {
             if (index >= 0)
             {
                 kategoriList[index] = newEntity;
             }
-            Spara();
+            SparaUppdatering();
         }
 
     }

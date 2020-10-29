@@ -51,14 +51,13 @@ namespace BL.Controller
         {
             int index = podcastRepository.HamtaIndex(namn);
             podcastRepository.TaBort(index);
-
         }
 
         public async void UppdateraPodcast(string podcastNamn, string url, int frekvens, string kategori, int index)
         {
             List<Avsnitt> avsnittsLista = await avsnittRepository.HamtaAllaAvsnitt(url);
             Podcast podcast = new Podcast(podcastNamn, url, frekvens, kategori, avsnittsLista);
-            podcastRepository.Uppdatera(index, podcast);
+            podcastRepository.SparaUppdatering(index, podcast);
         }
     }
 }

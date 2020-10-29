@@ -10,8 +10,6 @@ namespace DAL.Repositories
 {
     public interface IKategoriRepository<T> : IRepository<T> where T : Kategori
     {
-        T HamtaAllaEnligtKategori(string namn);
-
         void BytaKategori(int index, string nyTitel, List<Podcast> podcastIKategori);
 
     }

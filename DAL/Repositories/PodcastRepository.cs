@@ -25,10 +25,10 @@ namespace DAL.Repositories
         public void Skapa(Podcast entity)
         {
             podcastList.Add(entity);
-            Spara();    
+            SparaUppdatering();    
         }
 
-        public void Spara()
+        public void SparaUppdatering()
         {
             dataManager.SerializePodcast(podcastList);
         }
@@ -52,13 +52,13 @@ namespace DAL.Repositories
             return podcastListToBeReturned;
         }
 
-        public void Uppdatera(int index, Podcast newEntity)
+        public void SparaUppdatering(int index, Podcast newEntity)
         {
             if (index >= 0)
             {
                 podcastList[index] = newEntity;
             }
-            Spara();
+            SparaUppdatering();
         } 
         public int HamtaIndex(string namn)
         {
@@ -68,7 +68,7 @@ namespace DAL.Repositories
         public void TaBort(int index)
         {
                 podcastList.RemoveAt(index);
-                Spara();
+                SparaUppdatering();
         }
 
     }

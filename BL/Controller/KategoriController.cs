@@ -52,7 +52,7 @@ namespace BL.Controller
         {
             Console.WriteLine(gammalTitel + nyTitel + index);
             Kategori kategori = new Kategori(nyTitel);
-            kategoriRepository.Uppdatera(index, kategori);
+            kategoriRepository.SparaUppdatering(index, kategori);
 
             List<Podcast> allaPodcasts = podcastController.HamtaAllaPodcasts();
             List<Podcast> allaPodcastIKategori = new List<Podcast>(); 
@@ -71,12 +71,5 @@ namespace BL.Controller
             int index = kategoriRepository.HamtaIndex(titel);
             return index;
         }
-
-        //public string HamtaAllaEnligtKategori(string kategoriNamn)
-        //{
-        //    return HamtaAlla().First(p => p.KategoriNamn.Equals(kategoriNamn)); 
-        //    hur hämtar man KategoriNamn från klassen Kategori?
-
-        //}
     }
 }
