@@ -335,7 +335,15 @@ namespace Projekt_1
                     int index = podcastController.HamtaPodcastIndex(pod.Namn);
                     podcastController.UppdateraPodcast(pod.Namn, pod.URL, pod.UppdateringsFrekvens, pod.Kategori, index, pod.NextUpdate); 
                     pod.Uppdatera();
-                    uppdateraPodcastLista(); 
+
+                    for (int i = 0; i < lwPodcast.Items.Count; i++)
+                    {
+                        if (pod.Namn.Equals(lwPodcast.Items[i].SubItems[0].Text))
+                        {
+                            var antalAvsnitt = Convert.ToString(pod.AvsnittsLista.Count());
+                            lwPodcast.Items[i].SubItems[1].Text = antalAvsnitt;
+                        }
+                    }
                 }   
             }
         }
