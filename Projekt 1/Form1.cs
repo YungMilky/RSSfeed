@@ -79,7 +79,7 @@ namespace Projekt_1
 
         async Task UseDelay()
         {
-            await Task.Delay(300);
+            await Task.Delay(100);
             uppdateraPodcastLista();
         }
 
