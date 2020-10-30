@@ -171,7 +171,8 @@ namespace Projekt_1
                 int index = podcastController.HamtaPodcastIndex(lwPodcast.SelectedItems[0].Text);
 
                 podcastController.UppdateraPodcast(namn, url, frekvens, kategori, index);
-                uppdateraPodcastLista();
+                UseDelay(); 
+                //UppdateraPodcastLista(); 
                 clearTextFaltPodcast();
             }
             else
