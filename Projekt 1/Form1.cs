@@ -107,7 +107,6 @@ namespace Projekt_1
 
         private void btnLaggTill1_Click(object sender, EventArgs e)
         {
-
             Dictionary<string, object> userInput = new Dictionary<string, object>
             {
                 { "Namn", txtNamn.Text },
@@ -173,7 +172,6 @@ namespace Projekt_1
                 DateTime nextUpdate = DateTime.Now; 
                 podcastController.UppdateraPodcast(namn, url, frekvens, kategori, index, nextUpdate);
                 UseDelay(); 
-                //UppdateraPodcastLista(); 
                 clearTextFaltPodcast();
             }
             else
