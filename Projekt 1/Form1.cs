@@ -17,17 +17,25 @@ namespace Projekt_1
 {
     public partial class Podcast : Form
     {
+        private Timer podcastTimer = new Timer();
+
         PodcastController podcastController;
         KategoriController kategoriController;
+        AvsnittController avsnittController;
 
         public Podcast()
         {
             InitializeComponent();
             podcastController = new PodcastController();
             kategoriController = new KategoriController();
+            avsnittController = new AvsnittController();
             uppdateraKategoriLista();
             uppdateringsFrekvens();
             uppdateraPodcastLista();
+
+            podcastTimer.Interval = 1000;
+            podcastTimer.Tick += PodcastTimer_Tick;
+            podcastTimer.Start();
         }
 
         private void uppdateraPodcastLista()
@@ -99,7 +107,29 @@ namespace Projekt_1
 
         private void btnLaggTill1_Click(object sender, EventArgs e)
         {
-            podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, Convert.ToInt32(cbFrekvens.SelectedItem), cbKategori.SelectedItem.ToString());
+
+            Dictionary<string, object> userInput = new Dictionary<string, object>
+            {
+                { "Namn", txtNamn.Text },
+                { "URL", txtURL.Text },
+                { "Uppdateringsfrekvens", Convert.ToInt32(cbFrekvens.SelectedItem) },
+                { "Kategori", cbKategori.SelectedItem.ToString() }
+            };
+
+            InputValidator validator = new InputValidator();
+            ValidationResult results = validator.Validate(userInput);
+            string errorMessage = validator.LogValidationErrors(results);
+
+            if (string.IsNullOrEmpty(errorMessage))
+            {
+                podcastController.SkapaPodcastObjekt(userInput);
+            }
+            else
+            {
+                Console.WriteLine(errorMessage);
+                MessageBox.Show($"{errorMessage}", "Fel",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             uppdateraPodcastLista();
         }
 
@@ -296,6 +326,17 @@ namespace Projekt_1
         private void btnVisaAllaPodcasts_Click(object sender, EventArgs e)
         {
             uppdateraPodcastLista(); 
+        }
+        private void PodcastTimer_Tick(object sender, EventArgs e)
+        {
+            foreach (var pod in podcastController.HamtaAllaPodcasts())
+            {
+                if (pod.NeedsUpdate)
+                {
+                    pod.AvsnittsLista = avsnittController.HamtaAllaAvsnitt(pod.URL);
+                    pod.Uppdatera();
+                }   
+            }
         }
     }
 }

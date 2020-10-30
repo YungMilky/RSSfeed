@@ -13,6 +13,7 @@ namespace Models
         public int UppdateringsFrekvens { get; set; }
         public string Kategori { get; set; }
         public List<Avsnitt> AvsnittsLista { get; set; }
+        public DateTime NextUpdate { get; set; }
 
         public Podcast (string namn, string url, int uppdateringsFrekvens, string kategori, List<Avsnitt> avsnittsLista)
         {
@@ -20,7 +21,8 @@ namespace Models
             URL = url;
             UppdateringsFrekvens = uppdateringsFrekvens;
             Kategori = kategori;
-            AvsnittsLista = avsnittsLista; 
+            AvsnittsLista = avsnittsLista;
+            Uppdatera();
         }
 
         public Podcast()
@@ -32,18 +34,19 @@ namespace Models
         {
             return "Det här är en podcast";
         }
-        //public override List<object> getProperties()
-        //{
-        //    var propertyList = new List<object>();
 
-        //    foreach (var prop in this.GetType().GetProperties())
-        //    {
-        //        propertyList.Add(prop.Name, prop.GetValue(this.GetType()));
-        //    }
-
-        //    this.GetType().GetProperties());
-        //    return propertyList;
-        //}
+        public void Uppdatera()
+        {
+            NextUpdate = DateTime.Now.AddMinutes(UppdateringsFrekvens);
+            Console.WriteLine($"Podcast updated. Next update in {NextUpdate} minutes.");
+        }
+        public bool NeedsUpdate
+        {
+            get
+            {
+                return NextUpdate <= DateTime.Now;
+            }
+        }
     }
 }
 

@@ -17,6 +17,10 @@ namespace BL.Controller
         {
             avsnittRepository = new AvsnittRepository();
         }
+        public List<Avsnitt> HamtaAllaAvsnitt(string url)
+        {
+            return avsnittRepository.HamtaAllaAvsnitt(url);
+        }
 
     }
 
