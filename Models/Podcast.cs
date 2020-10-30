@@ -15,13 +15,14 @@ namespace Models
         public List<Avsnitt> AvsnittsLista { get; set; }
         public DateTime NextUpdate { get; set; }
 
-        public Podcast (string namn, string url, int uppdateringsFrekvens, string kategori, List<Avsnitt> avsnittsLista)
+        public Podcast (string namn, string url, int uppdateringsFrekvens, string kategori, List<Avsnitt> avsnittsLista, DateTime nextUpdate)
         {
             Namn = namn;
             URL = url;
             UppdateringsFrekvens = uppdateringsFrekvens;
             Kategori = kategori;
             AvsnittsLista = avsnittsLista;
+            NextUpdate = nextUpdate; 
             Uppdatera();
         }
 
@@ -37,8 +38,8 @@ namespace Models
 
         public void Uppdatera()
         {
-            NextUpdate = DateTime.Now.AddMinutes(UppdateringsFrekvens);
-            Console.WriteLine($"Podcast updated. Next update in {NextUpdate} minutes.");
+            NextUpdate = DateTime.Now.AddSeconds(UppdateringsFrekvens);
+            Console.WriteLine($"Podcast updated. Next update in {NextUpdate} seconds.");
         }
         public bool NeedsUpdate
         {

@@ -170,7 +170,8 @@ namespace Projekt_1
                 string kategori = cbKategori.Text;
                 int index = podcastController.HamtaPodcastIndex(lwPodcast.SelectedItems[0].Text);
 
-                podcastController.UppdateraPodcast(namn, url, frekvens, kategori, index);
+                DateTime nextUpdate = DateTime.Now; 
+                podcastController.UppdateraPodcast(namn, url, frekvens, kategori, index, nextUpdate);
                 UseDelay(); 
                 //UppdateraPodcastLista(); 
                 clearTextFaltPodcast();
@@ -321,21 +322,22 @@ namespace Projekt_1
                         lwPodcast.FullRowSelect = true;
                 }
             }
-            
         }
 
         private void btnVisaAllaPodcasts_Click(object sender, EventArgs e)
         {
             uppdateraPodcastLista(); 
         }
-        private void PodcastTimer_Tick(object sender, EventArgs e)
+        private async void PodcastTimer_Tick(object sender, EventArgs e)
         {
             foreach (var pod in podcastController.HamtaAllaPodcasts())
             {
                 if (pod.NeedsUpdate)
                 {
-                    pod.AvsnittsLista = avsnittController.HamtaAllaAvsnitt(pod.URL);
+                    int index = podcastController.HamtaPodcastIndex(pod.Namn);
+                    podcastController.UppdateraPodcast(pod.Namn, pod.URL, pod.UppdateringsFrekvens, pod.Kategori, index, pod.NextUpdate); 
                     pod.Uppdatera();
+                    uppdateraPodcastLista(); 
                 }   
             }
         }

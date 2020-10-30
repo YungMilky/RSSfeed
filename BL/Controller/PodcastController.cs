@@ -25,7 +25,8 @@ namespace BL.Controller
         public async void SkapaPodcastObjekt(string namn, string url, int uppdateringsFrekvens, string kategori)
         {
             List<Avsnitt> avsnitt = await avsnittRepository.HamtaAllaAvsnitt(url);
-            Podcast newPodcast = new Podcast(namn, url, uppdateringsFrekvens, kategori, avsnitt);
+            DateTime nextUpdate = DateTime.Now; 
+            Podcast newPodcast = new Podcast(namn, url, uppdateringsFrekvens, kategori, avsnitt, nextUpdate);
             podcastRepository.Skapa(newPodcast);
         }
         public async void SkapaPodcastObjekt(Dictionary<string, object> podcastProperties)
@@ -36,8 +37,8 @@ namespace BL.Controller
             string kategori = podcastProperties["Kategori"].ToString();
 
             List<Avsnitt> avsnitt = await avsnittRepository.HamtaAllaAvsnitt(url);
-
-            Podcast newPodcast = new Podcast(namn, url, uppdateringsFrekvens, kategori, avsnitt);
+            DateTime nextUpdate = DateTime.Now;
+            Podcast newPodcast = new Podcast(namn, url, uppdateringsFrekvens, kategori, avsnitt, nextUpdate);
             podcastRepository.Skapa(newPodcast);
         }
 
@@ -65,10 +66,10 @@ namespace BL.Controller
             podcastRepository.TaBort(index);
         }
 
-        public async void UppdateraPodcast(string podcastNamn, string url, int frekvens, string kategori, int index)
+        public async void UppdateraPodcast(string podcastNamn, string url, int frekvens, string kategori, int index, DateTime nextUpdate)
         {
             List<Avsnitt> avsnittsLista = await avsnittRepository.HamtaAllaAvsnitt(url);
-            Podcast podcast = new Podcast(podcastNamn, url, frekvens, kategori, avsnittsLista);
+            Podcast podcast = new Podcast(podcastNamn, url, frekvens, kategori, avsnittsLista, nextUpdate);
             podcastRepository.SparaUppdatering(index, podcast);
         }
     }
