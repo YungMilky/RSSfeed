@@ -28,19 +28,17 @@ namespace BL.Controller
             Podcast newPodcast = new Podcast(namn, url, uppdateringsFrekvens, kategori, avsnitt);
             podcastRepository.Skapa(newPodcast);
         }
-        public Podcast SkapaPodcastObjekt(Dictionary<string, object> podcastProperties)
+        public async void SkapaPodcastObjekt(Dictionary<string, object> podcastProperties)
         {
             string namn = podcastProperties["Namn"].ToString();
             string url = podcastProperties["URL"].ToString();
             int uppdateringsFrekvens = (int)podcastProperties["Uppdateringsfrekvens"];
             string kategori = podcastProperties["Kategori"].ToString();
 
-            List<Avsnitt> avsnitt = avsnittRepository.HamtaAllaAvsnitt(url);
+            List<Avsnitt> avsnitt = await avsnittRepository.HamtaAllaAvsnitt(url);
 
             Podcast newPodcast = new Podcast(namn, url, uppdateringsFrekvens, kategori, avsnitt);
             podcastRepository.Skapa(newPodcast);
-
-            return newPodcast;
         }
 
         public List<Podcast> HamtaAllaPodcasts()
