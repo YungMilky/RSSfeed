@@ -87,8 +87,6 @@ namespace BL.Validator
             {
                 url = $"{prefix}{url}";
             }
-
-            Console.WriteLine("autoformat"+ url);
             return url;
         }
 
