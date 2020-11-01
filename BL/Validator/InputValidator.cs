@@ -14,6 +14,7 @@ namespace BL.Validator
     {
         public InputValidator()
         {
+            When(pod => pod != null, () => { 
             //Regler för validering
             RuleFor(pod => pod["Namn"].ToString())
                 .Cascade(CascadeMode.Stop) //stoppar validering (async) så fort en regel bryts
@@ -24,16 +25,14 @@ namespace BL.Validator
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("Fältet 'Kategori' är tomt.")
                 .Length(2, 30).WithMessage("Fältet 'Kategori' kräver 2-30 bokstäver/symboler.");
-            
-            RuleFor(pod => pod["Uppdateringsfrekvens"])
-                .Cascade(CascadeMode.Stop)
-                .NotEmpty().WithMessage("Fältet 'Uppdateringsfrekvens' är tomt.");
 
             RuleFor(pod => pod["URL"].ToString())
                 .Cascade(CascadeMode.Stop) 
                 .NotEmpty().WithMessage("Fältet 'URL' är tomt.")
-                .Must(ValidURLLength).WithMessage("Fältet 'URL' kräver minst 17 symboler.") //ValidURLLength måste returnera true
-                .Must(ValidURL).WithMessage("Felaktig URL. Måste börja med http(s) och sluta med .xml ."); //ValidURL måste returnera true
+                .Must(ValidURLLength).WithMessage("Fältet 'URL' kräver minst 17 symboler.") //inuti Must() är metoden ValidURLLength(), som hittas längre ner
+                .Must(ValidURL).WithMessage("Felaktig URL. Måste börja med http(s) och sluta med .xml .");
+            
+            });
         }
 
         /*
@@ -44,18 +43,18 @@ namespace BL.Validator
          */
         protected bool ValidURL(string url)
         {
-            url = url.Replace(" ", ""); //tar bort mellanrum
+            url = url.Replace(" ", "");
 
             if (!(url.StartsWith("http://") || url.StartsWith("https://")) && !(url.EndsWith(".xml")))
             {
                 return true;
             }
-            else return false; //finare utan brackets
+            else return false;
         }
 
         protected bool ValidURLLength(string url)
         {
-            //minsta möjliga urlen är egentligen 17 symboler; "http://.x.x/x.xml", men Length index börjar ju på 0
+            //minsta möjliga urlen är egentligen 17 symboler; "http://.x.x/x.xml", och Length index börjar ju på 0
             return url.Length > 16; 
         }
         
@@ -69,12 +68,11 @@ namespace BL.Validator
             //det finns egentligen fler webb-protokoll än http och https,
             //men de är mer esoteriska, så för enkelhetens skull togs de inte med
 
-            //om urlen inte börjar med http:// eller https://
             if (!(url.StartsWith(prefix) || url.StartsWith(prefixSecure)))
             {
                 url = $"{prefix}{url}";
             }
-            //om urlen inte slutar med .xml
+
             if (!url.EndsWith(suffix))
             {
                 url = $"{url}{suffix}";

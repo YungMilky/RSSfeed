@@ -25,6 +25,10 @@ namespace Projekt_1
 
         public Podcast()
         {
+            podcastTimer.Interval = 1000;
+            podcastTimer.Tick += PodcastTimer_Tick;
+            podcastTimer.Start();
+
             InitializeComponent();
             podcastController = new PodcastController();
             kategoriController = new KategoriController();
@@ -32,10 +36,6 @@ namespace Projekt_1
             uppdateraKategoriLista();
             uppdateringsFrekvens();
             uppdateraPodcastLista();
-
-            podcastTimer.Interval = 1000;
-            podcastTimer.Tick += PodcastTimer_Tick;
-            podcastTimer.Start();
         }
 
         private void uppdateraPodcastLista()
@@ -134,7 +134,30 @@ namespace Projekt_1
 
         private void btnLaggTill2_Click(object sender, EventArgs e)
         {
-            kategoriController.SkapaKategoritObjekt(txtKategori.Text);
+            string kategori = txtKategori.Text ?? "";
+            Dictionary<string, object> userInput = new Dictionary<string, object>
+            {
+                { "Namn", "jaja" },
+                { "URL", "hahagggggggggggggggg" },
+                { "Uppdateringsfrekvens", "hoho" },
+                { "Kategori", kategori }
+            };
+
+            InputValidator validator = new InputValidator();
+            ValidationResult results = validator.Validate(userInput);
+            string errorMessage = validator.LogValidationErrors(results);
+
+            if (string.IsNullOrEmpty(errorMessage))
+            {
+                kategoriController.SkapaKategoritObjekt(txtKategori.Text);
+            }
+            else
+            {
+                Console.WriteLine(errorMessage);
+                MessageBox.Show($"{errorMessage}", "Fel",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             uppdateraKategoriLista();
             txtKategori.Clear();
         }
@@ -161,23 +184,31 @@ namespace Projekt_1
 
         private void btnSparaPodcast_Click(object sender, EventArgs e)
         {
-            if (lwPodcast.SelectedItems.Count == 1)
+            Dictionary<string, object> userInput = new Dictionary<string, object>
             {
-                string namn = txtNamn.Text;
-                string url = txtURL.Text;
-                int frekvens = Convert.ToInt32(cbFrekvens.Text);
-                string kategori = cbKategori.Text;
-                int index = podcastController.HamtaPodcastIndex(lwPodcast.SelectedItems[0].Text);
+                { "Namn", txtNamn.Text },
+                { "URL", txtURL.Text },
+                { "Uppdateringsfrekvens", Convert.ToInt32(cbFrekvens.SelectedItem) },
+                { "Kategori", cbKategori.SelectedItem.ToString() },
+                { "Index", podcastController.HamtaPodcastIndex(lwPodcast.SelectedItems[0].Text) }
+            };
 
-                DateTime nextUpdate = DateTime.Now; 
-                podcastController.UppdateraPodcast(namn, url, frekvens, kategori, index, nextUpdate);
-                UseDelay(); 
-                clearTextFaltPodcast();
+            InputValidator validator = new InputValidator();
+            ValidationResult results = validator.Validate(userInput);
+            string errorMessage = validator.LogValidationErrors(results);
+
+            if (string.IsNullOrEmpty(errorMessage))
+            {
+                podcastController.UppdateraPodcast(userInput);
             }
             else
             {
-                MessageBox.Show("Vänligen välj en podcast i listan.");
+                Console.WriteLine(errorMessage);
+                MessageBox.Show($"{errorMessage}", "Fel",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+                UseDelay(); 
+                clearTextFaltPodcast();
         }
 
         private void txtURL_TextChanged(object sender, EventArgs e)
@@ -226,7 +257,33 @@ namespace Projekt_1
 
         private void btnLaggTillPodcast_Click(object sender, EventArgs e)
         {
-            podcastController.SkapaPodcastObjekt(txtNamn.Text, txtURL.Text, Convert.ToInt32(cbFrekvens.SelectedItem), cbKategori.SelectedItem.ToString());
+            string namn = txtNamn.Text ?? "";
+            string URL = txtURL.Text ?? "";
+            string Kategori = cbKategori.SelectedItem?.ToString() ?? "";
+
+            Dictionary<string, object> userInput = new Dictionary<string, object>
+            {
+                { "Namn", namn},
+                { "URL", URL },
+                { "Uppdateringsfrekvens", Convert.ToInt32(cbFrekvens.SelectedItem) },
+                { "Kategori", Kategori }
+            };
+
+            InputValidator validator = new InputValidator();
+            ValidationResult results = validator.Validate(userInput);
+            string errorMessage = validator.LogValidationErrors(results);
+
+            if (string.IsNullOrEmpty(errorMessage))
+            {
+                podcastController.SkapaPodcastObjekt(userInput);
+            }
+            else
+            {
+                Console.WriteLine(errorMessage);
+                MessageBox.Show($"{errorMessage}", "Fel",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            uppdateraPodcastLista();
             UseDelay();
             clearTextFaltPodcast();
         }
@@ -346,6 +403,11 @@ namespace Projekt_1
                     }
                 }   
             }
+        }
+
+        private void Podcast_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
