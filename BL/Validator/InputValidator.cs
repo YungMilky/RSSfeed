@@ -19,7 +19,7 @@ namespace BL.Validator
             //Regler för validering
             RuleFor(pod => pod["Namn"].ToString())
                 .Cascade(CascadeMode.Stop) //stoppar validering (async) så fort en regel bryts
-                .NotEmpty().WithMessage("Fältet '{PropertyName}' är tomt.")
+                .NotEmpty().WithMessage("Fältet 'Namn' är tomt.")
                 .Length(2, 30).WithMessage("Fältet 'Namn' kräver 2-30 bokstäver/symboler.");
 
             RuleFor(pod => pod["Kategori"].ToString())
@@ -74,12 +74,11 @@ namespace BL.Validator
             return !preExistingCategories.Any(cats => cats.Titel == categories["KatNamn"].ToString());
         }
 
-        protected string AutoFormatURL(string url)
+        public string AutoFormatURL(string url)
         {
             url = url.Replace(" ", "");
             string prefix = @"http://";
             string prefixSecure = @"https://";
-            string suffix = ".xml";
 
             //det finns egentligen fler webb-protokoll än http och https,
             //men de är mer esoteriska, så för enkelhetens skull togs de inte med
@@ -89,10 +88,6 @@ namespace BL.Validator
                 url = $"{prefix}{url}";
             }
 
-            if (!url.EndsWith(suffix))
-            {
-                url = $"{url}{suffix}";
-            }
             Console.WriteLine("autoformat"+ url);
             return url;
         }

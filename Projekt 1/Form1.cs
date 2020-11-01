@@ -23,6 +23,8 @@ namespace Projekt_1
         KategoriController kategoriController;
         AvsnittController avsnittController;
 
+        InputValidator validator;
+
         public Podcast()
         {
             podcastTimer.Interval = 1000;
@@ -30,6 +32,7 @@ namespace Projekt_1
             podcastTimer.Start();
 
             InitializeComponent();
+            validator = new InputValidator();
             podcastController = new PodcastController();
             kategoriController = new KategoriController();
             avsnittController = new AvsnittController();
@@ -107,15 +110,18 @@ namespace Projekt_1
 
         private void btnLaggTill1_Click(object sender, EventArgs e)
         {
+            string namn = txtNamn.Text ?? "";
+            string URL = validator.AutoFormatURL(txtURL.Text) ?? "";
+            string Kategori = cbKategori.SelectedItem?.ToString() ?? "";
+
             Dictionary<string, object> userInput = new Dictionary<string, object>
             {
-                { "Namn", txtNamn.Text },
-                { "URL", txtURL.Text },
+                { "Namn", namn },
+                { "URL", URL },
                 { "Uppdateringsfrekvens", Convert.ToInt32(cbFrekvens.SelectedItem) },
-                { "Kategori", cbKategori.SelectedItem.ToString() }
+                { "Kategori", Kategori }
             };
 
-            InputValidator validator = new InputValidator();
             ValidationResult results = validator.Validate(userInput);
             string errorMessage = validator.LogValidationErrors(results);
 
@@ -141,7 +147,6 @@ namespace Projekt_1
                 { "Preexisting categories", kategoriController.HamtaAllaKategorier() }
             };
 
-            InputValidator validator = new InputValidator();
             ValidationResult results = validator.Validate(userInput);
             string errorMessage = validator.LogValidationErrors(results);
 
@@ -182,16 +187,19 @@ namespace Projekt_1
 
         private void btnSparaPodcast_Click(object sender, EventArgs e)
         {
+            string namn = txtNamn.Text ?? "";
+            string URL = validator.AutoFormatURL(txtURL.Text) ?? "";
+            string Kategori = cbKategori.SelectedItem?.ToString() ?? "";
+
             Dictionary<string, object> userInput = new Dictionary<string, object>
             {
-                { "Namn", txtNamn.Text },
-                { "URL", txtURL.Text },
+                { "Namn", namn },
+                { "URL", URL },
                 { "Uppdateringsfrekvens", Convert.ToInt32(cbFrekvens.SelectedItem) },
-                { "Kategori", cbKategori.SelectedItem.ToString() },
+                { "Kategori", Kategori },
                 { "Index", podcastController.HamtaPodcastIndex(lwPodcast.SelectedItems[0].Text) }
             };
 
-            InputValidator validator = new InputValidator();
             ValidationResult results = validator.Validate(userInput);
             string errorMessage = validator.LogValidationErrors(results);
 
@@ -256,7 +264,7 @@ namespace Projekt_1
         private void btnLaggTillPodcast_Click(object sender, EventArgs e)
         {
             string namn = txtNamn.Text ?? "";
-            string URL = txtURL.Text ?? "";
+            string URL = validator.AutoFormatURL(txtURL.Text) ?? "";
             string Kategori = cbKategori.SelectedItem?.ToString() ?? "";
 
             Dictionary<string, object> userInput = new Dictionary<string, object>
@@ -267,7 +275,6 @@ namespace Projekt_1
                 { "Kategori", Kategori }
             };
 
-            InputValidator validator = new InputValidator();
             ValidationResult results = validator.Validate(userInput);
             string errorMessage = validator.LogValidationErrors(results);
 
