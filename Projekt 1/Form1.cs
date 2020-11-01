@@ -192,8 +192,9 @@ namespace Projekt_1
             string Kategori = cbKategori.SelectedItem?.ToString() ?? "";
 
             var isSelected = lwPodcast.SelectedItems.Count > 0; //0 == nothing selected
+#nullable enable
             string? Index = isSelected ? lwPodcast.SelectedItems[0].Text : null;
-
+#nullable disable
             Dictionary<string, object> userInput = new Dictionary<string, object>
             {
                 { "Namn", namn },
@@ -369,7 +370,9 @@ namespace Projekt_1
         {
             lwPodcast.Items.Clear();
             var isSelected = lbKategorier.SelectedItems.Count > 0;
+#nullable enable
             string? selectedCategory = isSelected ? lbKategorier.SelectedItem.ToString() : null;
+#nullable disable
 
             foreach (var item in podcastController.HamtaAllaPodcasts())
             {
