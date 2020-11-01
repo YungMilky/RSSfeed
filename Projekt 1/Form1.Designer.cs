@@ -99,7 +99,7 @@
             // txtURL
             // 
             this.txtURL.Location = new System.Drawing.Point(20, 216);
-            this.txtURL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtURL.Margin = new System.Windows.Forms.Padding(2);
             this.txtURL.Name = "txtURL";
             this.txtURL.Size = new System.Drawing.Size(128, 20);
             this.txtURL.TabIndex = 2;
@@ -241,7 +241,7 @@
             // txtKategori
             // 
             this.txtKategori.Location = new System.Drawing.Point(508, 216);
-            this.txtKategori.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKategori.Margin = new System.Windows.Forms.Padding(2);
             this.txtKategori.Name = "txtKategori";
             this.txtKategori.Size = new System.Drawing.Size(151, 20);
             this.txtKategori.TabIndex = 29;
@@ -286,7 +286,7 @@
             // txtNamn
             // 
             this.txtNamn.Location = new System.Drawing.Point(20, 259);
-            this.txtNamn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNamn.Margin = new System.Windows.Forms.Padding(2);
             this.txtNamn.Name = "txtNamn";
             this.txtNamn.Size = new System.Drawing.Size(128, 20);
             this.txtNamn.TabIndex = 33;

@@ -191,13 +191,16 @@ namespace Projekt_1
             string URL = validator.AutoFormatURL(txtURL.Text) ?? "";
             string Kategori = cbKategori.SelectedItem?.ToString() ?? "";
 
+            var isSelected = lwPodcast.SelectedItems.Count > 0; //0 == nothing selected
+            string? Index = isSelected ? lwPodcast.SelectedItems[0].Text : null;
+
             Dictionary<string, object> userInput = new Dictionary<string, object>
             {
                 { "Namn", namn },
                 { "URL", URL },
                 { "Uppdateringsfrekvens", Convert.ToInt32(cbFrekvens.SelectedItem) },
                 { "Kategori", Kategori },
-                { "Index", podcastController.HamtaPodcastIndex(lwPodcast.SelectedItems[0].Text) }
+                { "Index", podcastController.HamtaPodcastIndex(Index) }
             };
 
             ValidationResult results = validator.Validate(userInput);
@@ -365,9 +368,12 @@ namespace Projekt_1
         private void btnFiltrera_Click(object sender, EventArgs e)
         {
             lwPodcast.Items.Clear();
+            var isSelected = lbKategorier.SelectedItems.Count > 0;
+            string? selectedCategory = isSelected ? lbKategorier.SelectedItem.ToString() : null;
+
             foreach (var item in podcastController.HamtaAllaPodcasts())
             {
-                if (item.Kategori.Equals(lbKategorier.SelectedItem.ToString()))
+                if (item.Kategori.Equals(selectedCategory))
                 {
                         string antalAvsnitt = item.AvsnittsLista.Count.ToString();
 
