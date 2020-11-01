@@ -358,9 +358,6 @@ namespace Projekt_1
                     podcastController.TaBortPodcast(titel);
                     uppdateraPodcastLista();
                 }
-                else
-                {
-                }
             }
             clearTextFaltPodcast();
         }
