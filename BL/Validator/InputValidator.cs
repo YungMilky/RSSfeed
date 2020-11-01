@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using BL.Controller;
+using FluentValidation;
 using FluentValidation.Results;
 using Models;
 using System;
@@ -14,7 +15,7 @@ namespace BL.Validator
     {
         public InputValidator()
         {
-            When(pod => pod != null, () => { 
+            When(pod => pod.ContainsKey("URL"), () => { 
             //Regler för validering
             RuleFor(pod => pod["Namn"].ToString())
                 .Cascade(CascadeMode.Stop) //stoppar validering (async) så fort en regel bryts
@@ -31,7 +32,15 @@ namespace BL.Validator
                 .NotEmpty().WithMessage("Fältet 'URL' är tomt.")
                 .Must(ValidURLLength).WithMessage("Fältet 'URL' kräver minst 17 symboler.") //inuti Must() är metoden ValidURLLength(), som hittas längre ner
                 .Must(ValidURL).WithMessage("Felaktig URL. Måste börja med http(s) och sluta med .xml .");
-            
+            });
+
+            When(pod => pod.ContainsKey("KatNamn"), () => {
+                RuleFor(pod => pod["KatNamn"])
+                .Cascade(CascadeMode.Stop)
+                .NotEmpty().WithMessage("Fältet 'URL' är tomt.");
+
+                RuleFor(pod => pod)
+                .Must(CompareCategoryNames).WithMessage("Kategorin finns redan.");
             });
         }
 
@@ -45,7 +54,7 @@ namespace BL.Validator
         {
             url = url.Replace(" ", "");
 
-            if (!(url.StartsWith("http://") || url.StartsWith("https://")) && !(url.EndsWith(".xml")))
+            if ((url.StartsWith(@"http://") || url.StartsWith(@"https://")) && url.EndsWith(".xml"))
             {
                 return true;
             }
@@ -57,12 +66,19 @@ namespace BL.Validator
             //minsta möjliga urlen är egentligen 17 symboler; "http://.x.x/x.xml", och Length index börjar ju på 0
             return url.Length > 16; 
         }
-        
+
+        protected bool CompareCategoryNames(Dictionary<string, object> categories)
+        {
+            List<Kategori> preExistingCategories = (List<Kategori>)categories["Preexisting categories"];
+
+            return !preExistingCategories.Any(cats => cats.Titel == categories["KatNamn"].ToString());
+        }
+
         protected string AutoFormatURL(string url)
         {
             url = url.Replace(" ", "");
-            string prefix = "http://";
-            string prefixSecure = "https://";
+            string prefix = @"http://";
+            string prefixSecure = @"https://";
             string suffix = ".xml";
 
             //det finns egentligen fler webb-protokoll än http och https,
@@ -77,7 +93,7 @@ namespace BL.Validator
             {
                 url = $"{url}{suffix}";
             }
-
+            Console.WriteLine("autoformat"+ url);
             return url;
         }
 
@@ -101,26 +117,6 @@ namespace BL.Validator
                 }
             }
             return errorMessage;
-
-        }
-
-        public string CreateUniqueFilename(string filePath)
-        {
-            string newFilePath = filePath;
-
-            if (File.Exists(filePath))
-            {
-                string dir = Path.GetDirectoryName(filePath);
-                string fileName = Path.GetFileNameWithoutExtension(filePath);
-                string fileExt = Path.GetExtension(filePath);
-
-                for (int i = 1; ; ++i)
-                {
-                    newFilePath = Path.Combine($"({dir}({fileName}({i}({fileExt})");
-                }
-            }
-
-            return newFilePath;
         }
     }
 

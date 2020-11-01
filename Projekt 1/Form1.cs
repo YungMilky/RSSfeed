@@ -134,13 +134,11 @@ namespace Projekt_1
 
         private void btnLaggTill2_Click(object sender, EventArgs e)
         {
-            string kategori = txtKategori.Text ?? "";
+            string kategoriNamn = txtKategori.Text ?? "";
             Dictionary<string, object> userInput = new Dictionary<string, object>
             {
-                { "Namn", "jaja" },
-                { "URL", "hahagggggggggggggggg" },
-                { "Uppdateringsfrekvens", "hoho" },
-                { "Kategori", kategori }
+                { "KatNamn", kategoriNamn },
+                { "Preexisting categories", kategoriController.HamtaAllaKategorier() }
             };
 
             InputValidator validator = new InputValidator();
