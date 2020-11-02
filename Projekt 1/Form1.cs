@@ -445,10 +445,5 @@ namespace Projekt_1
                 }   
             }
         }
-
-        private void Podcast_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
