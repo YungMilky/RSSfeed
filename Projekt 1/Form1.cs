@@ -58,13 +58,6 @@ namespace Projekt_1
                     lwPodcast.FullRowSelect = true;
                 }
             }
-            try
-            {
-                cbKategori.SelectedIndex = 0;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-            }
         }
 
         private void uppdateraKategoriLista()
@@ -78,13 +71,6 @@ namespace Projekt_1
                     lbKategorier.Items.Add(item.Titel);
                     cbKategori.Items.Add(item.Titel);
                 }
-            }
-            try
-            {
-                cbKategori.SelectedIndex = 0;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
             }
         }
 
