@@ -39,7 +39,6 @@ namespace Models
         public void Uppdatera()
         {
             NextUpdate = DateTime.Now.AddSeconds(UppdateringsFrekvens);
-            Console.WriteLine($"Podcast updated. Next update in {NextUpdate} seconds.");
         }
         public bool NeedsUpdate
         {

@@ -203,8 +203,8 @@ namespace Projekt_1
                 MessageBox.Show($"{errorMessage}", "Fel",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-                UseDelay(); 
                 clearTextFaltPodcast();
+            _ = UseDelay();
         }
 
         private void txtURL_TextChanged(object sender, EventArgs e)
@@ -291,7 +291,7 @@ namespace Projekt_1
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             uppdateraPodcastLista();
-            UseDelay();
+            _ = UseDelay();
             clearTextFaltPodcast();
         }
 
@@ -422,14 +422,14 @@ namespace Projekt_1
         {
             uppdateraPodcastLista(); 
         }
-        private async void PodcastTimer_Tick(object sender, EventArgs e)
+        private void PodcastTimer_Tick(object sender, EventArgs e)
         {
             foreach (var pod in podcastController.HamtaAllaPodcasts())
             {
                 if (pod.NeedsUpdate)
                 {
                     int index = podcastController.HamtaPodcastIndex(pod.Namn);
-                    podcastController.UppdateraPodcast(pod.Namn, pod.URL, pod.UppdateringsFrekvens, pod.Kategori, index, pod.NextUpdate); 
+                    podcastController.UppdateraPodcast(pod.Namn, pod.URL, pod.UppdateringsFrekvens, pod.Kategori, index, pod.NextUpdate);
                     pod.Uppdatera();
 
                     for (int i = 0; i < lwPodcast.Items.Count; i++)
@@ -440,7 +440,7 @@ namespace Projekt_1
                             lwPodcast.Items[i].SubItems[1].Text = antalAvsnitt;
                         }
                     }
-                }   
+                }
             }
         }
     }
