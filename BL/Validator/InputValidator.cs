@@ -45,17 +45,18 @@ namespace BL.Validator
 
             When(pod => pod.ContainsKey("SelectedCat"), () => {
                 RuleFor(pod => pod["SelectedCat"])
-                .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("Vänligen välj en kategori att ta bort.");
             });
 
             When(pod => pod.ContainsKey("Podcast to remove"), () => {
                 RuleFor(pod => pod["Podcast to remove"])
-                .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("Vänligen välj en podcast i listan att ta bort.");
             });
 
-            
+            When(pod => pod.ContainsKey("Cat to be saved"), () => {
+                RuleFor(pod => pod["Cat to be saved"])
+                .NotEmpty().WithMessage("Vänligen välj en kategori i listan att ta bort.");
+            });
         }
 
         /*

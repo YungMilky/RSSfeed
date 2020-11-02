@@ -245,18 +245,30 @@ namespace Projekt_1
 
         private void btnSparaKategori_Click(object sender, EventArgs e)//namnet på gamla kategorin kommer tillbaka när man lagt till en ny podcast. Funkar om man startar om programmet.
         {
-            if (lbKategorier.SelectedItems.Count == 1)
+            var isSelected = lbKategorier.SelectedItems.Count > 0;
+            string namn = isSelected ? txtKategori.Text : "";
+
+            Dictionary<string, object> userInput = new Dictionary<string, object>
             {
-                string namn = txtKategori.Text;
+                { "Cat to be saved", namn }
+            };
+
+            ValidationResult results = validator.Validate(userInput);
+            string errorMessage = validator.LogValidationErrors(results);
+
+            if (string.IsNullOrEmpty(errorMessage))
+            {
                 int index = kategoriController.HamtaKategoriIndex(lbKategorier.SelectedItem.ToString());
                 kategoriController.UppdateraKategoriLista(lbKategorier.SelectedItem.ToString(), namn, index);
                 uppdateraKategoriLista();
-                uppdateraPodcastLista(); 
+                uppdateraPodcastLista();
                 txtKategori.Text = "";
             }
             else
             {
-                MessageBox.Show("Vänligen välj en kategori i listan.");
+                Console.WriteLine(errorMessage);
+                MessageBox.Show($"{errorMessage}", "Fel",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
