@@ -37,11 +37,25 @@ namespace BL.Validator
             When(pod => pod.ContainsKey("KatNamn"), () => {
                 RuleFor(pod => pod["KatNamn"])
                 .Cascade(CascadeMode.Stop)
-                .NotEmpty().WithMessage("Fältet 'URL' är tomt.");
+                .NotEmpty().WithMessage("Vänligen skriv in ett namn för kategorin i textrutan ovan.");
 
                 RuleFor(pod => pod)
                 .Must(CompareCategoryNames).WithMessage("Kategorin finns redan.");
             });
+
+            When(pod => pod.ContainsKey("SelectedCat"), () => {
+                RuleFor(pod => pod["SelectedCat"])
+                .Cascade(CascadeMode.Stop)
+                .NotEmpty().WithMessage("Vänligen välj en kategori att ta bort.");
+            });
+
+            When(pod => pod.ContainsKey("Podcast to remove"), () => {
+                RuleFor(pod => pod["Podcast to remove"])
+                .Cascade(CascadeMode.Stop)
+                .NotEmpty().WithMessage("Vänligen välj en podcast i listan att ta bort.");
+            });
+
+            
         }
 
         /*

@@ -320,34 +320,64 @@ namespace Projekt_1
 
         private void btnTaBortKategori_Click(object sender, EventArgs e) //podcasten i en viss kategori kommer tillbaka när man skapar en ny podcast. Funkar om man startar om programmet.
         {
-            if (lbKategorier.SelectedItems.Count == 1)
+            var isSelected = lbKategorier.SelectedItems.Count > 0;
+            string kategori = isSelected ? txtKategori.Text : "";
+
+            Dictionary<string, object> userInput = new Dictionary<string, object>
             {
-                string titel = txtKategori.Text;
-                DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort kategorin " + titel + " och alla tillhörande podcasts?", "Varning", MessageBoxButtons.YesNo);
+                { "SelectedCat", kategori }
+            };
+
+            ValidationResult results = validator.Validate(userInput);
+            string errorMessage = validator.LogValidationErrors(results);
+
+            if (string.IsNullOrEmpty(errorMessage))
+            {
+                DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort kategorin " + kategori + " och alla tillhörande podcasts?", "Varning", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    kategoriController.TaBortKategori(titel);
+                    kategoriController.TaBortKategori(kategori);
                     uppdateraKategoriLista();
                     uppdateraPodcastLista();
                     txtKategori.Clear();
+                    Application.Restart();
+                    Environment.Exit(0);
                 }
             }
-            Application.Restart();
-            Environment.Exit(0);
+            else
+            {
+                Console.WriteLine(errorMessage);
+                MessageBox.Show($"{errorMessage}", "Fel",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnTaBortPodcast_Click(object sender, EventArgs e)
         {
-            if (lwPodcast.SelectedItems.Count == 1)
+            var isSelected = lwPodcast.SelectedItems.Count > 0;
+            string namn = isSelected ? lwPodcast.SelectedItems[0].Text : "";
+            Dictionary<string, object> userInput = new Dictionary<string, object>
             {
-                string titel = lwPodcast.SelectedItems[0].Text;
-                DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort podcasten " + titel + "?", "Varning", MessageBoxButtons.YesNo);
+                { "Podcast to remove", namn}
+            };
 
+            ValidationResult results = validator.Validate(userInput);
+            string errorMessage = validator.LogValidationErrors(results);
+
+            if (string.IsNullOrEmpty(errorMessage))
+            {
+                DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill ta bort podcasten " + namn + "?", "Varning", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    podcastController.TaBortPodcast(titel);
+                    podcastController.TaBortPodcast(namn);
                     uppdateraPodcastLista();
                 }
+            }
+            else
+            {
+                Console.WriteLine(errorMessage);
+                MessageBox.Show($"{errorMessage}", "Fel",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             clearTextFaltPodcast();
         }
