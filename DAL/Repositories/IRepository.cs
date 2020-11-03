@@ -9,8 +9,8 @@ namespace DAL.Repositories
     public interface IRepository<T> where T : class
     {
         void Skapa(T Entity);
-        void SparaUppdatering(int index, T newEntity); //method overloading, har samma metod-namn men har olika parametrar
-        void SparaUppdatering(); //method overloading, har samma metod-namn men har olika parametrar
+        void SparaUppdatering(int index, T newEntity); 
+        void SparaUppdatering(); 
         void TaBort(int index);
         int HamtaIndex(string namn);
         List<T> HamtaAlla();

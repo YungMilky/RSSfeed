@@ -31,7 +31,7 @@ namespace BL.Controller
             return kategoriRepository.HamtaAlla(); 
         }
 
-        public void TaBortKategori(string titel) //funkar inte att ta bort podcast som tillhör en kategori än
+        public void TaBortKategori(string titel) 
         {
             PodcastController podcastController2 = new PodcastController(); 
             int index = kategoriRepository.HamtaIndex(titel);

@@ -229,7 +229,8 @@ namespace Projekt_1
             }
         }
 
-        private void btnSparaKategori_Click(object sender, EventArgs e)//namnet på gamla kategorin kommer tillbaka när man lagt till en ny podcast. Funkar om man startar om programmet.
+        private void btnSparaKategori_Click(object sender, EventArgs e)
+            //namnet på gamla kategorin kommer tillbaka när man lagt till en ny podcast. Funkar om man startar om programmet.
         {
             var isSelected = lbKategorier.SelectedItems.Count > 0;
             string namn = isSelected ? txtKategori.Text : "";
@@ -330,7 +331,8 @@ namespace Projekt_1
             }
         }
 
-        private void btnTaBortKategori_Click(object sender, EventArgs e) //podcasten i en viss kategori kommer tillbaka när man skapar en ny podcast. Funkar om man startar om programmet.
+        private void btnTaBortKategori_Click(object sender, EventArgs e) 
+            //podcasten i en viss kategori kommer tillbaka när man skapar en ny podcast. Funkar om man startar om programmet.
         {
             var isSelected = lbKategorier.SelectedItems.Count > 0;
             string kategori = isSelected ? txtKategori.Text : "";
